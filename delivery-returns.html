@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delivery &amp; Returns | Concreet</title>
+<meta name="description" content="UK delivery times and costs, and how to return or cancel an order from Concreet. Free UK delivery on orders over £40, 30-day returns.">
+<link rel="canonical" href="https://concreet.co.uk/delivery-returns">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="/" aria-label="Concreet — home">CONCREET</a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/furniture">Furniture</a></li>
+    <li><a href="/shop">Candles &amp; Gifts</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="/" onclick="toggleMenu()">Home</a></li>
+    <li><a href="/furniture" onclick="toggleMenu()">Furniture</a></li>
+    <li><a href="/shop" onclick="toggleMenu()">Candles &amp; Gifts</a></li>
+    <li><a href="/about" onclick="toggleMenu()">About</a></li>
+    <li><a href="/contact" onclick="toggleMenu()">Contact</a></li>
+  </ul>
+</div>
+
+<section class="page-hero">
+  <div class="page-badge">Delivery &amp; Returns</div>
+  <h1>Getting it to you, and back again</h1>
+  <p>What it costs, how long it takes, and what happens if it is not right.</p>
+</section>
+
+<div class="prose">
+  <h2>Delivery</h2>
+  <p>We deliver to addresses in the United Kingdom. Delivery is calculated at checkout:</p>
+  <ul>
+    <li><strong>Orders of £40 or more — free UK delivery.</strong></li>
+    <li><strong>Orders under £40 — a flat delivery charge of £4.95.</strong></li>
+  </ul>
+  <p>Homeware orders are handmade to order and are normally dispatched within <strong>2–3 working days</strong>, then typically arrive within a further 2–5 working days.</p>
+
+  <h3>Made-to-order furniture</h3>
+  <p>Coffee tables and dining tables are built to your dimensions and have a longer lead time, which we will confirm in writing before the piece is started. Larger items are delivered by arrangement rather than by standard courier. <a href="/contact">Contact us</a> before ordering if you need a piece by a particular date.</p>
+
+  <span class="todo">To be confirmed by Concreet: the exact courier used, the lead time quoted for made-to-order furniture, and whether delivery outside mainland UK (Highlands and Islands, Northern Ireland, Channel Islands) is offered and at what cost.</span>
+
+  <h2>Your right to cancel</h2>
+  <p>If you are a consumer in the UK, the Consumer Contracts (Information, Cancellation and Additional Charges) Regulations 2013 give you the right to cancel most online orders. You have <strong>14 days from the day you receive the goods</strong> to tell us you are cancelling, and a further <strong>14 days from telling us</strong> to send the goods back.</p>
+  <p>To cancel, email <a href="mailto:concreteartisanuk@gmail.com">concreteartisanuk@gmail.com</a> with your order number. You do not have to give a reason.</p>
+  <p>We will refund what you paid, including the standard delivery charge, within 14 days of receiving the goods back (or of you proving you have sent them). Unless the item is faulty, the cost of returning it is yours.</p>
+
+  <h3>Where the right to cancel does not apply</h3>
+  <p>The regulations exclude goods <strong>made to your specification or clearly personalised</strong>. Our made-to-order furniture — anything built to dimensions, finish or base that you have chosen — falls into that category and cannot be cancelled once production has begun. This does not affect your rights if the piece turns out to be faulty or not as described.</p>
+
+  <h2>Our 30-day returns policy</h2>
+  <p>On top of your legal rights, we accept returns of unused homeware in its original condition <strong>within 30 days of delivery</strong>. Email us first so we can confirm the return address.</p>
+
+  <h2>Faulty or damaged items</h2>
+  <p>Concrete is a hand-cast material. Variation in colour, small surface pits and slight differences in texture between pieces are characteristic of the material and are not defects.</p>
+  <p>A crack, a break in transit, or an item that is not what was described is a different matter. Under the Consumer Rights Act 2015 goods must be of satisfactory quality, fit for purpose and as described. Email us within 30 days of delivery with a photograph and we will replace or refund it — including your delivery costs both ways.</p>
+
+  <div class="callout">
+    <p><strong>Need to arrange a return?</strong> Email <a href="mailto:concreteartisanuk@gmail.com">concreteartisanuk@gmail.com</a> with your order number and we will reply with the return address and next steps.</p>
+  </div>
+</div>
+
+<footer>
+  <p style="font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--accent);margin-bottom:0.5rem">CONCREET</p>
+  <p>The gentler side of concrete · Handmade in the North East of England</p>
+  <ul class="footer-links">
+    <li><a href="/furniture">Furniture</a></li>
+    <li><a href="/shop">Candles &amp; Gifts</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/delivery-returns">Delivery &amp; Returns</a></li>
+    <li><a href="/privacy">Privacy</a></li>
+    <li><a href="/terms">Terms</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+  <p>Questions? <a href="mailto:concreteartisanuk@gmail.com">concreteartisanuk@gmail.com</a></p>
+  <p style="margin-top:1rem">© 2026 Concreet. All rights reserved.</p>
+</footer>
+
+<script>
+function toggleMenu() {
+  var menu = document.getElementById('mobile-menu');
+  var burger = document.getElementById('hamburger');
+  var open = menu.classList.toggle('open');
+  if (burger) burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    var menu = document.getElementById('mobile-menu');
+    if (menu.classList.contains('open')) toggleMenu();
+  }
+});
+</script>
+
+</body>
+</html>

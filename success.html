@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Confirmed — Concreet</title>
+<meta name="description" content="Thank you — your Concreet order has been placed.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+/* The page previously used a different font, palette and green accent from
+   the rest of the site — the one moment a customer most needs to feel they
+   are still in the right place. It now uses the storefront tokens. */
+.confirm-wrap { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 6rem 5% 4rem; }
+.confirm-box {
+  background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+  padding: 3rem 2.5rem; max-width: 560px; width: 100%; text-align: center;
+  animation: rise 0.5s ease-out;
+}
+@keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .confirm-box { animation: none; } }
+.confirm-mark { font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem; }
+.confirm-box h1 { font-family: 'Playfair Display', serif; font-size: 2.1rem; font-weight: 400; color: #fff; margin-bottom: 1rem; }
+.confirm-box p { color: var(--muted); margin-bottom: 1rem; }
+.confirm-note {
+  margin-top: 1.75rem; padding: 1rem 1.25rem; text-align: left;
+  background: rgba(197, 169, 117, 0.07); border: 1px solid rgba(197, 169, 117, 0.2);
+  border-radius: 6px; font-size: 0.85rem; color: var(--muted);
+}
+.confirm-note strong { color: var(--text); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="/" aria-label="Concreet — home">CONCREET</a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/furniture">Furniture</a></li>
+    <li><a href="/shop">Candles &amp; Gifts</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="confirm-wrap">
+  <div class="confirm-box">
+    <div class="confirm-mark" aria-hidden="true">✦</div>
+    <h1>Order confirmed</h1>
+    <p>Cheers, pet — payment's gone through and your order's with us. Proper belter.</p>
+    <p>A confirmation email is on its way from Stripe with your receipt. Your order will be dispatched from the North East within <strong>2–3 working days</strong>.</p>
+
+    <div class="cta-row">
+      <a class="btn" href="/shop">Keep shopping</a>
+      <a class="btn btn-ghost" href="/">Back to home</a>
+    </div>
+
+    <div class="confirm-note">
+      <p style="margin-bottom:0.5rem">💚 Every Concreet piece is cast and finished by hand. Thanks for supporting a small North East business.</p>
+      <p style="margin-bottom:0">Something not right? Email <a href="mailto:concreteartisanuk@gmail.com" style="color:var(--accent)">concreteartisanuk@gmail.com</a> — see our <a href="/delivery-returns" style="color:var(--accent)">delivery &amp; returns</a> policy.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <ul class="footer-links">
+    <li><a href="/furniture">Furniture</a></li>
+    <li><a href="/shop">Candles &amp; Gifts</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/delivery-returns">Delivery &amp; Returns</a></li>
+    <li><a href="/privacy">Privacy</a></li>
+    <li><a href="/terms">Terms</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+  <p>© 2026 Concreet. All rights reserved.</p>
+</footer>
+
+<!-- The order is paid for, so empty the basket. Without this the customer
+     returns to the shop with the items they have just bought still in it. -->
+<script>
+  try { localStorage.removeItem('concreet_basket_v1') } catch (e) {}
+</script>
+
+</body>
+</html>

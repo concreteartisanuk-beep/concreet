@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found | Concreet</title>
+<meta name="description" content="That page could not be found. Browse the Concreet collection of handmade concrete homeware and furniture instead.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="/" aria-label="Concreet — home">CONCREET</a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/furniture">Furniture</a></li>
+    <li><a href="/shop">Candles &amp; Gifts</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="/" onclick="toggleMenu()">Home</a></li>
+    <li><a href="/furniture" onclick="toggleMenu()">Furniture</a></li>
+    <li><a href="/shop" onclick="toggleMenu()">Candles &amp; Gifts</a></li>
+    <li><a href="/about" onclick="toggleMenu()">About</a></li>
+    <li><a href="/contact" onclick="toggleMenu()">Contact</a></li>
+  </ul>
+</div>
+
+<section class="page-hero" style="border-bottom:none;padding-bottom:1rem">
+  <div class="page-badge">Error 404</div>
+  <h1>This one didn't set</h1>
+  <p>The page you were after isn't here — it may have moved, or the link may have been mistyped. Everything else is exactly where you left it.</p>
+  <div class="cta-row">
+    <a class="btn" href="/shop">Shop the collection</a>
+    <a class="btn btn-ghost" href="/">Back to home</a>
+  </div>
+</section>
+
+<div class="values">
+  <div class="value">
+    <h3><a href="/shop">Candles &amp; homeware</a></h3>
+    <p>Hand-poured candles, soap, lip balm and diffusers in cast concrete vessels.</p>
+  </div>
+  <div class="value">
+    <h3><a href="/furniture">Furniture &amp; homeware</a></h3>
+    <p>Clocks, bowls, planters and made-to-order concrete coffee and dining tables.</p>
+  </div>
+  <div class="value">
+    <h3><a href="/about">About us</a></h3>
+    <p>Who makes all this, and how it gets made.</p>
+  </div>
+  <div class="value">
+    <h3><a href="/contact">Contact</a></h3>
+    <p>Bespoke enquiries, custom sizes, or a question about an order.</p>
+  </div>
+</div>
+
+<footer>
+  <p style="font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--accent);margin-bottom:0.5rem">CONCREET</p>
+  <p>The gentler side of concrete · Handmade in the North East of England</p>
+  <ul class="footer-links">
+    <li><a href="/furniture">Furniture</a></li>
+    <li><a href="/shop">Candles &amp; Gifts</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/delivery-returns">Delivery &amp; Returns</a></li>
+    <li><a href="/privacy">Privacy</a></li>
+    <li><a href="/terms">Terms</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+  <p>Questions? <a href="mailto:concreteartisanuk@gmail.com">concreteartisanuk@gmail.com</a></p>
+  <p style="margin-top:1rem">© 2026 Concreet. All rights reserved.</p>
+</footer>
+
+<script>
+function toggleMenu() {
+  var menu = document.getElementById('mobile-menu');
+  var burger = document.getElementById('hamburger');
+  var open = menu.classList.toggle('open');
+  if (burger) burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    var menu = document.getElementById('mobile-menu');
+    if (menu.classList.contains('open')) toggleMenu();
+  }
+});
+</script>
+
+</body>
+</html>

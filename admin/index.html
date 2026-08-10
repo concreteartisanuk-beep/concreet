@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concreet Admin — Site Editor</title>
+<!-- The password check on this page runs entirely in the browser, so it is a
+     convenience, not access control. Keeping it out of search indexes is the
+     minimum; see .netlify/results.md for how to gate it properly. -->
+<meta name="robots" content="noindex, nofollow, noarchive">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d0d0d;--card:#141414;--card2:#1a1a1a;--accent:#c5a975;--text:#f4f1eb;--muted:#8a8578;--border:#2a2a2a;--green:#34d399;--red:#f87171}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh}
+
+/* LOGIN */
+#login-screen{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:2rem}
+.login-box{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:3rem;width:100%;max-width:420px;text-align:center}
+.login-box .logo{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--accent);letter-spacing:3px;margin-bottom:0.5rem}
+.login-box p{color:var(--muted);font-size:0.9rem;margin-bottom:2rem}
+.login-box input{width:100%;background:#0d0d0d;border:1px solid var(--border);color:var(--text);padding:0.85rem 1rem;border-radius:4px;font-size:1rem;font-family:'Inter',sans-serif;margin-bottom:1rem;outline:none;transition:border-color 0.2s}
+.login-box input:focus{border-color:var(--accent)}
+.login-box button{width:100%;background:var(--accent);color:#0d0d0d;font-weight:700;font-size:0.9rem;letter-spacing:1px;text-transform:uppercase;padding:0.9rem;border-radius:4px;border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:opacity 0.2s}
+.login-box button:hover{opacity:0.85}
+.login-error{color:var(--red);font-size:0.85rem;margin-top:0.75rem;display:none}
+
+/* ADMIN LAYOUT */
+#admin-screen{display:none}
+.admin-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;background:rgba(13,13,13,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.admin-nav .logo{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--accent);letter-spacing:2px}
+.admin-nav .nav-right{display:flex;align-items:center;gap:1rem}
+.nav-tab{background:none;border:1px solid var(--border);color:var(--muted);font-size:0.8rem;letter-spacing:1px;text-transform:uppercase;padding:0.45rem 1rem;border-radius:2px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s}
+.nav-tab.active,.nav-tab:hover{border-color:var(--accent);color:var(--accent)}
+.logout-btn{background:none;border:none;color:var(--muted);font-size:0.8rem;cursor:pointer;font-family:'Inter',sans-serif}
+.logout-btn:hover{color:var(--red)}
+
+.admin-body{padding:6rem 2rem 4rem;max-width:1100px;margin:0 auto}
+.page-section{display:none}
+.page-section.active{display:block}
+
+/* SAVE BAR */
+.save-bar{position:fixed;bottom:0;left:0;right:0;z-index:100;background:#111;border-top:1px solid var(--border);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between}
+.save-bar span{font-size:0.85rem;color:var(--muted)}
+.save-bar-btns{display:flex;gap:0.75rem}
+.btn-preview{background:transparent;border:1px solid var(--accent);color:var(--accent);font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;padding:0.55rem 1.25rem;border-radius:2px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s;text-decoration:none;display:inline-flex;align-items:center}
+.btn-preview:hover{background:rgba(197,169,117,0.1)}
+.btn-save{background:var(--accent);color:#0d0d0d;font-weight:700;font-size:0.85rem;letter-spacing:1px;text-transform:uppercase;padding:0.6rem 1.75rem;border-radius:2px;border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:opacity 0.2s}
+.btn-save:hover{opacity:0.85}
+
+/* PRODUCT CARDS */
+.section-title{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:400;color:#fff;margin-bottom:0.4rem}
+.section-sub{color:var(--muted);font-size:0.88rem;margin-bottom:2rem}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem;margin-bottom:3rem}
+.product-card{background:var(--card2);border:1px solid var(--border);border-radius:6px;overflow:hidden;transition:border-color 0.2s}
+.product-card:hover{border-color:rgba(197,169,117,0.3)}
+.product-card-img{position:relative;aspect-ratio:4/3;overflow:hidden}
+.product-card-img img{width:100%;height:100%;object-fit:cover}
+.img-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.2s}
+.product-card-img:hover .img-overlay{opacity:1}
+.img-change-btn{background:var(--accent);color:#0d0d0d;font-size:0.75rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:0.5rem 1rem;border-radius:2px;border:none;cursor:pointer;font-family:'Inter',sans-serif}
+.product-card-body{padding:1.25rem}
+.field-row{margin-bottom:1rem}
+.field-label{font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:0.4rem;display:block}
+.field-input{width:100%;background:#0d0d0d;border:1px solid var(--border);color:var(--text);padding:0.6rem 0.75rem;border-radius:3px;font-size:0.9rem;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.2s}
+.field-input:focus{border-color:var(--accent)}
+.field-input.price-input{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--accent)}
+textarea.field-input{resize:vertical;min-height:80px;line-height:1.5}
+.field-row-2{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+.badge-select{width:100%;background:#0d0d0d;border:1px solid var(--border);color:var(--text);padding:0.6rem 0.75rem;border-radius:3px;font-size:0.85rem;font-family:'Inter',sans-serif;outline:none;cursor:pointer}
+
+/* HERO EDITOR */
+.hero-editor{background:var(--card2);border:1px solid var(--border);border-radius:6px;padding:1.5rem;margin-bottom:2rem}
+.hero-editor h4{font-size:0.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:1.25rem}
+
+/* SUCCESS TOAST */
+.toast{position:fixed;top:80px;right:2rem;z-index:999;background:#1a2e22;border:1px solid var(--green);color:var(--green);padding:0.75rem 1.25rem;border-radius:4px;font-size:0.85rem;opacity:0;transition:opacity 0.3s;pointer-events:none}
+.toast.show{opacity:1}
+
+/* HOW TO SECTION */
+.how-to{background:var(--card2);border:1px solid var(--border);border-radius:6px;padding:2rem;max-width:700px}
+.how-to h3{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:400;color:#fff;margin-bottom:1.5rem}
+.step{display:flex;gap:1rem;margin-bottom:1.5rem}
+.step-num{width:32px;height:32px;min-width:32px;background:rgba(197,169,117,0.15);border:1px solid rgba(197,169,117,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.82rem;color:var(--accent);font-weight:600}
+.step-body h4{font-size:0.92rem;color:#fff;margin-bottom:0.3rem}
+.step-body p{font-size:0.85rem;color:var(--muted);line-height:1.6}
+.step-body code{background:#0d0d0d;border:1px solid var(--border);padding:0.15rem 0.45rem;border-radius:2px;font-size:0.82rem;color:var(--accent)}
+.divider{border:none;border-top:1px solid var(--border);margin:2rem 0}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login-screen">
+  <div class="login-box">
+    <div class="logo">CONCREET</div>
+    <p>Site Admin — Enter your password to continue</p>
+    <input type="password" id="pw-input" placeholder="Password" onkeydown="if(event.key==='Enter')doLogin()">
+    <button onclick="doLogin()">Login</button>
+    <div class="login-error" id="login-error">Incorrect password. Please try again.</div>
+  </div>
+</div>
+
+<!-- ADMIN -->
+<div id="admin-screen">
+
+  <nav class="admin-nav">
+    <div class="logo">CONCREET ADMIN</div>
+    <div class="nav-right">
+      <button class="nav-tab active" onclick="showTab('shop',this)">Shop</button>
+      <button class="nav-tab" onclick="showTab('furniture',this)">Furniture</button>
+      <button class="nav-tab" onclick="showTab('howto',this)">How To</button>
+      <button class="logout-btn" onclick="doLogout()">Logout</button>
+    </div>
+  </nav>
+
+  <div class="admin-body">
+
+    <!-- SHOP TAB -->
+    <div class="page-section active" id="tab-shop">
+      <h2 class="section-title">Shop — Signature Collection</h2>
+      <p class="section-sub">Edit product names, prices and descriptions. Changes take effect after you click Save & Download.</p>
+
+      <div class="hero-editor">
+        <h4>Hero Section</h4>
+        <div class="field-row">
+          <span class="field-label">Badge Text</span>
+          <input class="field-input" id="shop-hero-badge" type="text">
+        </div>
+        <div class="field-row">
+          <span class="field-label">Heading</span>
+          <input class="field-input" id="shop-hero-heading" type="text">
+        </div>
+        <div class="field-row">
+          <span class="field-label">Sub-heading</span>
+          <textarea class="field-input" id="shop-hero-subheading" rows="2"></textarea>
+        </div>
+      </div>
+
+      <div class="product-grid" id="shop-products-grid"></div>
+
+      <div class="hero-editor">
+        <h4>Gift Bundle</h4>
+        <div class="field-row-2">
+          <div class="field-row">
+            <span class="field-label">Name</span>
+            <input class="field-input" id="bundle-name" type="text">
+          </div>
+          <div class="field-row">
+            <span class="field-label">Price (£)</span>
+            <input class="field-input price-input" id="bundle-price" type="number" step="0.01">
+          </div>
+        </div>
+        <div class="field-row">
+          <span class="field-label">Description</span>
+          <textarea class="field-input" id="bundle-desc" rows="2"></textarea>
+        </div>
+        <div class="field-row">
+          <span class="field-label">Saving Text</span>
+          <input class="field-input" id="bundle-saving" type="text">
+        </div>
+      </div>
+    </div>
+
+    <!-- FURNITURE TAB -->
+    <div class="page-section" id="tab-furniture">
+      <h2 class="section-title">Furniture & Homeware</h2>
+      <p class="section-sub">Edit homeware pieces and concrete tables. Changes take effect after you click Save & Download.</p>
+
+      <div class="hero-editor">
+        <h4>Hero Section</h4>
+        <div class="field-row">
+          <span class="field-label">Badge Text</span>
+          <input class="field-input" id="furn-hero-badge" type="text">
+        </div>
+        <div class="field-row">
+          <span class="field-label">Heading</span>
+          <input class="field-input" id="furn-hero-heading" type="text">
+        </div>
+        <div class="field-row">
+          <span class="field-label">Sub-heading</span>
+          <textarea class="field-input" id="furn-hero-subheading" rows="2"></textarea>
+        </div>
+      </div>
+
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:400;color:var(--muted);margin-bottom:1.25rem">Homeware Pieces</h3>
+      <div class="product-grid" id="homeware-grid"></div>
+
+      <hr class="divider">
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:400;color:var(--muted);margin-bottom:1.25rem">Concrete Tables</h3>
+      <div class="product-grid" id="tables-grid"></div>
+    </div>
+
+    <!-- HOW TO TAB -->
+    <div class="page-section" id="tab-howto">
+      <h2 class="section-title">How to Edit Your Site</h2>
+      <p class="section-sub">Follow these steps every time you want to update your products, prices or text.</p>
+      <br>
+      <div class="how-to">
+        <h3>Editing Products & Prices</h3>
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h4>Open this Admin Panel</h4>
+            <p>Go to <code>concreet.co.uk/admin</code> and log in with your password.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h4>Make your changes</h4>
+            <p>Click on the <strong>Shop</strong> or <strong>Furniture</strong> tab. Edit any product name, price or description directly in the text boxes.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h4>Click "Save & Download"</h4>
+            <p>Press the gold <strong>Save & Download</strong> button at the bottom. A file called <code>site-data.js</code> will download to your Downloads folder.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h4>Replace the file on your PC</h4>
+            <p>Move or copy the downloaded <code>site-data.js</code> into your site folder:<br>
+            <code>Echolift_SEO_SaaS → concreet-app → site-data.js</code><br>
+            Replace the existing file when asked.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-body">
+            <h4>Deploy to Netlify</h4>
+            <p>Go to <a href="https://app.netlify.com" target="_blank" style="color:var(--accent)">app.netlify.com</a>, open your <strong>concreet-shop-uk</strong> site, click <strong>Deploys</strong>, then drag your entire <code>concreet-app</code> folder onto the deploy zone. Done — your site is live within 30 seconds.</p>
+          </div>
+        </div>
+        <hr class="divider">
+        <h3>Changing a Product Photo</h3>
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h4>Name your new photo correctly</h4>
+            <p>Rename your photo to match the existing image name, for example <code>candle.jpg</code> or <code>clock-copper.jpg</code>. Check the product card in this admin panel to see the current filename.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h4>Drop it into the images folder</h4>
+            <p>Copy the photo to: <code>concreet-app → images →</code> and replace the old one.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h4>Deploy as above</h4>
+            <p>Drag the <code>concreet-app</code> folder to Netlify Deploys and your new photo goes live.</p>
+          </div>
+        </div>
+        <hr class="divider">
+        <h3>Changing Your Admin Password</h3>
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h4>Open admin/index.html</h4>
+            <p>In your <code>concreet-app</code> folder, open <code>admin → index.html</code> in a text editor.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h4>Find and change the password</h4>
+            <p>Search for <code>ADMIN_PASSWORD</code> near the top of the script section and change it to your new password. Save and redeploy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="save-bar">
+    <span id="save-bar-msg">Changes are not yet saved.</span>
+    <div class="save-bar-btns">
+      <a class='btn-preview' href='/' target='_blank'>Preview Site ↗</a>
+      <button class="btn-save" onclick="saveAndDownload()">Save & Download</button>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast">✓ site-data.js downloaded — replace the file in concreet-app then redeploy.</div>
+
+<script src="../site-data.js"></script>
+<script>
+// ── CONFIG ──────────────────────────────────────────────────
+var ADMIN_PASSWORD = 'concreet2026';
+// ────────────────────────────────────────────────────────────
+
+var data; // will hold a working copy
+
+function doLogin() {
+  var pw = document.getElementById('pw-input').value;
+  if (pw === ADMIN_PASSWORD) {
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('admin-screen').style.display = 'block';
+    loadData();
+  } else {
+    document.getElementById('login-error').style.display = 'block';
+  }
+}
+
+function doLogout() {
+  document.getElementById('login-screen').style.display = 'flex';
+  document.getElementById('admin-screen').style.display = 'none';
+  document.getElementById('pw-input').value = '';
+}
+
+function showTab(name, btn) {
+  document.querySelectorAll('.page-section').forEach(function(s){ s.classList.remove('active'); });
+  document.querySelectorAll('.nav-tab').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('tab-' + name).classList.add('active');
+  btn.classList.add('active');
+}
+
+function loadData() {
+  // deep copy from SITE_DATA
+  data = JSON.parse(JSON.stringify(SITE_DATA));
+
+  // Hero — shop
+  setVal('shop-hero-badge', data.shop.hero.badge);
+  setVal('shop-hero-heading', data.shop.hero.heading);
+  setVal('shop-hero-subheading', data.shop.hero.subheading);
+  // Bundle
+  setVal('bundle-name', data.shop.bundle.name);
+  setVal('bundle-price', data.shop.bundle.price);
+  setVal('bundle-desc', data.shop.bundle.description);
+  setVal('bundle-saving', data.shop.bundle.saving);
+  // Shop products
+  renderProductGrid('shop-products-grid', data.shop.products);
+
+  // Hero — furniture
+  setVal('furn-hero-badge', data.furniture.hero.badge);
+  setVal('furn-hero-heading', data.furniture.hero.heading);
+  setVal('furn-hero-subheading', data.furniture.hero.subheading);
+  // Furniture grids
+  renderProductGrid('homeware-grid', data.furniture.homeware);
+  renderProductGrid('tables-grid', data.furniture.tables);
+}
+
+function setVal(id, val) {
+  var el = document.getElementById(id);
+  if (el) el.value = val;
+}
+
+function renderProductGrid(containerId, products) {
+  var container = document.getElementById(containerId);
+  container.innerHTML = '';
+  products.forEach(function(p, idx) {
+    var card = document.createElement('div');
+    card.className = 'product-card';
+    card.innerHTML =
+      '<div class="product-card-img">' +
+        '<img src="../' + p.image + '" alt="' + p.name + '" onerror="this.style.background=\'#1a1a1a\'">' +
+        '<div class="img-overlay"><span style="color:var(--muted);font-size:0.78rem;text-align:center;padding:0 1rem">Replace via<br><strong style="color:var(--text)">' + p.image.replace('images/','') + '</strong><br>in concreet-app/images/</span></div>' +
+      '</div>' +
+      '<div class="product-card-body">' +
+        '<div class="field-row">' +
+          '<span class="field-label">Product Name</span>' +
+          '<input class="field-input" data-id="' + p.id + '" data-field="name" value="' + escHtml(p.name) + '">' +
+        '</div>' +
+        '<div class="field-row-2">' +
+          '<div class="field-row">' +
+            '<span class="field-label">Price (£)</span>' +
+            '<input class="field-input price-input" data-id="' + p.id + '" data-field="price" type="number" step="0.01" value="' + p.price + '">' +
+          '</div>' +
+          '<div class="field-row">' +
+            '<span class="field-label">Badge</span>' +
+            '<input class="field-input" data-id="' + p.id + '" data-field="badge" value="' + escHtml(p.badge) + '">' +
+          '</div>' +
+        '</div>' +
+        '<div class="field-row">' +
+          '<span class="field-label">Description</span>' +
+          '<textarea class="field-input" data-id="' + p.id + '" data-field="description" rows="3">' + escHtml(p.description) + '</textarea>' +
+        '</div>' +
+      '</div>';
+    container.appendChild(card);
+  });
+}
+
+function escHtml(str) {
+  return String(str).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function collectData() {
+  // Hero — shop
+  data.shop.hero.badge = document.getElementById('shop-hero-badge').value;
+  data.shop.hero.heading = document.getElementById('shop-hero-heading').value;
+  data.shop.hero.subheading = document.getElementById('shop-hero-subheading').value;
+  // Bundle
+  data.shop.bundle.name = document.getElementById('bundle-name').value;
+  data.shop.bundle.price = parseFloat(document.getElementById('bundle-price').value);
+  data.shop.bundle.description = document.getElementById('bundle-desc').value;
+  data.shop.bundle.saving = document.getElementById('bundle-saving').value;
+  // Hero — furniture
+  data.furniture.hero.badge = document.getElementById('furn-hero-badge').value;
+  data.furniture.hero.heading = document.getElementById('furn-hero-heading').value;
+  data.furniture.hero.subheading = document.getElementById('furn-hero-subheading').value;
+
+  // Product fields
+  document.querySelectorAll('[data-id][data-field]').forEach(function(el) {
+    var id = el.dataset.id;
+    var field = el.dataset.field;
+    var val = field === 'price' ? parseFloat(el.value) : el.value;
+    updateProduct(id, field, val);
+  });
+}
+
+function updateProduct(id, field, val) {
+  var lists = [data.shop.products, data.furniture.homeware, data.furniture.tables];
+  lists.forEach(function(list) {
+    var p = list.find(function(x){ return x.id === id; });
+    if (p) p[field] = val;
+  });
+}
+
+function saveAndDownload() {
+  collectData();
+  var json = JSON.stringify(data, null, 2);
+  var output = '// ============================================================\n' +
+    '//  CONCREET SITE DATA — edit via /admin or directly here\n' +
+    '// ============================================================\n\n' +
+    'var SITE_DATA = ' + json + ';\n';
+
+  var blob = new Blob([output], { type: 'text/javascript' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = 'site-data.js';
+  a.click();
+  URL.revokeObjectURL(url);
+
+  document.getElementById('save-bar-msg').textContent = 'Downloaded! Replace site-data.js in concreet-app, then redeploy.';
+  var toast = document.getElementById('toast');
+  toast.classList.add('show');
+  setTimeout(function(){ toast.classList.remove('show'); }, 5000);
+}
+</script>
+</body>
+</html>

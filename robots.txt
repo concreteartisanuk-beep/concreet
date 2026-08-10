@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Nothing here is useful to a crawler and the checkout page is per-session.
+Disallow: /admin/
+Disallow: /success
+Disallow: /.netlify/
+
+Sitemap: https://concreet.co.uk/sitemap.xml

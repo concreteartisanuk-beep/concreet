@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact & Enquiries | Concreet — Handmade Concrete Homeware UK</title>
+<meta name="description" content="Get in touch with Concreet. Enquire about bespoke concrete furniture, custom orders, coffee tables, dining tables and homeware. Handmade in the North East of England.">
+<link rel="canonical" href="https://concreet.co.uk/contact">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d0d0d;--card:#141414;--accent:#c5a975;--text:#f4f1eb;--muted:#8a8578;--border:#2a2a2a;--green:#34d399}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6}
+a{text-decoration:none;color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 5%;background:rgba(13,13,13,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.logo{font-family:'Playfair Display',serif;font-size:1.4rem;letter-spacing:2px;color:var(--accent)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:0.85rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--text);transition:all 0.3s}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(13,13,13,0.98);border-bottom:1px solid var(--border);z-index:99;padding:1.5rem 5%}
+.mobile-menu.open{display:block}
+.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:1.25rem}
+.mobile-menu a{font-size:1rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+.mobile-menu a:hover{color:var(--text)}
+.hero{padding:9rem 5% 5rem;text-align:center;border-bottom:1px solid var(--border)}
+.hero-badge{display:inline-block;font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--accent);border:1px solid rgba(197,169,117,0.4);padding:0.4rem 1.25rem;border-radius:999px;margin-bottom:1.5rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,4rem);font-weight:400;color:#fff;margin-bottom:1rem}
+.hero p{color:var(--muted);font-size:1rem;max-width:520px;margin:0 auto}
+.contact-wrap{max-width:1100px;margin:0 auto;padding:5rem 5%;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.form-section h2{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:400;color:#fff;margin-bottom:0.5rem}
+.form-section p{color:var(--muted);font-size:0.9rem;margin-bottom:2rem}
+form{display:flex;flex-direction:column;gap:1.25rem}
+.field{display:flex;flex-direction:column;gap:0.4rem}
+.field label{font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.field input,.field textarea,.field select{background:#111;border:1px solid var(--border);color:var(--text);padding:0.85rem 1rem;border-radius:3px;font-size:0.95rem;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.2s;width:100%}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--accent)}
+.field select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238a8578' d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center}
+.field select option{background:#111}
+.field textarea{resize:vertical;min-height:120px;line-height:1.6}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.btn-submit{background:var(--accent);color:#0d0d0d;font-weight:700;font-size:0.9rem;letter-spacing:1px;text-transform:uppercase;padding:1rem 2rem;border-radius:3px;border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:opacity 0.2s;margin-top:0.5rem}
+.btn-submit:hover{opacity:0.85}
+.btn-submit:disabled{opacity:0.5;cursor:not-allowed}
+.success-msg{display:none;background:#1a2e22;border:1px solid var(--green);color:var(--green);padding:1.25rem 1.5rem;border-radius:4px;font-size:0.9rem;line-height:1.6}
+.error-msg{display:none;background:#2e1a1a;border:1px solid #e07a5f;color:#e8a08c;padding:1.25rem 1.5rem;border-radius:4px;font-size:0.9rem;line-height:1.6}
+.error-msg a{color:#e8a08c;text-decoration:underline}
+.hp-field{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.info-section{position:sticky;top:100px}
+.info-card{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:2rem;margin-bottom:1.5rem}
+.info-card h3{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:400;color:#fff;margin-bottom:0.75rem}
+.info-card p{color:var(--muted);font-size:0.88rem;line-height:1.7}
+.info-card a{color:var(--accent)}
+.info-items{display:flex;flex-direction:column;gap:1rem;margin-top:1rem}
+.info-item{display:flex;gap:0.75rem;align-items:flex-start}
+.info-icon{font-size:1.1rem;margin-top:2px}
+.info-item-text{font-size:0.88rem;color:var(--muted);line-height:1.6}
+.info-item-text strong{color:var(--text);display:block;margin-bottom:2px;font-size:0.9rem}
+.faq-item{border-top:1px solid var(--border);padding:1.25rem 0}
+.faq-item:last-child{border-bottom:1px solid var(--border)}
+.faq-q{font-size:0.92rem;color:#fff;margin-bottom:0.4rem;font-weight:500}
+.faq-a{font-size:0.85rem;color:var(--muted);line-height:1.65}
+footer{text-align:center;padding:2.5rem 5%;color:var(--muted);font-size:0.82rem;border-top:1px solid var(--border)}
+footer a{color:var(--accent)}
+.footer-links{display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap;margin:1.25rem 0;list-style:none;font-size:0.8rem}
+.footer-links a{color:var(--muted)}
+.footer-links a:hover{color:var(--text)}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .contact-wrap{grid-template-columns:1fr;gap:3rem;padding:3rem 5%}
+  .info-section{position:static}
+  .field-row{grid-template-columns:1fr}
+  .hero{padding:7rem 5% 3rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="/" aria-label="Concreet — home">CONCREET</a>
+  <ul class="nav-links">
+    <li><a href='/'>Home</a></li>
+    <li><a href='/furniture'>Furniture</a></li>
+    <li><a href='/shop'>Candles &amp; Gifts</a></li>
+    <li><a href='/about'>About</a></li>
+    <li><a class='active' href='/contact'>Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href='/' onclick='toggleMenu()'>Home</a></li>
+    <li><a href='/furniture' onclick='toggleMenu()'>Furniture</a></li>
+    <li><a href='/shop' onclick='toggleMenu()'>Candles &amp; Gifts</a></li>
+    <li><a href='/about' onclick='toggleMenu()'>About</a></li>
+    <li><a href='/contact' onclick='toggleMenu()'>Contact</a></li>
+  </ul>
+</div>
+
+<section class="hero">
+  <div class="hero-badge">Get in Touch</div>
+  <h1>Let's talk about your space</h1>
+  <p>Bespoke enquiries, custom orders, or just a question — we'd love to hear from you.</p>
+</section>
+
+<div class="contact-wrap">
+
+  <div class="form-section">
+    <h2>Send an Enquiry</h2>
+    <p>Particularly for our furniture pieces — every table is made to your exact dimensions and finish. Tell us what you have in mind.</p>
+
+    <!-- Netlify Forms: data-netlify="true" is what registers the form at
+         build time. Without this attribute the POST below 404s and nothing
+         is ever recorded. netlify-honeypot names the decoy field. -->
+    <form id='enquiry-form' method='POST' name='concreet-enquiry' data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="concreet-enquiry">
+      <p class="hp-field" aria-hidden="true"><label>Do not fill this in <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="first-name">First Name *</label>
+          <input type="text" id="first-name" name="first-name" required placeholder="Jane">
+        </div>
+        <div class="field">
+          <label for="last-name">Last Name *</label>
+          <input type="text" id="last-name" name="last-name" required placeholder="Smith">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required placeholder="jane@example.com">
+      </div>
+
+      <div class="field">
+        <label for="phone">Phone Number (optional)</label>
+        <input type="tel" id="phone" name="phone" placeholder="+44 7700 000000">
+      </div>
+
+      <div class="field">
+        <label for="interest">I'm interested in…</label>
+        <select id="interest" name="interest">
+          <option value="">Please select…</option>
+          <option value="Concrete Wall Clock">Concrete Wall Clock</option>
+          <option value="Concrete Candle">Concrete Candle</option>
+          <option value="Concrete Soap or Diffuser">Concrete Soap / Diffuser</option>
+          <option value="Decorative Bowls">Decorative Bowls or Planters</option>
+          <option value="Bespoke Coffee Table">Bespoke Coffee Table</option>
+          <option value="Bespoke Dining Table">Bespoke Dining Table</option>
+          <option value="Custom / Other">Custom or Other</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="dimensions">Dimensions or details (for furniture)</label>
+        <input type="text" id="dimensions" name="dimensions" placeholder="e.g. 120cm × 70cm, oak legs, light grey finish">
+      </div>
+
+      <div class="field">
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" required placeholder="Tell us what you're looking for, any specific requirements, or just say hello…"></textarea>
+      </div>
+
+      <div class="success-msg" id="success-msg" role="status">
+        ✓ Thank you! We've received your enquiry and will get back to you within 1–2 working days.
+      </div>
+
+      <div class="error-msg" id="error-msg" role="alert">
+        We couldn't send that — please try again, or email us directly at
+        <a href="mailto:concreteartisanuk@gmail.com">concreteartisanuk@gmail.com</a>.
+      </div>
+
+      <button type="submit" class="btn-submit" id="submit-btn">Send Enquiry →</button>
+    </form>
+  </div>
+
+  <div class="info-section">
+    <div class="info-card">
+      <h3>Get in touch directly</h3>
+      <div class="info-items">
+        <div class="info-item">
+          <span class="info-icon">✉</span>
+          <div class="info-item-text">
+            <strong>Email</strong>
+            <a href="mailto:concreteartisanuk@gmail.com">concreteartisanuk@gmail.com</a>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">📍</span>
+          <div class="info-item-text">
+            <strong>Based in</strong>
+            North East of England, UK
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">🕐</span>
+          <div class="info-item-text">
+            <strong>Response time</strong>
+            Within 1–2 working days
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>Frequently asked</h3>
+      <div class="faq-item">
+        <div class="faq-q">Can I order a custom size table?</div>
+        <div class="faq-a">Yes — all our furniture is made to order. Tell us your dimensions and we'll create something to fit your exact space.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How long does delivery take?</div>
+        <div class="faq-a">Small pieces (candles, soaps, bowls) ship within 5–7 days. Furniture is made to order — typically 3–5 weeks depending on complexity.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you offer gift wrapping?</div>
+        <div class="faq-a">Yes, just mention it in your order or message and we'll wrap it beautifully at no extra charge.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Are the products sealed or treated?</div>
+        <div class="faq-a">All homeware is sealed with a food-safe or water-resistant finish as appropriate. Tables and furniture receive a heavy-duty penetrating sealer for lasting durability.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p style="font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--accent);margin-bottom:0.5rem">CONCREET</p>
+  <p>Handmade in the North East of England · <a href="mailto:concreteartisanuk@gmail.com">concreteartisanuk@gmail.com</a></p>
+  <ul class="footer-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/furniture">Furniture</a></li>
+    <li><a href="/shop">Candles &amp; Gifts</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/delivery-returns">Delivery &amp; Returns</a></li>
+    <li><a href="/privacy">Privacy</a></li>
+    <li><a href="/terms">Terms</a></li>
+  </ul>
+  <p style="margin-top:1rem">© 2026 Concreet. All rights reserved.</p>
+</footer>
+
+<script>
+function toggleMenu() {
+  var menu = document.getElementById('mobile-menu');
+  var burger = document.getElementById('hamburger');
+  var open = menu.classList.toggle('open');
+  if (burger) burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+
+document.getElementById('enquiry-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var btn = document.getElementById('submit-btn');
+  var errorEl = document.getElementById('error-msg');
+  errorEl.style.display = 'none';
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  var form = this;
+
+  function failed() {
+    btn.disabled = false;
+    btn.textContent = 'Send Enquiry →';
+    errorEl.style.display = 'block';
+    errorEl.scrollIntoView({ block: 'nearest' });
+  }
+
+  // Netlify's form handler only accepts urlencoded bodies — a raw
+  // FormData post sends multipart and is rejected. The previous
+  // version also ignored the status code, so a failed submission
+  // still showed the thank-you message.
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(new FormData(form)).toString()
+  })
+    .then(function(response) {
+      if (!response.ok) { failed(); return; }
+      var success = document.getElementById('success-msg');
+      success.style.display = 'block';
+      btn.style.display = 'none';
+      form.querySelectorAll('input,textarea,select').forEach(function(el){
+        if (el.type !== 'hidden') el.value = '';
+      });
+      success.scrollIntoView({ block: 'nearest' });
+    })
+    .catch(failed);
+});
+</script>
+
+</body>
+</html>

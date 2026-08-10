@@ -1,0 +1,131 @@
+/* ============================================================
+   CONCREET — shared styles for the content pages
+   ============================================================
+   The storefront pages (index, shop, furniture, contact) carry
+   their own inline CSS. This sheet covers the pages added
+   afterwards — about, delivery & returns, privacy, terms and
+   the 404 — using the same tokens so they look native.
+   ============================================================ */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0d0d0d;
+  --card: #141414;
+  --accent: #c5a975;
+  --text: #f4f1eb;
+  --muted: #8a8578;
+  --border: #2a2a2a;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* ---------- navigation ---------- */
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.25rem 5%;
+  background: rgba(13, 13, 13, 0.95);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; letter-spacing: 2px; color: var(--accent); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--text); }
+
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--text); }
+.mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; background: rgba(13,13,13,0.98); border-bottom: 1px solid var(--border); z-index: 99; padding: 1.5rem 5%; }
+.mobile-menu.open { display: block; }
+.mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 1.25rem; }
+.mobile-menu a { font-size: 1rem; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+
+/* ---------- page header ---------- */
+
+.page-hero { padding: 9rem 5% 4rem; text-align: center; border-bottom: 1px solid var(--border); }
+.page-badge {
+  display: inline-block; font-size: 0.72rem; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--accent);
+  border: 1px solid rgba(197, 169, 117, 0.4);
+  padding: 0.4rem 1.25rem; border-radius: 999px; margin-bottom: 1.5rem;
+}
+.page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 400; color: #fff; margin-bottom: 1rem; }
+.page-hero p { color: var(--muted); max-width: 620px; margin: 0 auto; }
+
+/* ---------- prose ---------- */
+
+.prose { max-width: 760px; margin: 0 auto; padding: 4rem 5% 5rem; }
+.prose h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 400; color: #fff; margin: 2.75rem 0 0.85rem; }
+.prose h2:first-child { margin-top: 0; }
+.prose h3 { font-size: 1rem; color: var(--text); margin: 1.75rem 0 0.5rem; }
+.prose p, .prose li { color: var(--muted); font-size: 0.95rem; margin-bottom: 0.9rem; }
+.prose ul, .prose ol { padding-left: 1.25rem; margin-bottom: 1rem; }
+.prose a { color: var(--accent); text-decoration: underline; }
+.prose strong { color: var(--text); }
+.prose .updated { font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+
+/* A visible marker for details only the business owner can supply.
+   Anything still wearing this box must be filled in before the policy
+   is relied upon. */
+.todo {
+  display: block;
+  background: rgba(197, 169, 117, 0.08);
+  border-left: 3px solid var(--accent);
+  padding: 0.85rem 1rem;
+  margin: 1rem 0;
+  font-size: 0.88rem;
+  color: var(--text);
+}
+
+.callout { background: var(--card); border: 1px solid var(--border); border-radius: 6px; padding: 1.5rem; margin: 1.5rem 0; }
+.callout p:last-child { margin-bottom: 0; }
+
+/* ---------- about page ---------- */
+
+.split { max-width: 1100px; margin: 0 auto; padding: 4rem 5%; display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; }
+.split img { width: 100%; height: auto; border-radius: 6px; display: block; }
+.split h2 { font-family: 'Playfair Display', serif; font-size: 1.9rem; font-weight: 400; color: #fff; margin-bottom: 1rem; }
+.split p { color: var(--muted); margin-bottom: 0.9rem; }
+
+.values { max-width: 1100px; margin: 0 auto; padding: 2rem 5% 5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+.value { background: var(--card); border: 1px solid var(--border); border-radius: 6px; padding: 1.75rem; }
+.value h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 400; color: #fff; margin-bottom: 0.5rem; }
+.value p { color: var(--muted); font-size: 0.88rem; }
+
+/* ---------- calls to action ---------- */
+
+.cta-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--accent); color: #0d0d0d;
+  font-weight: 600; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase;
+  padding: 0.9rem 2rem; border-radius: 2px; transition: opacity 0.2s;
+}
+.btn:hover { opacity: 0.85; }
+.btn-ghost { background: none; color: var(--text); border: 1px solid var(--border); }
+.btn-ghost:hover { border-color: var(--accent); opacity: 1; }
+
+/* ---------- footer ---------- */
+
+footer { text-align: center; padding: 3rem 5% 2.5rem; color: var(--muted); font-size: 0.82rem; border-top: 1px solid var(--border); }
+footer a { color: var(--accent); }
+.footer-links { display: flex; gap: 1.25rem; justify-content: center; flex-wrap: wrap; margin: 1.25rem 0; list-style: none; }
+.footer-links a { color: var(--muted); }
+.footer-links a:hover { color: var(--text); }
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .split { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 5%; }
+  .page-hero { padding: 7rem 5% 3rem; }
+}

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop Handmade Concrete Homeware | Concreet UK</title>
+<meta name="description" content="Shop handcrafted concrete candles, soaps, lip balm and reed diffusers. Small batch artisan homeware made in the North East of England. Free UK delivery over £40.">
+<link rel="canonical" href="https://concreet.co.uk/shop">
+<meta property="og:title" content="Shop Handmade Concrete Homeware | Concreet UK">
+<meta property="og:description" content="Handcrafted concrete candles, soaps, diffusers and lip balm. Made in small batches in the North East of England.">
+<meta property="og:image" content="https://concreet.co.uk/images/concrete-candle-natural.png">
+<meta property="og:url" content="https://concreet.co.uk/shop">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "Concreet",
+  "description": "Handcrafted concrete homeware — candles, soap, lip balm and diffusers. Made in the North East of England.",
+  "url": "https://concreet.co.uk",
+  "email": "concreteartisanuk@gmail.com",
+  "areaServed": "GB",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Signature Collection",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "The Concrete Candle", "description": "Hand-poured soy wax in a real concrete vessel. 40+ hour burn time."}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Concrete Soap Bar", "description": "Cold-pressed with natural oils in a textured concrete mould."}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Reed Diffuser", "description": "Concrete base with natural reeds. Lasts up to 3 months."}}
+    ]
+  }
+}
+</script>
+<link rel="preload" as="image" href="/.netlify/images?url=/images/soap.jpg&amp;w=1800&amp;q=70" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d0d0d;--card:#141414;--accent:#c5a975;--text:#f4f1eb;--muted:#8a8578;--border:#2a2a2a}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6}
+a{text-decoration:none;color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 5%;background:rgba(13,13,13,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.logo{font-family:'Playfair Display',serif;font-size:1.4rem;letter-spacing:2px;color:var(--accent)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:0.85rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);transition:color 0.2s}
+.nav-links a:hover{color:var(--text)}
+.cart-btn{display:flex;align-items:center;gap:0.5rem;font-size:0.85rem;letter-spacing:1px;text-transform:uppercase;color:var(--accent);cursor:pointer;background:none;border:none;font-family:'Inter',sans-serif}
+.hero{min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:8rem 5% 4rem;background:linear-gradient(rgba(13,13,13,0.65),rgba(13,13,13,0.85)),url('/.netlify/images?url=/images/soap.jpg&w=1800&q=70') center/cover no-repeat;position:relative;transition:background-image 0.3s}
+.hero-badge{display:inline-block;font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--accent);border:1px solid rgba(197,169,117,0.4);padding:0.4rem 1.25rem;border-radius:999px;margin-bottom:1.5rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:400;line-height:1.1;margin-bottom:1.25rem;color:#fff}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero p{font-size:1.05rem;color:var(--muted);max-width:520px;margin:0 auto 2rem}
+.hero-cta{display:inline-flex;align-items:center;gap:0.5rem;background:var(--accent);color:#0d0d0d;font-weight:600;font-size:0.9rem;letter-spacing:1px;text-transform:uppercase;padding:0.9rem 2.25rem;border-radius:2px;transition:opacity 0.2s}
+.hero-cta:hover{opacity:0.85}
+.trust-bar{display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;padding:1.5rem 5%;border-bottom:1px solid var(--border);font-size:0.8rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+.trust-bar span{display:flex;align-items:center;gap:0.5rem}
+.collection{padding:5rem 5%;max-width:1300px;margin:0 auto}
+.section-header{text-align:center;margin-bottom:4rem}
+.section-label{font-size:0.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:0.75rem;display:block}
+.section-header h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:400;color:#fff}
+.section-header p{color:var(--muted);margin-top:0.75rem;font-size:0.95rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2rem}
+.card{background:var(--card);border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:transform 0.35s,border-color 0.35s,box-shadow 0.35s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-6px);border-color:rgba(197,169,117,0.4);box-shadow:0 20px 60px rgba(0,0,0,0.5)}
+.card-img-wrap{position:relative;overflow:hidden;aspect-ratio:4/3}
+.card-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}
+/* Hover-capable pointers only: on a touchscreen the :hover state sticks after
+   a tap, leaving the photo permanently zoomed in and re-cropped. */
+@media(hover:hover){.card:hover .card-img-wrap img{transform:scale(1.04)}}
+.badge{position:absolute;top:1rem;left:1rem;font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;padding:0.3rem 0.8rem;border-radius:999px;font-weight:600}
+.badge-new{background:rgba(197,169,117,0.15);color:var(--accent);border:1px solid rgba(197,169,117,0.3)}
+.badge-sale{background:rgba(239,68,68,0.15);color:#f87171;border:1px solid rgba(239,68,68,0.3)}
+.card-body{padding:1.75rem;display:flex;flex-direction:column;flex:1}
+.card-body h3{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:400;margin-bottom:0.5rem;color:#fff}
+.card-desc{font-size:0.88rem;color:var(--muted);line-height:1.65;margin-bottom:1.25rem;flex:1}
+.card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:1.25rem;border-top:1px solid var(--border)}
+.price{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--accent)}
+.price-old{font-size:0.9rem;color:var(--muted);text-decoration:line-through;margin-left:0.5rem;font-family:'Inter',sans-serif}
+.btn-add{background:transparent;border:1px solid var(--accent);color:var(--accent);font-size:0.78rem;letter-spacing:1.5px;text-transform:uppercase;padding:0.55rem 1.25rem;border-radius:2px;cursor:pointer;font-family:'Inter',sans-serif;transition:background 0.2s,color 0.2s}
+.btn-add:hover{background:var(--accent);color:#0d0d0d}
+.bundle{background:linear-gradient(135deg,#1a1410,#141210);border:1px solid rgba(197,169,117,0.35);border-radius:4px;padding:3rem;text-align:center;margin:4rem auto 0;max-width:700px}
+.bundle h3{font-family:'Playfair Display',serif;font-size:2rem;font-weight:400;color:#fff;margin-bottom:0.75rem}
+.bundle p{color:var(--muted);margin-bottom:1.75rem;font-size:0.95rem}
+.bundle-price{font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--accent);margin-bottom:0.5rem}
+.bundle-saving{font-size:0.82rem;color:#34d399;margin-bottom:1.75rem}
+.btn-bundle{display:inline-block;background:var(--accent);color:#0d0d0d;font-weight:700;font-size:0.9rem;letter-spacing:1px;text-transform:uppercase;padding:1rem 2.5rem;border-radius:2px;cursor:pointer;border:none;font-family:'Inter',sans-serif;transition:opacity 0.2s}
+.btn-bundle:hover{opacity:0.85}
+.social-proof{padding:4rem 5%;text-align:center;border-top:1px solid var(--border)}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;max-width:900px;margin:2.5rem auto 0}
+.review{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.75rem;text-align:left}
+.stars{color:var(--accent);font-size:0.9rem;letter-spacing:2px;margin-bottom:0.75rem}
+.review blockquote{font-style:italic;color:#d4cfc7;font-size:0.93rem;line-height:1.65;margin-bottom:1rem}
+.reviewer{font-size:0.82rem;color:var(--muted)}
+.delivery-banner{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;padding:2.5rem 5%;background:#111;border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center}
+.d-item{font-size:0.82rem;color:var(--muted);letter-spacing:0.5px}
+.d-item strong{display:block;font-size:1rem;color:var(--text);margin-bottom:0.25rem;font-family:'Playfair Display',serif;font-weight:400}
+footer{text-align:center;padding:2.5rem 5%;color:var(--muted);font-size:0.82rem;letter-spacing:0.5px}
+footer a{color:var(--accent)}
+.footer-links{display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap;margin:1.25rem 0;list-style:none;font-size:0.8rem}
+.footer-links a{color:var(--muted)}
+.footer-links a:hover{color:var(--text)}
+/* CART DRAWER */
+.cart-overlay{display:none;position:fixed;inset:0;z-index:998;background:rgba(0,0,0,0.7)}
+.cart-overlay.open{display:block}
+.cart-drawer{position:fixed;top:0;right:0;bottom:0;z-index:999;width:min(420px,100vw);background:#1a1a1a;border-left:1px solid var(--border);transform:translateX(100%);transition:transform 0.35s cubic-bezier(0.4,0,0.2,1);display:flex;flex-direction:column}
+.cart-drawer.open{transform:translateX(0)}
+.cart-header{display:flex;align-items:center;justify-content:space-between;padding:1.5rem;border-bottom:1px solid var(--border)}
+.cart-header h3{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:400;color:#fff}
+.cart-close{background:none;border:none;color:var(--muted);font-size:1.4rem;cursor:pointer;line-height:1;padding:0.25rem}
+.cart-items{flex:1;overflow-y:auto;padding:1.25rem}
+.cart-empty{text-align:center;padding:3rem 1rem;color:var(--muted);font-size:0.9rem}
+.cart-item{display:grid;grid-template-columns:64px 1fr auto;gap:1rem;align-items:center;padding:1rem 0;border-bottom:1px solid var(--border)}
+.cart-item img{width:64px;height:64px;object-fit:cover;border-radius:2px}
+.cart-item-name{font-size:0.9rem;color:var(--text);margin-bottom:0.25rem}
+.cart-item-price{font-size:0.82rem;color:var(--accent)}
+.qty-ctrl{display:flex;align-items:center;gap:0.5rem}
+.qty-btn{background:var(--border);border:none;color:var(--text);width:26px;height:26px;border-radius:2px;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center}
+.qty-btn:hover{background:var(--accent);color:#0d0d0d}
+.qty-num{font-size:0.88rem;min-width:20px;text-align:center}
+.cart-footer{padding:1.25rem;border-top:1px solid var(--border)}
+.cart-total-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+.cart-delivery-note{font-size:0.78rem;color:var(--accent);margin-bottom:0.75rem;min-height:1rem}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.cart-total-label{color:var(--muted);font-size:0.85rem;text-transform:uppercase;letter-spacing:1px}
+.cart-total-val{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--accent)}
+.btn-stripe{display:block;width:100%;background:var(--accent);color:#0d0d0d;font-weight:700;font-size:0.9rem;letter-spacing:1px;text-transform:uppercase;padding:1rem;border-radius:2px;cursor:pointer;border:none;font-family:'Inter',sans-serif;transition:opacity 0.2s;margin-bottom:0.75rem}
+.btn-stripe:hover{opacity:0.85}
+.btn-stripe:disabled{opacity:0.5;cursor:not-allowed}
+.cart-note{font-size:0.75rem;color:var(--muted);text-align:center;line-height:1.5}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--text);transition:all 0.3s}
+.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:rgba(13,13,13,0.98);border-bottom:1px solid var(--border);z-index:99;padding:1.5rem 5%}
+.mobile-menu.open{display:block}
+.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:1.25rem}
+.mobile-menu a{font-size:1rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);transition:color 0.2s}
+.mobile-menu a:hover{color:var(--text)}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.trust-bar{gap:1rem}.hero{min-height:60vh}.bundle{padding:2rem}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Your basket" aria-hidden="true">
+  <div class="cart-header">
+    <h3>Your Basket</h3>
+    <button class="cart-close" onclick="closeCart()" aria-label="Close basket">✕</button>
+  </div>
+  <div class="cart-items" id="cart-items" aria-live="polite"><div class="cart-empty">Your basket is empty</div></div>
+  <div class="cart-footer">
+    <div class="cart-total-row">
+      <span class="cart-total-label">Total</span>
+      <span class="cart-total-val" id="cart-total">£0.00</span>
+    </div>
+    <p class="cart-delivery-note" id="cart-delivery-note"></p>
+    <button class="btn-stripe" id="btn-stripe" onclick="goToStripe()" disabled>Checkout Securely →</button>
+    <p class="cart-note">🔒 Secure payment via Stripe · Free UK delivery over £40</p>
+  </div>
+</div>
+
+<nav>
+  <a class="logo" href="/" aria-label="Concreet — home">CONCREET</a>
+  <ul class="nav-links">
+    <li><a href='/'>Home</a></li>
+    <li><a href='/furniture'>Furniture</a></li>
+    <li><a href="#collection">Candles &amp; Gifts</a></li>
+    <li><a href='/about'>About</a></li>
+    <li><a href='/contact'>Contact</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:1rem">
+    <button class="cart-btn" onclick="openCart()" aria-label="Open basket">🛒 Basket <span id="cart-count" style="display:none;background:var(--accent);color:#0d0d0d;border-radius:999px;padding:0 6px;font-size:0.75rem;font-weight:700;margin-left:4px">0</span></button>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href='/' onclick='toggleMenu()'>Home</a></li>
+    <li><a href='/furniture' onclick='toggleMenu()'>Furniture</a></li>
+    <li><a href="#collection" onclick="toggleMenu()">Candles &amp; Gifts</a></li>
+    <li><a href='/about' onclick='toggleMenu()'>About</a></li>
+    <li><a href='/contact' onclick='toggleMenu()'>Contact</a></li>
+    <li><a href="#" onclick="toggleMenu();openCart();return false;">🛒 Basket</a></li>
+  </ul>
+</div>
+
+<section class="hero">
+  <div>
+    <div class="hero-badge">The Signature Collection</div>
+    <h1>Concrete, <em>reimagined</em><br>for your home.</h1>
+    <p>Handcrafted in the North East of England. Each piece made in small batches, with ingredients you can feel good about.</p>
+    <a href="#collection" class="hero-cta">Shop the Collection ↓</a>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <span>✦ Handmade in the UK</span>
+  <span>✦ Natural Ingredients</span>
+  <span>✦ Free Delivery Over £40</span>
+  <span>✦ Small Batch Production</span>
+</div>
+
+<section class="collection" id="collection">
+  <div class="section-header">
+    <span class="section-label">Signature Collection</span>
+    <h2>Where concrete meets calm</h2>
+    <p>Every product in our collection is shaped by hand, infused with natural botanicals,<br>and finished with the unmistakable texture of real concrete.</p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="/.netlify/images?url=/images/concrete-candle-artisan.jpg&w=760&fit=cover" alt="Concrete Soy Candle — Concreet Signature Collection" loading="lazy" width="380" height="285" decoding="async">
+        <span class="badge badge-new">Best Seller</span>
+      </div>
+      <div class="card-body">
+        <h3>The Concrete Candle</h3>
+        <p class="card-desc">Hand-poured soy wax in a real concrete vessel. Long burn time of 40+ hours, with your choice of calming botanical scent. A piece you'll keep long after the candle is gone.</p>
+        <div class="card-footer">
+          <div><span class="price">£18.99</span></div>
+          <button class="btn-add" onclick="addToCart('candle')">Add to Basket</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="/.netlify/images?url=/images/soap.jpg&w=760&fit=cover" alt="Concrete Artisan Soap Bar — Concreet" loading="lazy" width="380" height="285" decoding="async">
+        <span class="badge badge-new">New In</span>
+      </div>
+      <div class="card-body">
+        <h3>Concrete Soap Bar</h3>
+        <p class="card-desc">Cold-pressed with natural oils and presented in a textured concrete mould. Gentle on skin, kind to the planet. No sulphates, no parabens — just clean, beautiful soap.</p>
+        <div class="card-footer">
+          <div><span class="price">£9.99</span></div>
+          <button class="btn-add" onclick="addToCart('soap')">Add to Basket</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="/.netlify/images?url=/images/lip-balm.jpg&w=760&fit=cover" alt="Concrete Lip Balm — Concreet Natural Skincare" loading="lazy" width="380" height="285" decoding="async">
+      </div>
+      <div class="card-body">
+        <h3>Botanical Lip Balm</h3>
+        <p class="card-desc">Rich, nourishing lip care in a signature concrete tin. Made with beeswax, shea butter and natural botanicals. Your lips will thank you — and the tin is a keepsake.</p>
+        <div class="card-footer">
+          <div><span class="price">£7.99</span></div>
+          <button class="btn-add" onclick="addToCart('lipbalm')">Add to Basket</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="/.netlify/images?url=/images/diffuser.jpg&w=760&fit=cover" alt="Concrete Diffuser Bowl — Concreet Home Fragrance" loading="lazy" width="380" height="285" decoding="async">
+        <span class="badge badge-sale">Limited Stock</span>
+      </div>
+      <div class="card-body">
+        <h3>Reed Diffuser</h3>
+        <p class="card-desc">A concrete base, natural reeds and a long-lasting fragrance oil that fills your room for up to 3 months. The centrepiece your bathroom or hallway has been waiting for.</p>
+        <div class="card-footer">
+          <div><span class="price">£24.99</span></div>
+          <button class="btn-add" onclick="addToCart('diffuser')">Add to Basket</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="bundle" id="bundle">
+    <h3>The Complete Concreet Gift Set</h3>
+    <p>All four pieces. One beautiful concrete gift box. Perfect for birthdays, anniversaries, and people who deserve something genuinely special.</p>
+    <div class="bundle-price">£54.99</div>
+    <div class="bundle-saving">✦ Save £6.97 — Free Gift Wrapping Included</div>
+    <button class="btn-bundle" onclick="addToCart('bundle')">Add Gift Set to Basket</button>
+  </div>
+</section>
+
+<div class="delivery-banner">
+  <div class="d-item"><strong>Free UK Delivery</strong>On all orders over £40</div>
+  <div class="d-item"><strong>Dispatched in 2–3 Days</strong>Handmade to order, worth the wait</div>
+  <div class="d-item"><strong>Gift Wrapping Available</strong>Make it special</div>
+  <div class="d-item"><strong>Easy Returns</strong>30-day hassle-free policy</div>
+</div>
+
+<section class="social-proof" id="reviews">
+  <span class="section-label">Customer Reviews</span>
+  <h2 style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:400;color:#fff;margin-top:0.5rem">What our customers say</h2>
+  <div class="reviews-grid">
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <blockquote>"The candle is absolutely stunning. The concrete pot is so heavy and premium feeling — I've used it as a plant pot since it burned down. Total quality."</blockquote>
+      <div class="reviewer">— Sarah M., Leeds · Verified Purchase</div>
+    </div>
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <blockquote>"Bought the gift set for my mum's birthday and she cried. Proper beautiful products. The soap smells incredible. Will be ordering again for Christmas."</blockquote>
+      <div class="reviewer">— James T., Newcastle · Verified Purchase</div>
+    </div>
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <blockquote>"I was sceptical about concrete homeware but these are next level. The diffuser has been going for 2 months and still smells amazing. Brilliant."</blockquote>
+      <div class="reviewer">— Claire B., Durham · Verified Purchase</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p style="font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--accent);margin-bottom:0.5rem">CONCREET</p>
+  <p style="margin-bottom:0.5rem">The gentler side of concrete · Handmade in the North East of England</p>
+  <ul class="footer-links">
+    <li><a href="/furniture">Furniture</a></li>
+    <li><a href="/shop">Candles &amp; Gifts</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/delivery-returns">Delivery &amp; Returns</a></li>
+    <li><a href="/privacy">Privacy</a></li>
+    <li><a href="/terms">Terms</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+  <p>Questions? <a href="mailto:concreteartisanuk@gmail.com">concreteartisanuk@gmail.com</a> &nbsp;·&nbsp; <a href='/'>← Back to Home</a></p>
+  <p style="margin-top:1rem">© 2026 Concreet. All rights reserved.</p>
+</footer>
+
+<script src="site-data.js"></script>
+<script>
+// site-data.js (editable via /admin) supplies the copy, badges, imagery
+// and running order. The PRICE, however, comes from assets/catalogue.mjs —
+// the same file the checkout function reads — so the figure on the card is
+// always the figure Stripe will charge. If the two ever disagree, the
+// catalogue wins and the mismatch is logged.
+function catalogue() { return window.CONCREET_CATALOGUE || {}; }
+
+function priceOf(p) {
+  var entry = catalogue()[p.id];
+  if (!entry) {
+    console.warn('[shop] "' + p.id + '" is not in assets/catalogue.mjs — it cannot be bought until it is added.');
+    return p.price;
+  }
+  if (entry.price !== p.price) {
+    console.warn('[shop] price mismatch for "' + p.id + '": site-data says ' + p.price + ', catalogue says ' + entry.price + '. Using the catalogue.');
+  }
+  return entry.price;
+}
+
+function buyable(p) { return !!catalogue()[p.id]; }
+
+function cdn(path, w) {
+  if (!path) return '';
+  return '/.netlify/images?url=' + encodeURIComponent(path.charAt(0) === '/' ? path : '/' + path) + '&w=' + w + '&fit=cover';
+}
+
+// Render hero from data
+function renderShopHero() {
+  var h = SITE_DATA.shop.hero;
+  document.querySelector('.hero').style.backgroundImage = "linear-gradient(rgba(13,13,13,0.65),rgba(13,13,13,0.85)),url('" + cdn(h.bgImage, 1800) + "')";
+  document.querySelector('.hero-badge').textContent = h.badge;
+  document.querySelector('.hero h1').innerHTML = h.heading.replace(',', ',<br>').replace('reimagined', '<em>reimagined</em>');
+  document.querySelector('.hero p').textContent = h.subheading;
+}
+
+// Render products grid from data
+function renderShopProducts() {
+  var grid = document.getElementById('collection');
+  var gridEl = grid.querySelector('.grid');
+  gridEl.innerHTML = '';
+  SITE_DATA.shop.products.forEach(function(p) {
+    var badgeHtml = p.badge ? '<span class="badge badge-' + (p.badgeType||'new') + '">' + p.name + '</span>' : '';
+    // override badge text correctly
+    badgeHtml = p.badge ? '<span class="badge badge-' + (p.badgeType||'new') + '">' + p.badge + '</span>' : '';
+    var price = priceOf(p);
+    var buyBtn = buyable(p)
+      ? '<button class="btn-add" onclick="addToCart(\'' + p.id + '\')">Add to Basket</button>'
+      : '<a class="btn-add" href="/contact">Enquire</a>';
+    var card = '<div class="card">' +
+      '<div class="card-img-wrap">' +
+        '<img src="' + cdn(p.image, 760) + '" alt="' + p.name + ' — Concreet" width="380" height="285" loading="lazy" decoding="async">' +
+        badgeHtml +
+      '</div>' +
+      '<div class="card-body">' +
+        '<h3>' + p.name + '</h3>' +
+        '<p class="card-desc">' + p.description + '</p>' +
+        '<div class="card-footer">' +
+          '<div><span class="price">£' + price.toFixed(2) + '</span></div>' +
+          buyBtn +
+        '</div>' +
+      '</div>' +
+    '</div>';
+    gridEl.insertAdjacentHTML('beforeend', card);
+  });
+  // Bundle
+  var b = SITE_DATA.shop.bundle;
+  var bundleEl = document.getElementById('bundle');
+  if (bundleEl) {
+    bundleEl.querySelector('h3').textContent = b.name;
+    bundleEl.querySelector('p').textContent = b.description;
+    bundleEl.querySelector('.bundle-price').textContent = '£' + priceOf({ id: 'bundle', price: b.price }).toFixed(2);
+    bundleEl.querySelector('.bundle-saving').textContent = '✦ ' + b.saving;
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof SITE_DATA !== 'undefined') {
+    renderShopHero();
+    renderShopProducts();
+  }
+});
+</script>
+
+<!-- Shared basket: persists across pages, prices resolved from assets/catalogue.mjs -->
+<script type="module" src="assets/cart.js"></script>
+
+<!-- Mobile In-App Browser & Microphone Permission Fix -->
+<script src="vapi-mobile-fix.js"></script>
+
+<!-- Nancy — Concreet AI Shopping Assistant powered by Vapi -->
+<script>
+  (function (d, t) {
+    var g = document.createElement(t), s = d.getElementsByTagName(t)[0];
+    g.src = "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
+    g.defer = true; g.async = true;
+    s.parentNode.insertBefore(g, s);
+    g.onload = function () {
+      const vapi = window.vapiSDK.run({
+        apiKey: "0ebf67d6-4eca-4d1a-ab96-b7158677fc9a",
+        assistant: "656b3c0c-e7da-4b55-8274-c833fa5da545",
+        config: {
+          position: "bottom-right",
+          offset: "30px",
+          button: {
+            color: "#c5a975",
+            label: "Chat with Nancy",
+            icon: "https://unpkg.com/lucide-static@0.321.0/icons/mic.svg"
+          }
+        }
+      });
+      
+      if (window.handleVapiInstance) {
+        window.handleVapiInstance(vapi);
+      }
+    };
+  })(document, "script");
+</script>
+
+</body>
+</html>
