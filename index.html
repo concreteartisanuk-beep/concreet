@@ -120,9 +120,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .section-header h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:400;color:#fff}
 .section-header p{color:var(--muted);margin-top:0.75rem;font-size:0.95rem}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2rem}
+.grid-furniture{grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}
+.grid-homeware{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
 .card{background:var(--card);border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:transform 0.35s,border-color 0.35s,box-shadow 0.35s;display:flex;flex-direction:column}
 .card:hover{transform:translateY(-6px);border-color:rgba(197,169,117,0.4);box-shadow:0 20px 60px rgba(0,0,0,0.5)}
-.card-img-wrap{position:relative;overflow:hidden;aspect-ratio:4/3;background:#1a1a1a}
+.card-img-wrap{position:relative;overflow:hidden;aspect-ratio:1/1;background:#1a1a1a}
 /* The furniture photographs are portrait shots taken in customers' homes. A
    4:3 landscape crop cuts the tables in half, and even a 4:5 frame trimmed the
    base off them, so those cards use the photographs' native 3:4 ratio. */
@@ -205,7 +207,21 @@ footer a{color:var(--accent)}
 .mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:1.25rem}
 .mobile-menu a{font-size:1rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);transition:color 0.2s}
 .mobile-menu a:hover{color:var(--text)}
-@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.trust-bar{gap:1rem}.hero{min-height:60vh;padding:7rem 5% 3.5rem}.grid{grid-template-columns:1fr}.bundle{padding:2rem}}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .trust-bar{gap:1rem}
+  .hero{min-height:60vh;padding:7rem 5% 3.5rem}
+  .grid-furniture{grid-template-columns:1fr}
+  .grid-furniture .card{max-width:420px;margin:0 auto 1.5rem;width:100%}
+  .grid-homeware{grid-template-columns:1fr 1fr;gap:1rem}
+  .grid-homeware .card-body{padding:1rem;gap:0.5rem}
+  .grid-homeware .card-desc{display:none}
+  .grid-homeware .card-body h3{font-size:0.95rem;margin-bottom:0.2rem}
+  .grid-homeware .price{font-size:1.1rem}
+  .grid-homeware .btn-add{padding:0.5rem 1rem;font-size:0.72rem;letter-spacing:1px}
+  .bundle{padding:2rem}
+}
 </style>
 </head>
 <body>
@@ -282,11 +298,11 @@ footer a{color:var(--accent)}
     <p>Every table below was photographed in a real customer's home, not a studio.<br>Choose a shape, then tell us the size your room needs.</p>
   </div>
 
-  <div class="grid">
+  <div class="grid grid-furniture">
 
     <div class="card">
       <div class="card-img-wrap portrait">
-        <img src="/.netlify/images?url=/images/concrete-block-coffee-table-floating.webp&w=760&fit=cover" alt="The Floating Block concrete coffee table in a panelled living room, appearing to hover above a cream rug" loading="lazy" width="380" height="507" decoding="async">
+        <img src="/.netlify/images?url=/images/concrete-block-coffee-table-floating.webp&w=760&h=1013&fit=cover" alt="The Floating Block concrete coffee table in a panelled living room, appearing to hover above a cream rug" loading="lazy" width="380" height="507" decoding="async">
         <span class="badge badge-new">Signature Piece</span>
       </div>
       <div class="card-body">
@@ -302,7 +318,7 @@ footer a{color:var(--accent)}
 
     <div class="card">
       <div class="card-img-wrap portrait">
-        <img src="/.netlify/images?url=/images/large-concrete-coffee-table-luxury-room.webp&w=760&fit=cover" alt="The Grand Square concrete coffee table, a large charcoal block on a sheepskin rug in a panelled drawing room" loading="lazy" width="380" height="507" decoding="async">
+        <img src="/.netlify/images?url=/images/large-concrete-coffee-table-luxury-room.webp&w=760&h=1013&fit=cover" alt="The Grand Square concrete coffee table, a large charcoal block on a sheepskin rug in a panelled drawing room" loading="lazy" width="380" height="507" decoding="async">
         <span class="badge badge-new">For Larger Rooms</span>
       </div>
       <div class="card-body">
@@ -318,7 +334,7 @@ footer a{color:var(--accent)}
 
     <div class="card">
       <div class="card-img-wrap portrait">
-        <img src="/.netlify/images?url=/images/round-concrete-coffee-table-colourful-rug.webp&w=760&fit=cover" alt="The Round Drum concrete coffee table, a soft grey-green cylinder standing on a vivid patterned rug" loading="lazy" width="380" height="507" decoding="async">
+        <img src="/.netlify/images?url=/images/round-concrete-coffee-table-colourful-rug.webp&w=760&h=1013&fit=cover" alt="The Round Drum concrete coffee table, a soft grey-green cylinder standing on a vivid patterned rug" loading="lazy" width="380" height="507" decoding="async">
         <span class="badge badge-new">No Corners</span>
       </div>
       <div class="card-body">
@@ -334,7 +350,7 @@ footer a{color:var(--accent)}
 
     <div class="card">
       <div class="card-img-wrap portrait">
-        <img src="/.netlify/images?url=/images/concrete-coffee-table-candle-styling.webp&w=760&fit=cover" alt="The Low Slab concrete coffee table, a slim pale grey slab styled with a candle on a faded patterned rug" loading="lazy" width="380" height="507" decoding="async">
+        <img src="/.netlify/images?url=/images/concrete-coffee-table-candle-styling.webp&w=760&h=1013&fit=cover" alt="The Low Slab concrete coffee table, a slim pale grey slab styled with a candle on a faded patterned rug" loading="lazy" width="380" height="507" decoding="async">
         <span class="badge badge-new">Best Seller</span>
       </div>
       <div class="card-body">
@@ -386,11 +402,11 @@ footer a{color:var(--accent)}
     </div>
   </div>
 
-  <div class="grid">
+  <div class="grid grid-homeware">
 
     <div class="card">
       <div class="card-img-wrap">
-        <img src="/.netlify/images?url=/images/concrete-candle-artisan.webp&w=760&fit=cover" alt="Small Volcanic Concrete Candle — Concreet UK" width="380" height="285" loading="lazy" decoding="async">
+        <img src="/.netlify/images?url=/images/concrete-candle-artisan.webp&w=760&h=760&fit=cover" alt="Small Volcanic Concrete Candle — Concreet UK" width="380" height="380" loading="lazy" decoding="async">
         <span class="badge badge-new">Best Seller</span>
       </div>
       <div class="card-body">
@@ -405,7 +421,7 @@ footer a{color:var(--accent)}
 
     <div class="card">
       <div class="card-img-wrap">
-        <img src="/.netlify/images?url=/images/concrete-candle-natural.webp&w=760&fit=cover" alt="Handmade Natural Concrete Candle — Concreet UK" loading="lazy" width="380" height="285" decoding="async">
+        <img src="/.netlify/images?url=/images/concrete-candle-natural.webp&w=760&h=760&fit=cover" alt="Handmade Natural Concrete Candle — Concreet UK" loading="lazy" width="380" height="380" decoding="async">
         <span class="badge badge-new">New In</span>
       </div>
       <div class="card-body">
@@ -420,7 +436,7 @@ footer a{color:var(--accent)}
 
     <div class="card">
       <div class="card-img-wrap">
-        <img src="/.netlify/images?url=/images/concrete-candle-lifestyle.webp&w=760&fit=cover" alt="Volcanic Concrete Candle — Concreet UK" width="380" height="285" loading="lazy" decoding="async">
+        <img src="/.netlify/images?url=/images/concrete-candle-lifestyle.webp&w=760&h=760&fit=cover" alt="Volcanic Concrete Candle — Concreet UK" width="380" height="380" loading="lazy" decoding="async">
         <span class="badge badge-new">Handmade</span>
       </div>
       <div class="card-body">
@@ -435,7 +451,7 @@ footer a{color:var(--accent)}
 
     <div class="card">
       <div class="card-img-wrap">
-        <img src="/.netlify/images?url=/images/candle.webp&w=760&fit=cover" alt="Hand-cast Concrete Candle Holder — Concreet UK" width="380" height="285" loading="lazy" decoding="async">
+        <img src="/.netlify/images?url=/images/candle.webp&w=760&h=760&fit=cover" alt="Hand-cast Concrete Candle Holder — Concreet UK" width="380" height="380" loading="lazy" decoding="async">
         <span class="badge badge-sale">Limited Stock</span>
       </div>
       <div class="card-body">
@@ -450,7 +466,7 @@ footer a{color:var(--accent)}
 
     <div class="card">
       <div class="card-img-wrap">
-        <img src="/.netlify/images?url=/images/concrete-soap-botanical.webp&w=760&fit=cover" alt="Artisan Concrete Soap Bar with Natural Botanicals — Concreet UK" loading="lazy" width="380" height="285" decoding="async">
+        <img src="/.netlify/images?url=/images/concrete-soap-botanical.webp&w=760&h=760&fit=cover" alt="Artisan Concrete Soap Bar with Natural Botanicals — Concreet UK" loading="lazy" width="380" height="380" decoding="async">
       </div>
       <div class="card-body">
         <h3>Concrete Soap Bar</h3>
@@ -464,7 +480,7 @@ footer a{color:var(--accent)}
 
     <div class="card">
       <div class="card-img-wrap">
-        <img src="/.netlify/images?url=/images/concrete-lipbalm-lifestyle.webp&w=760&fit=cover" alt="Concrete Kiss Lip Balm — Concreet UK Artisan Skincare" loading="lazy" width="380" height="285" decoding="async">
+        <img src="/.netlify/images?url=/images/concrete-lipbalm-lifestyle.webp&w=760&h=760&fit=cover" alt="Concrete Kiss Lip Balm — Concreet UK Artisan Skincare" loading="lazy" width="380" height="380" decoding="async">
       </div>
       <div class="card-body">
         <h3>Concrete Kiss Lip Balm — 10ml</h3>
@@ -478,7 +494,7 @@ footer a{color:var(--accent)}
 
     <div class="card">
       <div class="card-img-wrap">
-        <img src="/.netlify/images?url=/images/lip-balm.webp&w=760&fit=cover" alt="Concrete Kiss Lip Balm 14ml — Concreet UK" width="380" height="285" loading="lazy" decoding="async">
+        <img src="/.netlify/images?url=/images/lip-balm.webp&w=760&h=760&fit=cover" alt="Concrete Kiss Lip Balm 14ml — Concreet UK" width="380" height="380" loading="lazy" decoding="async">
         <span class="badge badge-new">Best Value</span>
       </div>
       <div class="card-body">
@@ -493,7 +509,7 @@ footer a{color:var(--accent)}
 
     <div class="card">
       <div class="card-img-wrap">
-        <img src="/.netlify/images?url=/images/concrete-diffuser-lifestyle.webp&w=760&fit=cover" alt="Concrete Reed Diffuser — Luxury Home Fragrance UK" loading="lazy" width="380" height="285" decoding="async">
+        <img src="/.netlify/images?url=/images/concrete-diffuser-lifestyle.webp&w=760&h=760&fit=cover" alt="Concrete Reed Diffuser — Luxury Home Fragrance UK" loading="lazy" width="380" height="380" decoding="async">
         <span class="badge badge-sale">Limited Stock</span>
       </div>
       <div class="card-body">

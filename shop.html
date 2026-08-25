@@ -150,7 +150,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2rem}
 .card{background:var(--card);border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:transform 0.35s,border-color 0.35s,box-shadow 0.35s;display:flex;flex-direction:column}
 .card:hover{transform:translateY(-6px);border-color:rgba(197,169,117,0.4);box-shadow:0 20px 60px rgba(0,0,0,0.5)}
-.card-img-wrap{position:relative;overflow:hidden;aspect-ratio:4/3}
+.card-img-wrap{position:relative;overflow:hidden;aspect-ratio:1/1}
 .card-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}
 /* Hover-capable pointers only: on a touchscreen the :hover state sticks after
    a tap, leaving the photo permanently zoomed in and re-cropped. */
@@ -225,7 +225,19 @@ footer a{color:var(--accent)}
 .mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:1.25rem}
 .mobile-menu a{font-size:1rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);transition:color 0.2s}
 .mobile-menu a:hover{color:var(--text)}
-@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.trust-bar{gap:1rem}.hero{min-height:60vh}.bundle{padding:2rem}.grid{grid-template-columns:1fr}}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .trust-bar{gap:1rem}
+  .hero{min-height:60vh}
+  .bundle{padding:2rem}
+  .grid{grid-template-columns:1fr 1fr;gap:1rem}
+  .grid .card-body{padding:1rem;gap:0.5rem}
+  .grid .card-desc{display:none}
+  .grid .card-body h3{font-size:0.95rem;margin-bottom:0.2rem}
+  .grid .price{font-size:1.1rem}
+  .grid .btn-add{padding:0.5rem 1rem;font-size:0.72rem;letter-spacing:1px}
+}
 </style>
 </head>
 <body>
@@ -323,7 +335,7 @@ footer a{color:var(--accent)}
 
     <div class="card">
       <div class="card-img-wrap">
-        <img src="/.netlify/images?url=/images/concrete-candle-artisan.webp&w=760&fit=cover" alt="Concrete Soy Candle — Concreet Signature Collection" loading="lazy" width="380" height="285" decoding="async">
+        <img src="/.netlify/images?url=/images/concrete-candle-artisan.webp&w=760&h=760&fit=cover" alt="Concrete Soy Candle — Concreet Signature Collection" loading="lazy" width="380" height="380" decoding="async">
         <span class="badge badge-new">Best Seller</span>
       </div>
       <div class="card-body">
@@ -338,7 +350,7 @@ footer a{color:var(--accent)}
 
     <div class="card">
       <div class="card-img-wrap">
-        <img src="/.netlify/images?url=/images/soap.webp&w=760&fit=cover" alt="Concrete Artisan Soap Bar — Concreet" loading="lazy" width="380" height="285" decoding="async">
+        <img src="/.netlify/images?url=/images/soap.webp&w=760&h=760&fit=cover" alt="Concrete Artisan Soap Bar — Concreet" loading="lazy" width="380" height="380" decoding="async">
         <span class="badge badge-new">New In</span>
       </div>
       <div class="card-body">
@@ -353,7 +365,7 @@ footer a{color:var(--accent)}
 
     <div class="card">
       <div class="card-img-wrap">
-        <img src="/.netlify/images?url=/images/lip-balm.webp&w=760&fit=cover" alt="Concrete Lip Balm — Concreet Natural Skincare" loading="lazy" width="380" height="285" decoding="async">
+        <img src="/.netlify/images?url=/images/lip-balm.webp&w=760&h=760&fit=cover" alt="Concrete Lip Balm — Concreet Natural Skincare" loading="lazy" width="380" height="380" decoding="async">
       </div>
       <div class="card-body">
         <h3>Botanical Lip Balm</h3>
@@ -367,7 +379,7 @@ footer a{color:var(--accent)}
 
     <div class="card">
       <div class="card-img-wrap">
-        <img src="/.netlify/images?url=/images/diffuser.webp&w=760&fit=cover" alt="Concrete Diffuser Bowl — Concreet Home Fragrance" loading="lazy" width="380" height="285" decoding="async">
+        <img src="/.netlify/images?url=/images/diffuser.webp&w=760&h=760&fit=cover" alt="Concrete Diffuser Bowl — Concreet Home Fragrance" loading="lazy" width="380" height="380" decoding="async">
         <span class="badge badge-sale">Limited Stock</span>
       </div>
       <div class="card-body">
@@ -461,7 +473,7 @@ function buyable(p) { return !!catalogue()[p.id]; }
 
 function cdn(path, w) {
   if (!path) return '';
-  return '/.netlify/images?url=' + encodeURIComponent(path.charAt(0) === '/' ? path : '/' + path) + '&w=' + w + '&fit=cover';
+  return '/.netlify/images?url=' + encodeURIComponent(path.charAt(0) === '/' ? path : '/' + path) + '&w=' + w + '&h=' + w + '&fit=cover';
 }
 
 // Render hero from data
@@ -488,7 +500,7 @@ function renderShopProducts() {
       : '<a class="btn-add" href="/contact">Enquire</a>';
     var card = '<div class="card">' +
       '<div class="card-img-wrap">' +
-        '<img src="' + cdn(p.image, 760) + '" alt="' + p.name + ' — Concreet" width="380" height="285" loading="lazy" decoding="async">' +
+        '<img src="' + cdn(p.image, 760) + '" alt="' + p.name + ' — Concreet" width="380" height="380" loading="lazy" decoding="async">' +
         badgeHtml +
       '</div>' +
       '<div class="card-body">' +
