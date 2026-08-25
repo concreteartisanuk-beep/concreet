@@ -76,7 +76,35 @@
     <li><a href="/contact">Contact</a></li>
   </ul>
   <p>© 2026 Concreet. All rights reserved.</p>
+  <style>
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(197, 169, 117, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(197, 169, 117, 0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(197, 169, 117, 0); }
+    }
+  </style>
+  <div class="visitor-counter-wrap" style="margin-top: 1rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.75rem; color: var(--muted); letter-spacing: 1px;">
+    <span class="visitor-dot" style="display: inline-block; width: 6px; height: 6px; background-color: var(--accent); border-radius: 50%; animation: pulse 2s infinite;"></span>
+    <span id="visit-count">...</span> visits
+  </div>
 </footer>
+<script>
+  (function() {
+    const key = 'concreet_co_uk_total_visits_2026';
+    const isNew = !sessionStorage.getItem('concreet_session');
+    const action = isNew ? 'hit' : 'get';
+    fetch('https://countapi.mileshilliard.com/api/v1/' + action + '/' + key)
+      .then(r => r.json())
+      .then(d => {
+        if (d && typeof d.value === 'number') {
+          const el = document.getElementById('visit-count');
+          if (el) el.textContent = d.value.toLocaleString();
+          if (isNew) sessionStorage.setItem('concreet_session', 'true');
+        }
+      })
+      .catch(e => console.warn('Visitor counter error:', e));
+  })();
+</script>
 
 <!-- The order is paid for, so empty the basket. Without this the customer
      returns to the shop with the items they have just bought still in it. -->
