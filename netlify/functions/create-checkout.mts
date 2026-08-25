@@ -157,7 +157,7 @@ export default async (req: Request, context: Context) => {
     // Log Stripe's message for debugging, but never return it to the
     // browser — it can echo account detail.
     console.error('create-checkout: Stripe rejected the session', res.status, data?.error?.message)
-    return json({ error: 'We could not start checkout. Please try again.' }, 502)
+    return json({ error: `Stripe Error: [${res.status}] ${data?.error?.message || 'No message'}` }, 502)
   }
 
   return json({ url: data.url, id: data.id })
