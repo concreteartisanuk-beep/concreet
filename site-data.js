@@ -63,7 +63,7 @@ var SITE_DATA = {
         price: 14.99,
         badge: "New In",
         badgeType: "new",
-        image: "images/jewellery-tray.png",
+        image: "images/jewellery-tray.webp",
         description: "A minimal, hand-cast concrete tray designed for holding rings, earrings, bracelets, and other everyday essentials. Its raw texture beautifully contrasts with delicate jewellery."
       },
       {
@@ -72,7 +72,7 @@ var SITE_DATA = {
         price: 24.99,
         badge: "Trending",
         badgeType: "new",
-        image: "images/ying-yang-candle.png",
+        image: "images/ying-yang-candle.webp",
         description: "A striking double-vessel candle cast in concrete, forming the iconic Yin Yang symbol. Hand-poured with natural soy wax and therapeutic essential oils for balance and focus."
       },
       {
@@ -81,7 +81,7 @@ var SITE_DATA = {
         price: 29.99,
         badge: "Handmade",
         badgeType: "new",
-        image: "images/concrete-essential-diffuser.png",
+        image: "images/concrete-essential-diffuser.webp",
         description: "A passive concrete diffuser designed to slowly release essential oil fragrance into your space. Features an industrial-modern design that doubles as homeware decor."
       }
     ],
@@ -170,7 +170,7 @@ var SITE_DATA = {
         price: 34.99,
         badge: "Sculptural",
         badgeType: "new",
-        image: "images/concrete-bowl-offset.png",
+        image: "images/concrete-bowl-offset.webp",
         description: "A unique sculptural concrete bowl featuring an offset center design. Hand-cast and finished, perfect as an eye-catching key dish or modern mantelpiece accent."
       },
       {
@@ -179,7 +179,7 @@ var SITE_DATA = {
         price: 49.99,
         badge: "Nesting Set",
         badgeType: "new",
-        image: "images/concrete-bowl-set.png",
+        image: "images/concrete-bowl-set.webp",
         description: "A set of three hand-cast concrete nesting bowls of varying sizes and tones. Highly tactile and sculptural, suitable as a decorative collection or organizing dishes."
       },
       {
@@ -188,7 +188,7 @@ var SITE_DATA = {
         price: 12.99,
         badge: "New In",
         badgeType: "new",
-        image: "images/concrete-bowl-mini.png",
+        image: "images/concrete-bowl-mini.webp",
         description: "A small, versatile concrete bowl perfect for storing rings, small trinkets, or keys. Minimalist and beautifully weighted with a smooth interior finish."
       }
     ],

@@ -96,19 +96,19 @@ export const CATALOGUE = {
   'jewellery-tray': {
     name: 'Concrete Jewellery Tray',
     price: 14.99,
-    image: 'images/jewellery-tray.png',
+    image: 'images/jewellery-tray.webp',
     description: 'A minimal, hand-cast concrete tray designed for holding rings, earrings, bracelets, and other everyday essentials.',
   },
   'ying-yang-candle': {
     name: 'Ying Yang Candle',
     price: 24.99,
-    image: 'images/ying-yang-candle.png',
+    image: 'images/ying-yang-candle.webp',
     description: 'A striking double-vessel candle cast in concrete, forming the iconic Yin Yang symbol.',
   },
   'diffuser-essential': {
     name: 'Concrete Essential Oil Diffuser',
     price: 29.99,
-    image: 'images/concrete-essential-diffuser.png',
+    image: 'images/concrete-essential-diffuser.webp',
     description: 'A passive concrete diffuser designed to slowly release essential oil fragrance into your space.',
   },
 
@@ -158,19 +158,19 @@ export const CATALOGUE = {
   'bowl-offset': {
     name: 'Handmade Concrete Bowl, Offset Center',
     price: 34.99,
-    image: 'images/concrete-bowl-offset.png',
+    image: 'images/concrete-bowl-offset.webp',
     description: 'A unique sculptural concrete bowl featuring an offset center design. Hand-cast and finished.',
   },
   'bowl-set': {
     name: 'Concrete Bowl Set',
     price: 49.99,
-    image: 'images/concrete-bowl-set.png',
+    image: 'images/concrete-bowl-set.webp',
     description: 'A set of three hand-cast concrete nesting bowls of varying sizes and tones.',
   },
   'bowl-mini': {
     name: 'Mini Concrete Bowl',
     price: 12.99,
-    image: 'images/concrete-bowl-mini.png',
+    image: 'images/concrete-bowl-mini.webp',
     description: 'A small, versatile concrete bowl perfect for storing rings, small trinkets, or keys.',
   },
 
