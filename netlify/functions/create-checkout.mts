@@ -16,7 +16,7 @@
 import type { Config, Context } from '@netlify/functions'
 import { CATALOGUE, CURRENCY, FREE_DELIVERY_OVER, DELIVERY_FLAT_RATE } from '../../assets/catalogue.mjs'
 
-const STRIPE_API = 'https://api.stripe.com/v1/checkout_sessions'
+const STRIPE_API = 'https://api.stripe.com/v1/checkout/sessions'
 const MAX_QTY = 20
 
 // The site's environment variable is currently named STRIP_SECRET_KEY
@@ -157,7 +157,7 @@ export default async (req: Request, context: Context) => {
     // Log Stripe's message for debugging, but never return it to the
     // browser — it can echo account detail.
     console.error('create-checkout: Stripe rejected the session', res.status, data?.error?.message)
-    return json({ error: `Stripe Error: [${res.status}] ${data?.error?.message || 'No message'}` }, 502)
+    return json({ error: 'We could not start checkout. Please try again.' }, 502)
   }
 
   return json({ url: data.url, id: data.id })

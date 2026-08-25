@@ -60,7 +60,7 @@ export default async (req: Request, _context: Context) => {
     return new Response('Method not allowed', { status: 405 })
   }
 
-  const secret = Netlify.env.get('STRIPE_WEBHOOK_SECRET')
+  const secret = Netlify.env.get('STRIPE_WEBHOOK_SECRET')?.trim()
   if (!secret) {
     console.error('stripe-webhook: STRIPE_WEBHOOK_SECRET is not set — refusing to trust this request')
     return new Response('Webhook not configured', { status: 500 })
