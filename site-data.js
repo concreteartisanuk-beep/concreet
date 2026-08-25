@@ -56,6 +56,33 @@ var SITE_DATA = {
         badgeType: "new",
         image: "images/diffuser-volcanic.webp",
         description: "A hand-cast concrete vessel filled with natural volcanic rocks that soak up your chosen fragrance oil and release it slowly into the room. No reeds, no flame — just a sculptural centrepiece that scents your space for weeks. Simply top up the oil to refresh."
+      },
+      {
+        id: "jewellery-tray",
+        name: "Concrete Jewellery Tray",
+        price: 14.99,
+        badge: "New In",
+        badgeType: "new",
+        image: "images/jewellery-tray.png",
+        description: "A minimal, hand-cast concrete tray designed for holding rings, earrings, bracelets, and other everyday essentials. Its raw texture beautifully contrasts with delicate jewellery."
+      },
+      {
+        id: "ying-yang-candle",
+        name: "Ying Yang Candle",
+        price: 24.99,
+        badge: "Trending",
+        badgeType: "new",
+        image: "images/ying-yang-candle.png",
+        description: "A striking double-vessel candle cast in concrete, forming the iconic Yin Yang symbol. Hand-poured with natural soy wax and therapeutic essential oils for balance and focus."
+      },
+      {
+        id: "diffuser-essential",
+        name: "Concrete Essential Oil Diffuser",
+        price: 29.99,
+        badge: "Handmade",
+        badgeType: "new",
+        image: "images/concrete-essential-diffuser.png",
+        description: "A passive concrete diffuser designed to slowly release essential oil fragrance into your space. Features an industrial-modern design that doubles as homeware decor."
       }
     ],
     bundle: {
@@ -136,6 +163,33 @@ var SITE_DATA = {
         badgeType: "sale",
         image: "images/planter-geo.webp",
         description: "The darker, more angular planter in the range — cut into sharp facets and finished almost black, which makes the green of whatever you put in it look twice as green. Approx. 16cm across, 12cm tall. Drainage hole included."
+      },
+      {
+        id: "bowl-offset",
+        name: "Handmade Concrete Bowl, Offset Center",
+        price: 34.99,
+        badge: "Sculptural",
+        badgeType: "new",
+        image: "images/concrete-bowl-offset.png",
+        description: "A unique sculptural concrete bowl featuring an offset center design. Hand-cast and finished, perfect as an eye-catching key dish or modern mantelpiece accent."
+      },
+      {
+        id: "bowl-set",
+        name: "Concrete Bowl Set",
+        price: 49.99,
+        badge: "Nesting Set",
+        badgeType: "new",
+        image: "images/concrete-bowl-set.png",
+        description: "A set of three hand-cast concrete nesting bowls of varying sizes and tones. Highly tactile and sculptural, suitable as a decorative collection or organizing dishes."
+      },
+      {
+        id: "bowl-mini",
+        name: "Mini Concrete Bowl",
+        price: 12.99,
+        badge: "New In",
+        badgeType: "new",
+        image: "images/concrete-bowl-mini.png",
+        description: "A small, versatile concrete bowl perfect for storing rings, small trinkets, or keys. Minimalist and beautifully weighted with a smooth interior finish."
       }
     ],
     tables: [
