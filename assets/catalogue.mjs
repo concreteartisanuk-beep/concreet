@@ -111,6 +111,12 @@ export const CATALOGUE = {
     image: 'images/concrete-essential-diffuser.webp',
     description: 'A passive concrete diffuser designed to slowly release essential oil fragrance into your space.',
   },
+  'plant-pot-holder': {
+    name: 'Concrete plant pot/ candle holder',
+    price: 19.99,
+    image: 'images/concrete-plant-pot-holder.webp',
+    description: 'A handmade concrete vessel that works beautifully as both a planter and a candle holder.',
+  },
 
   // ---- Homeware (furniture page) ----
   'clock-copper': {

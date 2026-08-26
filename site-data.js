@@ -19,7 +19,43 @@ var SITE_DATA = {
         badge: "Best Seller",
         badgeType: "new",
         image: "images/concrete-candle-artisan.webp",
-        description: "Hand-poured soy wax in a real concrete vessel. Long burn time of 40+ hours, with your choice of calming botanical scent. A piece you'll keep long after the candle is gone."
+        description: "Hand-poured soy wax in a real concrete vessel. Long burn time of 40+ hours, with your choice of calming botanical scent."
+      },
+      {
+        id: "sml-candle",
+        name: "Small Volcanic Concrete Candle",
+        price: 13.99,
+        badge: "New In",
+        badgeType: "new",
+        image: "images/concrete-candle-artisan.webp",
+        description: "Hand-poured plant-based wax in a raw, reusable volcanic concrete vessel. Burns clean and long."
+      },
+      {
+        id: "nat-candle",
+        name: "Handmade Natural Concrete Candle",
+        price: 19.99,
+        badge: "Natural",
+        badgeType: "new",
+        image: "images/concrete-candle-natural.webp",
+        description: "Signature natural concrete candle with a subtle natural botanical fragrance. Hand-cast in the North East."
+      },
+      {
+        id: "vol-candle",
+        name: "Volcanic Concrete Candle",
+        price: 19.99,
+        badge: "Eco-friendly",
+        badgeType: "new",
+        image: "images/concrete-candle-lifestyle.webp",
+        description: "Large volcanic concrete candle with a long burn time and natural botanical scent."
+      },
+      {
+        id: "holder",
+        name: "Concrete Candle Holder",
+        price: 19.99,
+        badge: "Minimalist",
+        badgeType: "new",
+        image: "images/candle.webp",
+        description: "Hand-cast concrete candle holder, minimalist and beautifully weighted to bring calm to any room."
       },
       {
         id: "soap",
@@ -28,7 +64,7 @@ var SITE_DATA = {
         badge: "New In",
         badgeType: "new",
         image: "images/concrete-soap-botanical.webp",
-        description: "Cold-pressed with natural oils and presented in a textured concrete mould. Gentle on skin, kind to the planet. No sulphates, no parabens — just clean, beautiful soap."
+        description: "Cold-pressed with natural oils and presented in a textured concrete mould. Gentle on skin, kind to the planet."
       },
       {
         id: "lipbalm",
@@ -37,7 +73,25 @@ var SITE_DATA = {
         badge: "",
         badgeType: "",
         image: "images/lip-balm.webp",
-        description: "Rich, nourishing lip care in a signature concrete tin. Made with beeswax, shea butter and natural botanicals. Your lips will thank you — and the tin is a keepsake."
+        description: "Rich, nourishing lip care in a signature concrete tin. Made with beeswax, shea butter and natural botanicals."
+      },
+      {
+        id: "lipbalm10",
+        name: "Concrete Kiss Lip Balm 10ml",
+        price: 7.99,
+        badge: "10ml",
+        badgeType: "new",
+        image: "images/concrete-lipbalm-lifestyle.webp",
+        description: "Beeswax, shea butter and natural botanicals in a compact 10ml concrete tin. Deeply moisturizing."
+      },
+      {
+        id: "lipbalm14",
+        name: "Concrete Kiss Lip Balm 14ml",
+        price: 10.99,
+        badge: "14ml",
+        badgeType: "new",
+        image: "images/lip-balm.webp",
+        description: "Our signature moisturizing beeswax and shea butter lip balm in a larger 14ml reusable concrete tin."
       },
       {
         id: "diffuser",
@@ -46,7 +100,7 @@ var SITE_DATA = {
         badge: "Limited Stock",
         badgeType: "sale",
         image: "images/concrete-diffuser-lifestyle.webp",
-        description: "A concrete base, natural reeds and a long-lasting fragrance oil that fills your room for up to 3 months. The centrepiece your bathroom or hallway has been waiting for."
+        description: "A concrete base, natural reeds and a long-lasting fragrance oil that fills your room for up to 3 months."
       },
       {
         id: "diffuser-volcanic",
@@ -55,7 +109,7 @@ var SITE_DATA = {
         badge: "New In",
         badgeType: "new",
         image: "images/diffuser-volcanic.webp",
-        description: "A hand-cast concrete vessel filled with natural volcanic rocks that soak up your chosen fragrance oil and release it slowly into the room. No reeds, no flame — just a sculptural centrepiece that scents your space for weeks. Simply top up the oil to refresh."
+        description: "A hand-cast concrete vessel filled with natural volcanic rocks that soak up your chosen fragrance oil."
       },
       {
         id: "jewellery-tray",
@@ -64,7 +118,7 @@ var SITE_DATA = {
         badge: "New In",
         badgeType: "new",
         image: "images/jewellery-tray.webp",
-        description: "A minimal, hand-cast concrete tray designed for holding rings, earrings, bracelets, and other everyday essentials. Its raw texture beautifully contrasts with delicate jewellery."
+        description: "A minimal, hand-cast concrete tray designed for holding rings, earrings, bracelets, and other everyday essentials."
       },
       {
         id: "ying-yang-candle",
@@ -73,7 +127,7 @@ var SITE_DATA = {
         badge: "Trending",
         badgeType: "new",
         image: "images/ying-yang-candle.webp",
-        description: "A striking double-vessel candle cast in concrete, forming the iconic Yin Yang symbol. Hand-poured with natural soy wax and therapeutic essential oils for balance and focus."
+        description: "A striking double-vessel candle cast in concrete, forming the iconic Yin Yang symbol."
       },
       {
         id: "diffuser-essential",
@@ -82,7 +136,70 @@ var SITE_DATA = {
         badge: "Handmade",
         badgeType: "new",
         image: "images/concrete-essential-diffuser.webp",
-        description: "A passive concrete diffuser designed to slowly release essential oil fragrance into your space. Features an industrial-modern design that doubles as homeware decor."
+        description: "A passive concrete diffuser designed to slowly release essential oil fragrance into your space."
+      },
+      {
+        id: "plant-pot-holder",
+        name: "Concrete plant pot/ candle holder",
+        price: 19.99,
+        badge: "Dual Purpose",
+        badgeType: "new",
+        image: "images/concrete-plant-pot-holder.webp",
+        description: "A handmade concrete vessel that works beautifully as both a planter and a candle holder."
+      },
+      {
+        id: "planter-hex",
+        name: "Hexagonal Planter",
+        price: 49.00,
+        badge: "Handmade",
+        badgeType: "new",
+        image: "images/hexagonal-concrete-planter-geometric.webp",
+        description: "A chunky faceted vessel cast in pale natural concrete, each angled face catching the light differently."
+      },
+      {
+        id: "bowl-large",
+        name: "Display Bowl — Cream",
+        price: 44.99,
+        badge: "Best Seller",
+        badgeType: "new",
+        image: "images/bowl-display.webp",
+        description: "Wide, shallow and deceptively simple. The outside keeps the sandy texture of raw cast concrete."
+      },
+      {
+        id: "clock-copper",
+        name: "Concrete Wall Clock — Copper",
+        price: 69.99,
+        badge: "Gift Idea",
+        badgeType: "new",
+        image: "images/clock-copper.webp",
+        description: "A solid concrete face with the hour markers recessed into the surface. Slim brushed copper hands."
+      },
+      {
+        id: "clock-wood",
+        name: "Concrete Wall Clock — Oak",
+        price: 69.99,
+        badge: "New In",
+        badgeType: "new",
+        image: "images/clock-wood.webp",
+        description: "The same concrete face with hands turned from natural oak — a noticeably softer thing in a room."
+      },
+      {
+        id: "bowl-grey",
+        name: "Decorative Bowl — Grey",
+        price: 34.99,
+        badge: "Key Dish",
+        badgeType: "new",
+        image: "images/bowl-grey.webp",
+        description: "The smaller, darker cousin of the cream bowl, and the one that tends to end up by the front door."
+      },
+      {
+        id: "bowl-deep",
+        name: "Deep Set Bowl",
+        price: 39.99,
+        badge: "Gift Idea",
+        badgeType: "new",
+        image: "images/bowl-set.webp",
+        description: "A taller profile with real capacity behind it — this is the one that works as an actual fruit bowl."
       }
     ],
     bundle: {
