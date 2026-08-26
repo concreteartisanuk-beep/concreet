@@ -71,8 +71,8 @@ export const CATALOGUE = {
   // ---- Shop page ----
   candle: {
     name: 'The Concrete Candle',
-    price: 18.99,
-    image: 'images/concrete-candle-artisan.webp',
+    price: 39.99,
+    image: 'images/concrete-candle-original.webp',
     description: 'Hand-poured soy wax in a real concrete vessel. 40+ hour burn time.',
   },
   lipbalm: {

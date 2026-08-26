@@ -15,10 +15,10 @@ var SITE_DATA = {
       {
         id: "candle",
         name: "The Concrete Candle",
-        price: 18.99,
+        price: 39.99,
         badge: "Best Seller",
         badgeType: "new",
-        image: "images/concrete-candle-artisan.webp",
+        image: "images/concrete-candle-original.webp",
         description: "Hand-poured soy wax in a real concrete vessel. Long burn time of 40+ hours, with your choice of calming botanical scent."
       },
       {
