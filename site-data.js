@@ -51,7 +51,7 @@ var SITE_DATA = {
       {
         id: "holder",
         name: "Concrete Candle Holder",
-        price: 19.99,
+        price: 20.99,
         badge: "Minimalist",
         badgeType: "new",
         image: "images/candle.webp",
@@ -60,7 +60,7 @@ var SITE_DATA = {
       {
         id: "soap",
         name: "Concrete Soap Bar",
-        price: 9.99,
+        price: 8.99,
         badge: "New In",
         badgeType: "new",
         image: "images/concrete-soap-botanical.webp",
@@ -69,7 +69,7 @@ var SITE_DATA = {
       {
         id: "lipbalm",
         name: "Botanical Lip Balm",
-        price: 7.99,
+        price: 3.99,
         badge: "",
         badgeType: "",
         image: "images/lip-balm.webp",
@@ -123,7 +123,7 @@ var SITE_DATA = {
       {
         id: "ying-yang-candle",
         name: "Ying Yang Candle",
-        price: 24.99,
+        price: 21.99,
         badge: "Trending",
         badgeType: "new",
         image: "images/ying-yang-candle.webp",
@@ -132,7 +132,7 @@ var SITE_DATA = {
       {
         id: "diffuser-essential",
         name: "Concrete Essential Oil Diffuser",
-        price: 29.99,
+        price: 36.50,
         badge: "Handmade",
         badgeType: "new",
         image: "images/concrete-essential-diffuser.webp",
@@ -146,6 +146,15 @@ var SITE_DATA = {
         badgeType: "new",
         image: "images/concrete-plant-pot-holder.webp",
         description: "A handmade concrete vessel that works beautifully as both a planter and a candle holder."
+      },
+      {
+        id: "concrete-chopping-board",
+        name: "Concrete Chopping Board",
+        price: 21.99,
+        badge: "New In",
+        badgeType: "new",
+        image: "images/concrete-chopping-board.webp",
+        description: "A handmade concrete chopping board / serving board, beautifully crafted in the UK."
       },
       {
         id: "planter-hex",
@@ -168,7 +177,7 @@ var SITE_DATA = {
       {
         id: "clock-copper",
         name: "Concrete Wall Clock — Copper",
-        price: 69.99,
+        price: 85.99,
         badge: "Gift Idea",
         badgeType: "new",
         image: "images/clock-copper.webp",
@@ -177,7 +186,7 @@ var SITE_DATA = {
       {
         id: "clock-wood",
         name: "Concrete Wall Clock — Oak",
-        price: 69.99,
+        price: 85.99,
         badge: "New In",
         badgeType: "new",
         image: "images/clock-wood.webp",
@@ -239,7 +248,7 @@ var SITE_DATA = {
       {
         id: "clock-copper",
         name: "Concrete Wall Clock — Copper",
-        price: 69.99,
+        price: 85.99,
         badge: "Gift Idea",
         badgeType: "new",
         image: "images/clock-copper.webp",
@@ -248,7 +257,7 @@ var SITE_DATA = {
       {
         id: "clock-wood",
         name: "Concrete Wall Clock — Oak",
-        price: 69.99,
+        price: 85.99,
         badge: "New In",
         badgeType: "new",
         image: "images/clock-wood.webp",
@@ -307,6 +316,15 @@ var SITE_DATA = {
         badgeType: "new",
         image: "images/concrete-bowl-mini.webp",
         description: "A small, versatile concrete bowl perfect for storing rings, small trinkets, or keys. Minimalist and beautifully weighted with a smooth interior finish."
+      },
+      {
+        id: "concrete-chopping-board",
+        name: "Concrete Chopping Board",
+        price: 21.99,
+        badge: "New In",
+        badgeType: "new",
+        image: "images/concrete-chopping-board.webp",
+        description: "A handmade concrete chopping board / serving board, beautifully crafted in the UK."
       }
     ],
     tables: [

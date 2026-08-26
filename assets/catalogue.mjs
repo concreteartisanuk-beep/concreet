@@ -39,13 +39,13 @@ export const CATALOGUE = {
   },
   holder: {
     name: 'Concrete Candle Holder',
-    price: 19.99,
+    price: 20.99,
     image: 'images/candle.webp',
     description: 'Hand-cast concrete candle holder, minimalist and beautifully weighted.',
   },
   soap: {
     name: 'Concrete Soap Bar',
-    price: 9.99,
+    price: 8.99,
     image: 'images/concrete-soap-botanical.webp',
     description: 'Cold-pressed with natural oils. No sulphates, no parabens.',
   },
@@ -77,7 +77,7 @@ export const CATALOGUE = {
   },
   lipbalm: {
     name: 'Botanical Lip Balm',
-    price: 7.99,
+    price: 3.99,
     image: 'images/lip-balm.webp',
     description: 'Beeswax, shea butter and natural botanicals in a concrete tin.',
   },
@@ -101,13 +101,13 @@ export const CATALOGUE = {
   },
   'ying-yang-candle': {
     name: 'Ying Yang Candle',
-    price: 24.99,
+    price: 21.99,
     image: 'images/ying-yang-candle.webp',
     description: 'A striking double-vessel candle cast in concrete, forming the iconic Yin Yang symbol.',
   },
   'diffuser-essential': {
     name: 'Concrete Essential Oil Diffuser',
-    price: 29.99,
+    price: 36.50,
     image: 'images/concrete-essential-diffuser.webp',
     description: 'A passive concrete diffuser designed to slowly release essential oil fragrance into your space.',
   },
@@ -117,17 +117,23 @@ export const CATALOGUE = {
     image: 'images/concrete-plant-pot-holder.webp',
     description: 'A handmade concrete vessel that works beautifully as both a planter and a candle holder.',
   },
+  'concrete-chopping-board': {
+    name: 'Concrete Chopping Board',
+    price: 21.99,
+    image: 'images/concrete-chopping-board.webp',
+    description: 'A handmade concrete chopping board / serving board, beautifully crafted in the UK.',
+  },
 
   // ---- Homeware (furniture page) ----
   'clock-copper': {
     name: 'Concrete Wall Clock — Copper',
-    price: 69.99,
+    price: 85.99,
     image: 'images/clock-copper.webp',
     description: 'Recessed hour markers and brushed copper hands. 30cm. Silent sweep movement.',
   },
   'clock-wood': {
     name: 'Concrete Wall Clock — Oak',
-    price: 69.99,
+    price: 85.99,
     image: 'images/clock-wood.webp',
     description: 'Recessed hour markers and natural oak hands. 30cm. Silent sweep movement.',
   },
@@ -218,7 +224,7 @@ export const CATALOGUE = {
   // returning customer's browser still prices correctly.
   'coffee-table-wood': {
     name: 'Concrete Coffee Table — Wood Base',
-    price: 349.0,
+    price: 495.99,
     image: 'images/coffee-table-wood.webp',
     description: 'A hand-cast concrete top on solid natural wood legs. Approx. 90×50cm.',
   },
