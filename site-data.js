@@ -190,12 +190,12 @@ var SITE_DATA = {
       },
       {
         id: "bowl-offset",
-        name: "Handmade Concrete Bowl, Offset Center",
+        name: "Handmade Concrete Bowl",
         price: 34.99,
         category: "bowls",
         badge: "Sculptural",
         badgeType: "new",
-        image: "images/concrete-bowl-offset.webp",
+        image: "images/concrete-bowl-offset.jpg",
         size: "18cm Dia × 6.5cm D | 950g",
         description: "A unique sculptural concrete bowl featuring an off-center inner reservoir design. Hand-cast and hand-waxed, perfect as an eye-catching coffee table accent."
       },
@@ -468,11 +468,11 @@ var SITE_DATA = {
       },
       {
         id: "bowl-offset",
-        name: "Handmade Concrete Bowl, Offset Center",
+        name: "Handmade Concrete Bowl",
         price: 34.99,
         badge: "Sculptural",
         badgeType: "new",
-        image: "images/concrete-bowl-offset.webp",
+        image: "images/concrete-bowl-offset.jpg",
         description: "A unique sculptural concrete bowl featuring an offset center design. Hand-cast and finished, perfect as an eye-catching key dish or modern mantelpiece accent."
       },
       {
