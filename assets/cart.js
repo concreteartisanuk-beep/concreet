@@ -243,6 +243,65 @@ async function goToStripe() {
   }
 }
 
+/** Instantly purchase a single item in a new window/tab via Stripe */
+async function buyNowInNewWindow(id, quantity = 1) {
+  if (!CATALOGUE[id]) {
+    console.warn('[checkout] unknown product id:', id)
+    return
+  }
+
+  // Pre-open new tab synchronously within user gesture to bypass browser popup blockers
+  const newWin = window.open('about:blank', '_blank')
+  if (newWin) {
+    newWin.document.write(`
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <title>Connecting to Secure Checkout — Concreet</title>
+        <style>
+          body { background: #0d0d0d; color: #f4f1eb; font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; text-align: center; }
+          .spinner { width: 48px; height: 48px; border: 3px solid rgba(197, 169, 117, 0.2); border-top-color: #c5a975; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 1.5rem; }
+          @keyframes spin { to { transform: rotate(360deg); } }
+          h2 { color: #c5a975; font-weight: 400; margin-bottom: 0.5rem; }
+          p { color: #8a8578; font-size: 0.9rem; }
+        </style>
+      </head>
+      <body>
+        <div>
+          <div class="spinner"></div>
+          <h2>Redirecting to Stripe Secure Checkout…</h2>
+          <p>Handcrafted in North East England · Free UK delivery over £40</p>
+        </div>
+      </body>
+      </html>
+    `)
+  }
+
+  try {
+    const res = await fetch('/.netlify/functions/create-checkout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items: [{ id, quantity }] }),
+    })
+    const data = await res.json().catch(() => ({}))
+
+    if (res.ok && data.url) {
+      if (newWin) {
+        newWin.location.href = data.url
+      } else {
+        window.location.href = data.url
+      }
+      return
+    }
+    if (newWin) newWin.close()
+    alert('Payment gateway error: ' + (data.error || 'Could not launch checkout.'))
+  } catch (err) {
+    if (newWin) newWin.close()
+    alert('Could not connect to payment gateway. Please try again.')
+  }
+}
+
 /** Clear the basket — called by the order confirmation page. */
 function clearCart() {
   basket = {}
@@ -321,7 +380,9 @@ Object.assign(window, {
   closeCart,
   toggleMenu,
   goToStripe,
+  buyNowInNewWindow,
   clearCart,
   cdnImg,
   CONCREET_CATALOGUE: CATALOGUE,
 })
+

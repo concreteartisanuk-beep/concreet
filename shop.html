@@ -331,6 +331,17 @@ footer a{color:var(--accent)}
     </div>
   </div>
 
+  <div class="filter-bar" id="categoryFilterBar">
+    <button class="filter-btn active" onclick="setCategoryFilter('all', this)">All Items (34)</button>
+    <button class="filter-btn" onclick="setCategoryFilter('candles', this)">Soy Candles &amp; Fragrance</button>
+    <button class="filter-btn" onclick="setCategoryFilter('skincare', this)">Natural Skincare &amp; Soap</button>
+    <button class="filter-btn" onclick="setCategoryFilter('bowls', this)">Bowls &amp; Trays</button>
+    <button class="filter-btn" onclick="setCategoryFilter('clocks', this)">Clocks &amp; Planters</button>
+    <button class="filter-btn" onclick="setCategoryFilter('homeware', this)">Kitchen &amp; Homeware</button>
+    <button class="filter-btn" onclick="setCategoryFilter('furniture', this)">Concrete Furniture</button>
+    <button class="filter-btn" onclick="setCategoryFilter('giftsets', this)">Gift Sets</button>
+  </div>
+
   <div class="grid">
 
     <div class="card">
@@ -476,24 +487,25 @@ footer a{color:var(--accent)}
   })();
 </script>
 
+<style>
+.filter-bar{display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem}
+.filter-btn{background:transparent;border:1px solid var(--border);color:var(--muted);padding:0.6rem 1.4rem;border-radius:999px;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all 0.25s}
+.filter-btn:hover,.filter-btn.active{background:var(--accent);color:#0d0d0d;border-color:var(--accent);font-weight:600}
+.card-size-tag{font-size:0.78rem;color:var(--accent);background:rgba(197,169,117,0.1);border:1px solid rgba(197,169,117,0.25);padding:0.35rem 0.75rem;border-radius:4px;margin-bottom:0.75rem;display:inline-block;width:fit-content}
+.card-actions-row{display:flex;gap:0.5rem;align-items:center;width:100%;margin-top:1rem}
+.btn-buy-now-sm{flex:1;background:var(--accent);color:#0d0d0d;font-weight:600;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;padding:0.65rem 0.5rem;border-radius:4px;border:1px solid var(--accent);cursor:pointer;text-align:center;transition:all 0.2s}
+.btn-buy-now-sm:hover{background:#d4b885;border-color:#d4b885;transform:translateY(-1px)}
+.btn-add-sm{flex:1;background:transparent;color:var(--text);border:1px solid var(--border);font-size:0.75rem;font-weight:500;letter-spacing:1px;text-transform:uppercase;padding:0.65rem 0.5rem;border-radius:4px;cursor:pointer;transition:all 0.2s;text-align:center}
+.btn-add-sm:hover{border-color:var(--accent);color:var(--accent)}
+</style>
+
 <script src="site-data.js"></script>
 <script>
-// site-data.js (editable via /admin) supplies the copy, badges, imagery
-// and running order. The PRICE, however, comes from assets/catalogue.mjs —
-// the same file the checkout function reads — so the figure on the card is
-// always the figure Stripe will charge. If the two ever disagree, the
-// catalogue wins and the mismatch is logged.
 function catalogue() { return window.CONCREET_CATALOGUE || {}; }
 
 function priceOf(p) {
   var entry = catalogue()[p.id];
-  if (!entry) {
-    console.warn('[shop] "' + p.id + '" is not in assets/catalogue.mjs — it cannot be bought until it is added.');
-    return p.price;
-  }
-  if (entry.price !== p.price) {
-    console.warn('[shop] price mismatch for "' + p.id + '": site-data says ' + p.price + ', catalogue says ' + entry.price + '. Using the catalogue.');
-  }
+  if (!entry) return p.price;
   return entry.price;
 }
 
@@ -502,6 +514,15 @@ function buyable(p) { return !!catalogue()[p.id]; }
 function cdn(path, w) {
   if (!path) return '';
   return '/.netlify/images?url=' + encodeURIComponent(path.charAt(0) === '/' ? path : '/' + path) + '&w=' + w + '&h=' + w + '&fit=cover';
+}
+
+var currentCategory = 'all';
+
+function setCategoryFilter(cat, btn) {
+  currentCategory = cat;
+  document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+  if (btn) btn.classList.add('active');
+  renderShopProducts();
 }
 
 // Render hero from data
@@ -518,30 +539,45 @@ function renderShopProducts() {
   var grid = document.getElementById('collection');
   var gridEl = grid.querySelector('.grid');
   gridEl.innerHTML = '';
-  SITE_DATA.shop.products.forEach(function(p) {
-    var badgeHtml = p.badge ? '<span class="badge badge-' + (p.badgeType||'new') + '">' + p.name + '</span>' : '';
-    // override badge text correctly
-    badgeHtml = p.badge ? '<span class="badge badge-' + (p.badgeType||'new') + '">' + p.badge + '</span>' : '';
+
+  var filtered = SITE_DATA.shop.products.filter(function(p) {
+    if (currentCategory === 'all') return true;
+    return p.category === currentCategory;
+  });
+
+  filtered.forEach(function(p) {
+    var badgeHtml = p.badge ? '<span class="badge badge-' + (p.badgeType||'new') + '">' + p.badge + '</span>' : '';
     var price = priceOf(p);
-    var buyBtn = buyable(p)
-      ? '<button class="btn-add" onclick="addToCart(\'' + p.id + '\')">Add to Basket</button>'
-      : '<a class="btn-add" href="/contact">Enquire</a>';
+    var productUrl = '/product.html?id=' + encodeURIComponent(p.id);
+    
+    var sizeHtml = p.size ? '<div class="card-size-tag">📐 ' + p.size + '</div>' : '';
+
+    var buyBtnHtml = buyable(p)
+      ? '<button class="btn-buy-now-sm" onclick="buyNowInNewWindow(\'' + p.id + '\')">⚡ Buy Now</button>' +
+        '<button class="btn-add-sm" onclick="addToCart(\'' + p.id + '\')">🛒 Basket</button>'
+      : '<a class="btn-add-sm" href="/contact">Enquire</a>';
+
     var card = '<div class="card">' +
-      '<div class="card-img-wrap">' +
+      '<a href="' + productUrl + '" target="_blank" class="card-img-wrap" title="Click to view full specs in new window">' +
         '<img src="' + cdn(p.image, 760) + '" alt="' + p.name + ' — Concreet" width="380" height="380" loading="lazy" decoding="async">' +
         badgeHtml +
-      '</div>' +
+      '</a>' +
       '<div class="card-body">' +
-        '<h3>' + p.name + '</h3>' +
+        '<h3><a href="' + productUrl + '" target="_blank" style="color:inherit;" title="Open in new window">' + p.name + ' ↗</a></h3>' +
+        sizeHtml +
         '<p class="card-desc">' + p.description + '</p>' +
-        '<div class="card-footer">' +
-          '<div><span class="price">£' + price.toFixed(2) + '</span></div>' +
-          buyBtn +
+        '<div class="card-footer" style="flex-direction:column;gap:0.75rem;align-items:stretch;">' +
+          '<div style="display:flex;justify-content:space-between;align-items:center;">' +
+            '<span class="price">£' + price.toFixed(2) + '</span>' +
+            '<a href="' + productUrl + '" target="_blank" style="font-size:0.78rem;color:var(--accent);text-decoration:underline;">View Specs ↗</a>' +
+          '</div>' +
+          '<div class="card-actions-row">' + buyBtnHtml + '</div>' +
         '</div>' +
       '</div>' +
     '</div>';
     gridEl.insertAdjacentHTML('beforeend', card);
   });
+
   // Bundle
   var b = SITE_DATA.shop.bundle;
   var bundleEl = document.getElementById('bundle');
