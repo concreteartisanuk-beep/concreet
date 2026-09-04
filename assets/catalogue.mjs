@@ -210,7 +210,7 @@ export const CATALOGUE = {
   },
   'bowl-mini': {
     name: 'Mini Concrete Bowl',
-    price: 12.99,
+    price: 18.99,
     category: 'bowls',
     badge: 'New In',
     badgeType: 'new',

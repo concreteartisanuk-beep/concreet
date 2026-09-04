@@ -213,7 +213,7 @@ var SITE_DATA = {
       {
         id: "bowl-mini",
         name: "Mini Concrete Bowl",
-        price: 12.99,
+        price: 18.99,
         category: "bowls",
         badge: "New In",
         badgeType: "new",
@@ -487,7 +487,7 @@ var SITE_DATA = {
       {
         id: "bowl-mini",
         name: "Mini Concrete Bowl",
-        price: 12.99,
+        price: 18.99,
         badge: "New In",
         badgeType: "new",
         image: "images/concrete-bowl-mini.webp",
