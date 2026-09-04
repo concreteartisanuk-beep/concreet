@@ -201,12 +201,12 @@ var SITE_DATA = {
       },
       {
         id: "bowl-set",
-        name: "Concrete Bowl Set (Set of 3)",
+        name: "Concrete Bowl Set",
         price: 49.99,
         category: "bowls",
         badge: "Nesting Set",
         badgeType: "new",
-        image: "images/concrete-bowl-set.webp",
+        image: "images/concrete-bowl-set.jpg",
         size: "Small (10cm), Medium (15cm), Large (20cm) | 2.2kg total",
         description: "A set of three hand-cast concrete nesting bowls in complementary tones (White, Grey, Charcoal). Highly tactile and versatile storage dishes."
       },
@@ -481,7 +481,7 @@ var SITE_DATA = {
         price: 49.99,
         badge: "Nesting Set",
         badgeType: "new",
-        image: "images/concrete-bowl-set.webp",
+        image: "images/concrete-bowl-set.jpg",
         description: "A set of three hand-cast concrete nesting bowls of varying sizes and tones. Highly tactile and sculptural, suitable as a decorative collection or organizing dishes."
       },
       {
