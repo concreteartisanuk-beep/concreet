@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# Nothing here is useful to a crawler and the checkout page is per-session.
+# Exclude internal admin, session, and backend endpoints from search engines
 Disallow: /admin/
 Disallow: /success
 Disallow: /.netlify/
