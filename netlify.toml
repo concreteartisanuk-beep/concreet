@@ -46,3 +46,58 @@
   for = "/admin/*"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
+
+# ---------- redirects & SEO canonicalization ----------
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/furniture.html"
+  to = "/furniture"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop.html"
+  to = "/shop"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/product.html"
+  to = "/product"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about.html"
+  to = "/about"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact.html"
+  to = "/contact"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/delivery-returns.html"
+  to = "/delivery-returns"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacy.html"
+  to = "/privacy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/terms.html"
+  to = "/terms"
+  status = 301
+  force = true

@@ -548,7 +548,7 @@ function renderShopProducts() {
   filtered.forEach(function(p) {
     var badgeHtml = p.badge ? '<span class="badge badge-' + (p.badgeType||'new') + '">' + p.badge + '</span>' : '';
     var price = priceOf(p);
-    var productUrl = '/product.html?id=' + encodeURIComponent(p.id);
+    var productUrl = '/product?id=' + encodeURIComponent(p.id);
     
     var sizeHtml = p.size ? '<div class="card-size-tag">📐 ' + p.size + '</div>' : '';
 
