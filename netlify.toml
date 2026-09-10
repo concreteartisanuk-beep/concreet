@@ -61,6 +61,12 @@
   force = true
 
 [[redirects]]
+  from = "/microcement-worktops.html"
+  to = "/microcement-worktops"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/shop.html"
   to = "/shop"
   status = 301
