@@ -389,7 +389,9 @@ footer{background:#080808;border-top:1px solid var(--border);padding:5rem 5% 3re
     </div>
 
     <div class="quote-box">
-      <form action="/contact" method="GET">
+      <form id="microcement-quote-form" method="POST" name="microcement-quote" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="microcement-quote">
+        <p class="hp-field" style="display:none" aria-hidden="true"><label>Do not fill this in <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
         <div class="form-grid">
           <div class="form-group">
             <label for="name">Your Name</label>
