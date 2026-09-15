@@ -90,6 +90,7 @@ export default async (req: Request, context: Context) => {
   form.set('billing_address_collection', 'auto')
   form.set('phone_number_collection[enabled]', 'false')
   form.set('allow_promotion_codes', 'true')
+  form.set('payment_intent_data[statement_descriptor_suffix]', 'CONCREET')
 
   let subtotal = 0
   let index = 0
