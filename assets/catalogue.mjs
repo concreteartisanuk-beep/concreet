@@ -402,7 +402,7 @@ export const CATALOGUE = {
     category: 'furniture',
     badge: 'Compact Living',
     badgeType: 'new',
-    image: 'images/coffee-table-round.webp',
+    image: 'images/round-concrete-coffee-table-colourful-rug.webp',
     size: '70cm Dia × 40cm H | ~24kg',
     description: 'Polished circular concrete top resting on a tripod black steel base. Compact design for apartments and snug sitting rooms.',
   },
