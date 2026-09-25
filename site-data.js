@@ -151,7 +151,7 @@ var SITE_DATA = {
         category: "bowls",
         badge: "New In",
         badgeType: "new",
-        image: "images/jewellery-tray.webp",
+        image: "images/jewellery-tray.avif",
         size: "20cm L × 11cm W × 2cm H | 420g",
         description: "A minimal, hand-cast oval concrete tray designed for holding rings, earrings, bracelets, watches, and everyday essentials. Features a protective cork underside."
       },
