@@ -147,7 +147,7 @@ var SITE_DATA = {
       {
         id: "jewellery-tray",
         name: "Concrete Jewellery Tray",
-        price: 14.99,
+        price: 24.99,
         category: "bowls",
         badge: "New In",
         badgeType: "new",

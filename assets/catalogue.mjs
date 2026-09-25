@@ -180,7 +180,7 @@ export const CATALOGUE = {
   },
   'jewellery-tray': {
     name: 'Concrete Jewellery Tray',
-    price: 14.99,
+    price: 24.99,
     category: 'bowls',
     badge: 'Best Seller',
     badgeType: 'new',
