@@ -457,7 +457,29 @@ footer{background:#080808;border-top:1px solid var(--border);padding:5rem 5% 3re
           </div>
         </div>
 
-        <button type="submit" class="btn-primary form-submit">Submit Resurfacing Quote Request</button>
+        <!-- Live Instant Estimate Display -->
+        <div id="live-estimator-box" style="margin: 1.5rem 0; padding: 1.35rem 1.6rem; background: rgba(197, 169, 117, 0.08); border: 1px solid var(--accent); border-radius: 6px; display: flex; flex-direction: column; gap: 0.5rem;">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+            <span style="font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); font-weight: 700;">✨ Instant Estimated Investment</span>
+            <span id="live-estimate-price" style="font-size: 1.45rem; font-family: 'Playfair Display', serif; font-weight: 700; color: #fff;">£1,250 – £1,550</span>
+          </div>
+          <p id="live-estimate-breakdown" style="font-size: 0.85rem; color: #d4cfc5; margin: 0; line-height: 1.5;">
+            Based on ~4.0m straight worktop layout. Includes mechanical diamond keying, fiberglass quartz adhesion primer, 2x hand-trowelled microcement coats, fine hand-sanding &amp; 3x waterproof polyurethane seal.
+          </p>
+          <div style="font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem;">
+            ✓ 100% Non-Porous &amp; Stain Resistant • 5-Year Craftsmanship Guarantee • 3-Day On-Site Turnaround
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary form-submit" style="width: 100%; justify-content: center; font-size: 1rem; padding: 1.1rem 2rem;">Request Formal Project Proposal &amp; Finish Samples</button>
+
+        <!-- Direct Instant Contact Row -->
+        <div style="margin-top: 1.5rem; text-align: center; font-size: 0.9rem; color: #d4cfc5; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08);">
+          <span>Prefer an immediate answer? </span>
+          <a href="tel:07494867646" style="color: var(--accent); font-weight: 700; text-decoration: underline; margin: 0 0.5rem;">📞 Call 07494 867646</a>
+          <span> or </span>
+          <a href="https://wa.me/447494867646?text=Hi%20Ian,%20I'd%20like%20a%20microcement%20worktop%20quote" target="_blank" rel="noopener noreferrer" style="color: #4ade80; font-weight: 700; text-decoration: underline; margin-left: 0.5rem;">💬 WhatsApp Your Kitchen Photos</a>
+        </div>
       </form>
     </div>
   </section>
@@ -552,6 +574,59 @@ footer{background:#080808;border-top:1px solid var(--border);padding:5rem 5% 3re
       if (thumbEl) {
         thumbEl.classList.add('active');
       }
+    }
+
+    // Dynamic Live Worktop Estimator Calculation
+    function updateEstimate() {
+      const layoutEl = document.getElementById('worktopLayout');
+      const lengthEl = document.getElementById('lengthMeters');
+      const priceEl = document.getElementById('live-estimate-price');
+      const breakdownEl = document.getElementById('live-estimate-breakdown');
+      if (!layoutEl || !priceEl) return;
+
+      const layout = layoutEl.value;
+      const rawVal = lengthEl ? lengthEl.value.replace(/[^0.9.]/g, '') : '';
+      let meters = parseFloat(rawVal);
+      if (isNaN(meters) || meters <= 0) meters = 4.0;
+
+      // Base professional rate ~£290 - £350 per linear meter of complete resurfacing
+      let baseLow = meters * 290;
+      let baseHigh = meters * 350;
+
+      let layoutName = 'Straight Run';
+      if (layout === 'lshape') {
+        baseLow += 160;
+        baseHigh += 220;
+        layoutName = 'L-Shape';
+      } else if (layout === 'ushape') {
+        baseLow += 260;
+        baseHigh += 360;
+        layoutName = 'U-Shape';
+      } else if (layout === 'island') {
+        baseLow += 220;
+        baseHigh += 320;
+        layoutName = 'Kitchen Island';
+      } else if (layout === 'full') {
+        baseLow += 380;
+        baseHigh += 520;
+        layoutName = 'Worktop + Kitchen Island';
+      }
+
+      const lowRounded = Math.round(baseLow / 50) * 50;
+      const highRounded = Math.round(baseHigh / 50) * 50;
+
+      priceEl.textContent = `£${lowRounded.toLocaleString()} – £${highRounded.toLocaleString()}`;
+      if (breakdownEl) {
+        breakdownEl.innerHTML = `Based on ~${meters.toFixed(1)}m ${layoutName} layout. Includes mechanical diamond keying, quartz adhesion primer, 2x hand-trowelled microcement coats, fine hand-sanding &amp; 3x waterproof matte/satin polyurethane seal.`;
+      }
+    }
+
+    const layoutInput = document.getElementById('worktopLayout');
+    const lengthInput = document.getElementById('lengthMeters');
+    if (layoutInput) layoutInput.addEventListener('change', updateEstimate);
+    if (lengthInput) {
+      lengthInput.addEventListener('input', updateEstimate);
+      lengthInput.addEventListener('change', updateEstimate);
     }
   </script>
 </body>
