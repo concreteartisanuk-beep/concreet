@@ -55,6 +55,12 @@
   force = true
 
 [[redirects]]
+  from = "/.netlifywebhook/*"
+  to = "/.netlify/functions/stripe-webhook"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/index.html"
   to = "/"
   status = 301
