@@ -385,6 +385,17 @@ var SITE_DATA = {
         image: "images/coffee-table-round.webp",
         size: "70cm Dia × 40cm H | ~24kg",
         description: "Polished circular concrete top resting on a tripod black steel base. Compact design for apartments and snug sitting rooms."
+      },
+      {
+        id: "coffee-strata-tiered",
+        name: "The Strata Dual-Tier Floating Coffee Table",
+        price: 695.00,
+        category: "furniture",
+        badge: "New Design",
+        badgeType: "new",
+        image: "images/tiered-floating-concrete-coffee-table.jpg",
+        size: "100cm × 100cm Base, 60cm × 60cm Tier | 35cm Total Height | ~42kg",
+        description: "An architectural dual-tier floating coffee table featuring an elevated cantilevered square platform offset over a wide low-profile base. Built with a structural timber core and hand-trowelled in velvety, storm-grey microcement. Sealed for stain and heat resistance."
       }
     ],
     bundle: {
@@ -504,6 +515,15 @@ var SITE_DATA = {
       }
     ],
     tables: [
+      {
+        id: "coffee-strata-tiered",
+        name: "The Strata Dual-Tier",
+        price: 695.00,
+        badge: "New Release",
+        badgeType: "new",
+        image: "images/tiered-floating-concrete-coffee-table.jpg",
+        description: "An architectural two-tier floating coffee table with an elevated cantilevered square tier offset over an expansive low-profile square base. Built around an engineered structural timber core and hand-trowelled in velvety storm-grey microcement. 100×100cm base, 60×60cm upper tier, 35cm high as shown. 4–5 weeks."
+      },
       {
         id: "coffee-block-float",
         name: "The Floating Block",

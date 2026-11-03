@@ -336,6 +336,16 @@ export const CATALOGUE = {
   },
 
   // ---- Hand-trowelled Furniture (Made to Order) ----
+  'coffee-strata-tiered': {
+    name: 'The Strata Dual-Tier Floating Coffee Table',
+    price: 695.00,
+    category: 'furniture',
+    badge: 'New Design',
+    badgeType: 'new',
+    image: 'images/tiered-floating-concrete-coffee-table.jpg',
+    size: '100cm × 100cm Base, 60cm × 60cm Tier | 35cm Total Height | ~42kg',
+    description: 'An architectural dual-tier floating coffee table featuring an elevated cantilevered square platform offset over a wide low-profile base. Built with a structural timber core and hand-trowelled in velvety, storm-grey microcement. Sealed for stain and heat resistance.',
+  },
   'coffee-block-float': {
     name: 'The Floating Block Coffee Table',
     price: 895.00,
