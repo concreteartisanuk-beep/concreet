@@ -119,3 +119,9 @@
   to = "/terms"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/deposit.html"
+  to = "/deposit"
+  status = 301
+  force = true

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bespoke Commission Deposit | Concreet UK</title>
+<meta name="description" content="Secure your bespoke concrete furniture build slot. Handcrafted in County Durham with 30 years of artisan concrete expertise.">
+<link rel="canonical" href="https://concreet.co.uk/deposit">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+img{max-width:100%;height:auto;display:block}
+:root{--bg:#0d0d0d;--card:#141414;--accent:#c5a975;--text:#f4f1eb;--muted:#8a8578;--border:#2a2a2a;--green:#34d399}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6}
+a{text-decoration:none;color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 5%;background:rgba(13,13,13,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.logo{font-family:'Playfair Display',serif;font-size:1.4rem;letter-spacing:2px;color:var(--accent)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:0.85rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);transition:color 0.2s}
+.nav-links a:hover{color:var(--text)}
+.hero{padding:8rem 5% 3.5rem;text-align:center;border-bottom:1px solid var(--border)}
+.hero-badge{display:inline-block;font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--accent);border:1px solid rgba(197,169,117,0.4);padding:0.4rem 1.25rem;border-radius:999px;margin-bottom:1.2rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,4.5vw,3.2rem);font-weight:400;color:#fff;margin-bottom:0.8rem}
+.hero p{color:var(--muted);font-size:0.95rem;max-width:580px;margin:0 auto}
+.main-wrap{max-width:1100px;margin:0 auto;padding:4rem 5%;display:grid;grid-template-columns:1.15fr 0.85fr;gap:3.5rem;align-items:start}
+.deposit-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:2.5rem;box-shadow:0 12px 36px rgba(0,0,0,0.4)}
+.deposit-card h2{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:400;color:#fff;margin-bottom:0.5rem}
+.deposit-card p.sub{color:var(--muted);font-size:0.88rem;margin-bottom:2rem}
+.form-group{margin-bottom:1.3rem}
+.form-group label{display:block;font-size:0.75rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:0.4rem;font-weight:600}
+.form-group input,.form-group textarea{width:100%;background:#0d0d0d;border:1px solid var(--border);color:var(--text);padding:0.9rem 1rem;border-radius:4px;font-size:0.95rem;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.2s}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--accent)}
+.amount-wrapper{position:relative}
+.currency-symbol{position:absolute;left:1rem;top:50%;transform:translateY(-50%);color:var(--accent);font-size:1.2rem;font-weight:700}
+.amount-wrapper input{padding-left:2.4rem;font-size:1.25rem;font-weight:700;color:var(--accent)}
+.btn-pay{display:flex;align-items:center;justify-content:center;gap:0.6rem;width:100%;background:var(--accent);color:#0d0d0d;font-weight:700;font-size:0.95rem;letter-spacing:1.5px;text-transform:uppercase;padding:1.2rem;border-radius:4px;border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.3s cubic-bezier(0.16,1,0.3,1);margin-top:1.5rem;box-shadow:0 6px 20px rgba(197,169,117,0.25)}
+.btn-pay:hover{background:#d4b885;transform:translateY(-2px);box-shadow:0 8px 24px rgba(197,169,117,0.4)}
+.btn-pay:disabled{opacity:0.6;cursor:not-allowed;transform:none}
+.security-note{display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.2rem;font-size:0.75rem;color:var(--muted);text-align:center}
+.guarantee-box{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:2rem}
+.guarantee-box h3{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:400;color:#fff;margin-bottom:1.2rem;padding-bottom:0.75rem;border-bottom:1px solid var(--border)}
+.guarantee-item{display:flex;gap:1rem;margin-bottom:1.4rem;align-items:flex-start}
+.guarantee-item:last-child{margin-bottom:0}
+.guarantee-icon{font-size:1.2rem;background:rgba(197,169,117,0.1);color:var(--accent);width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;flex-shrink:0}
+.guarantee-text strong{display:block;color:#fff;font-size:0.9rem;margin-bottom:0.2rem}
+.guarantee-text p{color:var(--muted);font-size:0.82rem;line-height:1.5}
+.direct-contact{margin-top:2rem;padding:1.2rem;background:#111;border:1px solid var(--border);border-radius:6px;text-align:center}
+.direct-contact p{font-size:0.82rem;color:var(--muted);margin-bottom:0.5rem}
+.direct-contact a{color:var(--accent);font-weight:700;font-size:0.92rem}
+footer{text-align:center;padding:2.5rem 5%;color:var(--muted);font-size:0.82rem;border-top:1px solid var(--border)}
+footer a{color:var(--accent)}
+@media(max-width:850px){.main-wrap{grid-template-columns:1fr;gap:2rem}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">CONCREET</a>
+  <ul class="nav-links">
+    <li><a href="/shop">Shop</a></li>
+    <li><a href="/furniture">Furniture</a></li>
+    <li><a href="/microcement-worktops">Worktops</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="hero-badge">Artisan Commission Security</div>
+  <h1>Secure Your Workshop Build Slot</h1>
+  <p>50% Production Deposit • Handcrafted in County Durham • 100% Guaranteed Finish Approval Prior to Dispatch</p>
+</header>
+
+<main class="main-wrap">
+  <!-- Deposit Payment Form -->
+  <section class="deposit-card">
+    <h2>Commission Details</h2>
+    <p class="sub">Verify your project reference and amount below to proceed to Stripe checkout.</p>
+
+    <form id="depositForm" onsubmit="handleDepositSubmit(event)">
+      <div class="form-group">
+        <label for="clientName">Client Name</label>
+        <input type="text" id="clientName" name="clientName" required placeholder="e.g. Jenny Taylor">
+      </div>
+
+      <div class="form-group">
+        <label for="clientEmail">Email Address (for Stripe Receipt)</label>
+        <input type="email" id="clientEmail" name="clientEmail" required placeholder="your.email@example.com">
+      </div>
+
+      <div class="form-group">
+        <label for="projectRef">Project / Commission Reference</label>
+        <input type="text" id="projectRef" name="projectRef" required placeholder="e.g. 3-Piece Bespoke Cylindrical Coffee Tables">
+      </div>
+
+      <div class="form-group">
+        <label for="depositAmount">Deposit Amount (£ GBP)</label>
+        <div class="amount-wrapper">
+          <span class="currency-symbol">£</span>
+          <input type="number" id="depositAmount" name="depositAmount" min="10" max="10000" step="1" required placeholder="825">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="notes">Notes / Colour Specifications (Optional)</label>
+        <textarea id="notes" name="notes" rows="2" placeholder="e.g. Cream, Smoky Grey, and Warm Taupe microcement finishes."></textarea>
+      </div>
+
+      <button type="submit" id="btnPay" class="btn-pay">
+        <span>Proceed to Secure Checkout</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+
+      <div class="security-note">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+        <span>256-Bit SSL Encrypted • Direct Stripe Checkout • Card, Apple Pay & Google Pay</span>
+      </div>
+    </form>
+  </section>
+
+  <!-- Artisan Guarantees -->
+  <aside class="guarantee-box">
+    <h3>The Concreet Guarantee</h3>
+
+    <div class="guarantee-item">
+      <div class="guarantee-icon">✦</div>
+      <div class="guarantee-text">
+        <strong>Seamless Architectural Finish</strong>
+        <p>Engineered with a lightweight structural timber core and hand-trowelled in Italian microcement. Monolithic stone look with zero joints or visible legs.</p>
+      </div>
+    </div>
+
+    <div class="guarantee-item">
+      <div class="guarantee-icon">🛡</div>
+      <div class="guarantee-text">
+        <strong>Triple Polyurethane Stain Shield</strong>
+        <p>Finished with 3 coats of commercial-grade matte polyurethane for full resistance against red wine, coffee, oils, and daily domestic spills.</p>
+      </div>
+    </div>
+
+    <div class="guarantee-item">
+      <div class="guarantee-icon">📹</div>
+      <div class="guarantee-text">
+        <strong>Pre-Dispatch Video & Photo Approval</strong>
+        <p>Before your furniture leaves our North East workshop, we send high-resolution video and photos. You inspect and approve every finish before delivery is booked.</p>
+      </div>
+    </div>
+
+    <div class="guarantee-item">
+      <div class="guarantee-icon">📦</div>
+      <div class="guarantee-text">
+        <strong>Dedicated Courier Delivery</strong>
+        <p>Custom-crated with high-density protective foam and delivered safely directly to your address.</p>
+      </div>
+    </div>
+
+    <div class="direct-contact">
+      <p>Questions about your commission?</p>
+      <a href="https://wa.me/447494867646?text=Hi%20Ian,%20I%20have%20a%20question%20about%20my%20commission%20deposit" target="_blank" rel="noopener">WhatsApp Ian: 07494 867646</a>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <p>&copy; 2026 Concreet UK. Artisan concrete & microcement craftsmanship. County Durham, England.</p>
+  <p style="margin-top:0.4rem;"><a href="/contact">Contact</a> &bull; <a href="/shop">Catalogue</a> &bull; <a href="/microcement-worktops">Microcement Worktops</a></p>
+</footer>
+
+<script>
+// Auto-fill from URL parameters: ?client=...&ref=...&amount=...&email=...
+window.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('client')) document.getElementById('clientName').value = params.get('client');
+  if (params.get('ref')) document.getElementById('projectRef').value = params.get('ref');
+  if (params.get('amount')) document.getElementById('depositAmount').value = params.get('amount');
+  if (params.get('email')) document.getElementById('clientEmail').value = params.get('email');
+  if (params.get('notes')) document.getElementById('notes').value = params.get('notes');
+});
+
+async function handleDepositSubmit(e) {
+  e.preventDefault();
+  const btn = document.getElementById('btnPay');
+  btn.disabled = true;
+  btn.innerHTML = '<span>Connecting to Stripe...</span>';
+
+  const payload = {
+    clientName: document.getElementById('clientName').value.trim(),
+    clientEmail: document.getElementById('clientEmail').value.trim(),
+    projectRef: document.getElementById('projectRef').value.trim(),
+    amount: parseFloat(document.getElementById('depositAmount').value),
+    notes: document.getElementById('notes').value.trim()
+  };
+
+  try {
+    const res = await fetch('/.netlify/functions/create-custom-deposit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    const data = await res.json();
+    if (res.ok && data.url) {
+      window.location.href = data.url;
+    } else {
+      alert(data.error || 'Payment gateway connection error. Please contact Ian directly at 07494 867646.');
+      btn.disabled = false;
+      btn.innerHTML = '<span>Proceed to Secure Checkout</span>';
+    }
+  } catch (err) {
+    console.error(err);
+    alert('Network error connecting to payment gateway. Please try again or WhatsApp 07494 867646.');
+    btn.disabled = false;
+    btn.innerHTML = '<span>Proceed to Secure Checkout</span>';
+  }
+}
+</script>
+
+</body>
+</html>
