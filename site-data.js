@@ -13,6 +13,17 @@ var SITE_DATA = {
     },
     products: [
       {
+        id: "sample-box",
+        name: "Artisan Microcement & Concrete Sample Box",
+        price: 19.00,
+        category: "homeware",
+        badge: "100% Refundable",
+        badgeType: "new",
+        image: "images/concrete-candle-natural.webp",
+        size: "3 Hand-Cast Stone Swatches + Polyurethane Sealant Tester",
+        description: "Touch, feel, and test real architectural microcement finishes in your home before commissioning your kitchen worktops or custom furniture. Includes 3 hand-trowelled stone swatches (Natural Concrete, Industrial Charcoal, Sandstone Slate), satin polyurethane sealant tester, and finish guide. The £19 is 100% credited toward your worktop installation or furniture order!"
+      },
+      {
         id: "candle",
         name: "The Concrete Candle",
         price: 39.99,
