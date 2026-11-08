@@ -106,7 +106,7 @@ export const CATALOGUE = {
   },
   'bonsai-crimson-diffuser': {
     name: 'Autumn Crimson Bonsai Volcanic Diffuser',
-    price: 34.99,
+    price: 58.99,
     category: 'candles',
     badge: 'New In',
     badgeType: 'new',
@@ -117,7 +117,7 @@ export const CATALOGUE = {
   },
   'bonsai-golden-diffuser': {
     name: 'Golden Zen Bonsai Volcanic Diffuser',
-    price: 34.99,
+    price: 58.99,
     category: 'candles',
     badge: 'Artisan Zen',
     badgeType: 'new',
