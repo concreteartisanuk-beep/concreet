@@ -112,6 +112,28 @@ var SITE_DATA = {
         description: "A passive architectural concrete burner and diffuser. Heat-resistant ceramic oil dish sits atop a sculpted concrete pillar to gently release essential oils into the room."
       },
       {
+        id: "bonsai-crimson-diffuser",
+        name: "Autumn Crimson Bonsai Volcanic Diffuser",
+        price: 34.99,
+        category: "candles",
+        badge: "New In",
+        badgeType: "new",
+        image: "images/bonsai-crimson-diffuser.jpg",
+        size: "14cm Dia × 22cm H | 950g",
+        description: "Passive flame-free aromatherapy meets artisan sculpture. Features a vibrant autumn crimson Japanese maple bonsai nestled in porous black volcanic basalt rocks inside a hand-cast geometric faceted concrete bowl. Simply add 5–8 drops of essential oil onto the lava stones for a continuous, gentle scent throw. No electricity, no water, no flame."
+      },
+      {
+        id: "bonsai-golden-diffuser",
+        name: "Golden Zen Bonsai Volcanic Diffuser",
+        price: 34.99,
+        category: "candles",
+        badge: "Artisan Zen",
+        badgeType: "new",
+        image: "images/bonsai-golden-diffuser.jpg",
+        size: "14cm Dia × 20cm H | 920g",
+        description: "A calming flame-free desktop oasis. Sculpted evergreen chartreuse bonsai rooted in natural porous volcanic lava stone, seated in a minimalist hand-cast round concrete vessel. The volcanic basalt stones naturally diffuse your favourite organic essential oils without heat or cables. Includes 10ml aromatherapy oil dropper."
+      },
+      {
         id: "soap",
         name: "Concrete Soap Bar",
         price: 8.99,
