@@ -438,6 +438,36 @@ export const CATALOGUE = {
     size: '70cm Dia × 40cm H | ~24kg',
     description: 'Polished 70cm circular concrete top resting on a sturdy tripod black steel base. Compact modern design ideal for snugs, apartments, and sitting rooms.',
   },
+  'coffee-block-beige': {
+    name: 'The Floating Block — Warm Sand Beige',
+    price: 895.00,
+    category: 'furniture',
+    badge: 'Penthouse Edition',
+    badgeType: 'new',
+    image: 'images/floating-block-warm-beige.jpg',
+    size: '120cm L × 80cm W × 38cm H | ~48kg',
+    description: 'Monolithic architectural floating block coffee table finished in warm sand beige Italian microcement. Supported by a deeply recessed shadow-gap pedestal plinth, creating the optical illusion of solid stone hovering an inch above your floor. Sealed with triple-coat stain-proof polyurethane against red wine, espresso, and heat.',
+  },
+  'coffee-cylinders-trio': {
+    name: 'The Triptych Cylindrical Coffee Table Trio',
+    price: 1650.00,
+    category: 'furniture',
+    badge: 'Architectural Trio',
+    badgeType: 'new',
+    image: 'images/cylindrical-coffee-tables-trio.jpg',
+    size: '3-Piece Set: 105cm Dia (Cream) · 85cm Dia (Smoky Grey) · 60cm Dia (Warm Taupe)',
+    description: 'A statement three-piece graduated nesting coffee table arrangement. Includes three monolithic hand-trowelled cylinders in contrasting complementary tones: 105cm Cream Stone (42cm H), 85cm Smoky Grey-Brown (36cm H), and 60cm Warm Taupe (30cm H). Seamless curved microcement over engineered lightweight structural timber cores with zero floor-loading risk.',
+  },
+  'coffee-strata-tiered': {
+    name: 'The Strata Dual-Tier Floating Coffee Table',
+    price: 695.00,
+    category: 'furniture',
+    badge: 'Dual-Level Architecture',
+    badgeType: 'new',
+    image: 'images/tiered-floating-concrete-coffee-table.jpg',
+    size: '100cm × 100cm Base, 60cm × 60cm Tier | 35cm Total Height | ~42kg',
+    description: 'An architectural dual-tier floating coffee table featuring an elevated cantilevered square platform offset over a wide low-profile base. Built with a structural timber core and hand-trowelled in velvety, storm-grey microcement. Sealed for stain and heat resistance.',
+  },
 }
 
 // Free UK delivery threshold, in pounds. Orders below this pay the flat rate.

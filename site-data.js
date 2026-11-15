@@ -429,6 +429,28 @@ var SITE_DATA = {
         image: "images/tiered-floating-concrete-coffee-table.jpg",
         size: "100cm × 100cm Base, 60cm × 60cm Tier | 35cm Total Height | ~42kg",
         description: "An architectural dual-tier floating coffee table featuring an elevated cantilevered square platform offset over a wide low-profile base. Built with a structural timber core and hand-trowelled in velvety, storm-grey microcement. Sealed for stain and heat resistance."
+      },
+      {
+        id: "coffee-block-beige",
+        name: "The Floating Block — Warm Sand Beige",
+        price: 895.00,
+        category: "furniture",
+        badge: "Penthouse Edition",
+        badgeType: "new",
+        image: "images/floating-block-warm-beige.jpg",
+        size: "120cm L × 80cm W × 38cm H | ~48kg",
+        description: "A monolithic cantilevered coffee table hand-trowelled in warm sand beige Italian microcement. Featuring a deeply recessed hidden plinth, the architectural block appears to float effortlessly above the floor. Sealed with a 3-layer matte polyurethane nano-membrane for complete wine, coffee, and oil resistance."
+      },
+      {
+        id: "coffee-cylinders-trio",
+        name: "The Triptych Cylindrical Coffee Table Trio",
+        price: 1650.00,
+        category: "furniture",
+        badge: "Architectural Trio",
+        badgeType: "new",
+        image: "images/cylindrical-coffee-tables-trio.jpg",
+        size: "3-Piece Set: 105cm, 85cm & 60cm Diameters (30–42cm Heights) | ~92kg total",
+        description: "A monumental 3-piece grouping of nesting cylindrical monoliths designed to anchor spacious living rooms. Hand-trowelled in graduated natural mineral tones (Cream Stone, Smoky Grey, and Warm Taupe). Seamless circular geometry with zero hard corners, hand-waxed and fully sealed."
       }
     ],
     bundle: {
@@ -601,6 +623,24 @@ var SITE_DATA = {
         badgeType: "sale",
         image: "images/dining-table-steel.webp",
         description: "A hand-trowelled concrete top on a spare black steel frame, sealed harder than the coffee tables because a dining table takes daily wine, oil and hot plates. 180×90cm seats six comfortably; any length to 300cm, with benches to match. 6–8 weeks."
+      },
+      {
+        id: "coffee-block-beige",
+        name: "The Floating Block — Warm Sand Beige",
+        price: 895.00,
+        badge: "Penthouse Edition",
+        badgeType: "new",
+        image: "images/floating-block-warm-beige.jpg",
+        description: "A monumental floating block hand-trowelled in warm Mediterranean sand beige microcement. Engineered with a hidden shadow plinth so the solid volume reads as hovering weightlessly 1 inch off your floor. Sealed with a 3-layer velvet matte nano-membrane for real living. 120×80×38cm as shown, made to any dimension. 4–5 weeks."
+      },
+      {
+        id: "coffee-cylinders-trio",
+        name: "The Triptych Cylindrical Trio",
+        price: 1650.00,
+        badge: "Architectural Trio",
+        badgeType: "new",
+        image: "images/cylindrical-coffee-tables-trio.jpg",
+        description: "An architectural cluster of three graduated monolithic cylinders (105cm, 85cm, and 60cm diameters at staggered 42cm, 36cm, and 30cm heights). Hand-trowelled in tonal Cream Stone, Smoky Grey, and Warm Taupe. Fluid, organic arrangement with zero sharp edges. Complete 3-piece commission, or enquire for single cylinders. 5–6 weeks."
       }
     ]
   }
