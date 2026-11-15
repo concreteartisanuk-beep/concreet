@@ -122,12 +122,28 @@ function renderCart() {
   const noteEl = document.getElementById('cart-delivery-note')
   if (noteEl) {
     const remaining = FREE_DELIVERY_OVER - total
-    noteEl.textContent =
-      count === 0
-        ? ''
-        : remaining > 0
-          ? `Spend £${remaining.toFixed(2)} more for free UK delivery`
-          : '✓ Your order qualifies for free UK delivery'
+    if (count === 0) {
+      noteEl.innerHTML = ''
+    } else if (remaining > 0) {
+      const upsellId = !basket['soap'] ? 'soap' : (!basket['lipbalm'] ? 'lipbalm' : (!basket['sml-candle'] ? 'sml-candle' : 'holder'))
+      const item = CATALOGUE[upsellId]
+      const percent = Math.min(100, Math.max(5, Math.round((total / FREE_DELIVERY_OVER) * 100)))
+      const upsellBtn = item ? `<button type="button" class="cart-upsell-btn" onclick="addToCart('${upsellId}')" aria-label="Add ${escapeHtml(item.name)} for £${item.price.toFixed(2)} to unlock free delivery">+ Add ${escapeHtml(item.name)} (£${item.price.toFixed(2)})</button>` : ''
+      noteEl.innerHTML = `
+        <div class="cart-progress-wrap">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.35rem;font-size:0.75rem;">
+            <span>Spend <strong style="color:var(--accent);">£${remaining.toFixed(2)}</strong> more for <strong>FREE UK Delivery</strong></span>
+            <span style="color:var(--muted);">${percent}%</span>
+          </div>
+          <div style="background:#222;border-radius:99px;height:5px;overflow:hidden;width:100%;margin-bottom:0.6rem;">
+            <div style="background:var(--accent);height:100%;width:${percent}%;transition:width 0.3s ease;"></div>
+          </div>
+          ${upsellBtn}
+        </div>
+      `
+    } else {
+      noteEl.innerHTML = '<div style="color:#34d399;font-weight:600;font-size:0.8rem;padding:0.25rem 0;display:flex;align-items:center;gap:0.4rem;"><span>✓</span> Your order qualifies for FREE UK Delivery</div>'
+    }
   }
 
   const el = document.getElementById('cart-items')
@@ -309,9 +325,45 @@ function clearCart() {
   renderCart()
 }
 
-// ---------- wiring ----------
+function injectStyles() {
+  if (document.getElementById('cart-dynamic-styles')) return
+  const style = document.createElement('style')
+  style.id = 'cart-dynamic-styles'
+  style.textContent = `
+    .cart-upsell-btn {
+      background: rgba(197, 169, 117, 0.12);
+      border: 1px dashed var(--accent);
+      color: var(--accent);
+      width: 100%;
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s ease;
+      display: block;
+      font-family: inherit;
+    }
+    .cart-upsell-btn:hover {
+      background: var(--accent);
+      color: #0d0d0d;
+      border-style: solid;
+      transform: translateY(-1px);
+    }
+    .cart-progress-wrap {
+      margin: 0.5rem 0 0.85rem;
+      background: rgba(25, 25, 25, 0.7);
+      border: 1px solid var(--border);
+      padding: 0.65rem 0.75rem;
+      border-radius: 6px;
+    }
+  `
+  document.head.appendChild(style)
+}
 
 function init() {
+  injectStyles()
   load()
   renderCart()
 

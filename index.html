@@ -98,7 +98,9 @@ img{max-width:100%;height:auto;display:block}
 :root{--bg:#0d0d0d;--card:#141414;--accent:#c5a975;--text:#f4f1eb;--muted:#8a8578;--border:#2a2a2a}
 body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6}
 a{text-decoration:none;color:inherit}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 5%;background:rgba(13,13,13,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.announcement-bar{position:fixed;top:0;left:0;right:0;z-index:102;background:linear-gradient(90deg,#1c1610,#2c2216,#1c1610);color:#d4cfc7;border-bottom:1px solid rgba(197,169,117,0.35);text-align:center;padding:0.42rem 1rem;font-size:0.75rem;letter-spacing:0.8px;font-weight:500;display:flex;align-items:center;justify-content:center;line-height:1.35}
+.announcement-bar strong{color:#fff}
+nav{position:fixed;top:31px;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 5%;background:rgba(13,13,13,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
 .logo{font-family:'Playfair Display',serif;font-size:1.4rem;letter-spacing:2px;color:var(--accent)}
 .nav-links{display:flex;gap:2rem;list-style:none}
 .nav-links a{font-size:0.85rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);transition:color 0.2s}
@@ -212,6 +214,9 @@ footer a{color:var(--accent)}
 .mobile-menu a{font-size:1rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);transition:color 0.2s}
 .mobile-menu a:hover{color:var(--text)}
 @media(max-width:768px){
+  .announcement-bar{font-size:0.67rem;padding:0.35rem 0.5rem;line-height:1.25}
+  nav{top:28px}
+  .mobile-menu{top:96px}
   .nav-links{display:none}
   .hamburger{display:flex}
   .trust-bar{gap:1rem}
@@ -220,7 +225,7 @@ footer a{color:var(--accent)}
   .grid-furniture .card{max-width:420px;margin:0 auto 1.5rem;width:100%}
   .grid-homeware{grid-template-columns:1fr 1fr;gap:1rem}
   .grid-homeware .card-body{padding:1rem;gap:0.5rem}
-  .grid-homeware .card-desc{display:none}
+  .grid-homeware .card-desc{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:0.75rem;line-height:1.35;margin-bottom:0.5rem;color:var(--muted)}
   .grid-homeware .card-body h3{font-size:0.95rem;margin-bottom:0.2rem}
   .grid-homeware .price{font-size:1.1rem}
   .grid-homeware .btn-add{padding:0.5rem 1rem;font-size:0.72rem;letter-spacing:1px}
@@ -246,6 +251,10 @@ footer a{color:var(--accent)}
     <button class="btn-stripe" id="btn-stripe" onclick="goToStripe()" disabled>Checkout Securely →</button>
     <p class="cart-note">🔒 Secure payment via Stripe · Free UK delivery over £40</p>
   </div>
+</div>
+
+<div class="announcement-bar">
+  <span>✦ <strong>EARLY CHRISTMAS SPECIAL:</strong> 10% OFF YOUR FIRST ORDER WITH CODE <strong style="color:var(--accent);">CONCREET10</strong> · FREE UK DELIVERY OVER £40 · ORDER BY DEC 18 FOR CHRISTMAS DELIVERY ✦</span>
 </div>
 
 <nav>
@@ -406,7 +415,70 @@ footer a{color:var(--accent)}
     </div>
   </div>
 
+  <!-- ARTISAN SPOTLIGHT: Bonsai Volcanic Diffuser -->
+  <div class="spotlight-card" style="background:linear-gradient(135deg,rgba(30,24,18,0.85),rgba(18,16,14,0.95));border:1px solid rgba(197,169,117,0.4);border-radius:8px;padding:2.5rem;margin-bottom:3.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem;align-items:center;box-shadow:0 12px 45px rgba(0,0,0,0.6)">
+    <div style="position:relative;border-radius:6px;overflow:hidden;aspect-ratio:1/1;background:#141414;border:1px solid var(--border)">
+      <img src="/.netlify/images?url=/images/bonsai-crimson-diffuser.jpg&w=800&h=800&fit=cover" alt="Autumn Crimson Bonsai Volcanic Lava Stone Diffuser" style="width:100%;height:100%;object-fit:cover" loading="lazy" width="400" height="400">
+      <span class="badge badge-new" style="background:var(--accent);color:#0d0d0d;font-weight:700;top:1rem;left:1rem">Artisan Spotlight · New In</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:1rem">
+      <span style="font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent);font-weight:600">Flame-Free Aromatherapy Sculpture</span>
+      <h3 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.3rem);color:#fff;line-height:1.2;font-weight:400">Autumn Crimson Bonsai Volcanic Diffuser</h3>
+      <div style="display:flex;align-items:center;gap:0.75rem">
+        <span style="color:var(--accent);font-size:0.95rem">★★★★★</span>
+        <span style="font-size:0.82rem;color:var(--muted)">Handcrafted in County Durham · Small Batch</span>
+      </div>
+      <p style="color:#d4cfc7;font-size:0.92rem;line-height:1.65">
+        A marriage of Japanese Zen garden serenity and tactile raw concrete craftsmanship. Features a vibrant crimson Japanese maple bonsai nestled in porous black volcanic basalt rocks inside a hand-cast geometric faceted concrete bowl. Simply add 5–8 drops of pure essential oil onto the lava stones for a continuous, gentle scent throw. <strong>Zero flame, zero hot wax, zero electricity cords.</strong>
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;font-size:0.78rem;color:var(--accent)">
+        <span style="background:rgba(197,169,117,0.1);border:1px solid rgba(197,169,117,0.25);padding:0.35rem 0.75rem;border-radius:4px">🌿 Flame-Free &amp; Waterless</span>
+        <span style="background:rgba(197,169,117,0.1);border:1px solid rgba(197,169,117,0.25);padding:0.35rem 0.75rem;border-radius:4px">🌋 Natural Porous Basalt</span>
+        <span style="background:rgba(197,169,117,0.1);border:1px solid rgba(197,169,117,0.25);padding:0.35rem 0.75rem;border-radius:4px">🎁 Complete Gift Set + 10ml Oil</span>
+        <span style="background:rgba(197,169,117,0.1);border:1px solid rgba(197,169,117,0.25);padding:0.35rem 0.75rem;border-radius:4px">🚚 Free UK Delivery Included</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:1rem;margin-top:0.5rem">
+        <span class="price" style="font-size:2rem">£58.99</span>
+        <span style="font-size:0.82rem;color:#34d399;font-weight:600">✓ Qualifies for FREE UK Delivery</span>
+      </div>
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:0.5rem">
+        <button class="btn-bundle" style="padding:0.85rem 2rem;font-size:0.82rem;letter-spacing:1px" onclick="addToCart('bonsai-crimson-diffuser')">Add to Basket →</button>
+        <a href="/product?id=bonsai-crimson-diffuser" class="hero-cta ghost" style="padding:0.85rem 1.5rem;font-size:0.82rem;letter-spacing:1px">View Full Specs &amp; Golden Zen ↗</a>
+      </div>
+    </div>
+  </div>
+
   <div class="grid grid-homeware">
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="/.netlify/images?url=/images/bonsai-crimson-diffuser.jpg&w=760&h=760&fit=cover" alt="Autumn Crimson Bonsai Volcanic Diffuser" loading="lazy" width="380" height="380" decoding="async">
+        <span class="badge badge-new">New In</span>
+      </div>
+      <div class="card-body">
+        <h3>Autumn Crimson Bonsai Diffuser</h3>
+        <p class="card-desc">Passive flame-free aromatherapy with a crimson Japanese maple bonsai nestled in porous black volcanic rocks inside a hand-cast geometric concrete bowl. Includes 10ml pure essential oil.</p>
+        <div class="card-footer">
+          <div><span class="price">£58.99</span></div>
+          <button class="btn-add" onclick="addToCart('bonsai-crimson-diffuser')">Add to Basket</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="/.netlify/images?url=/images/bonsai-golden-diffuser.jpg&w=760&h=760&fit=cover" alt="Golden Zen Bonsai Volcanic Diffuser" loading="lazy" width="380" height="380" decoding="async">
+        <span class="badge badge-new">Artisan Zen</span>
+      </div>
+      <div class="card-body">
+        <h3>Golden Zen Bonsai Diffuser</h3>
+        <p class="card-desc">Calming desktop evergreen bonsai in a hand-cast round concrete bowl with porous volcanic basalt rocks that passively diffuse essential oils without heat, flame, or cables.</p>
+        <div class="card-footer">
+          <div><span class="price">£58.99</span></div>
+          <button class="btn-add" onclick="addToCart('bonsai-golden-diffuser')">Add to Basket</button>
+        </div>
+      </div>
+    </div>
 
     <div class="card">
       <div class="card-img-wrap">
@@ -725,6 +797,14 @@ footer a{color:var(--accent)}
     };
   })(document, "script");
 </script>
+
+<!-- Floating WhatsApp Chat Button -->
+<div class="floating-whatsapp-bar" style="position:fixed;bottom:1.5rem;left:1.5rem;z-index:997;display:flex;align-items:center;background:rgba(18,18,18,0.92);border:1px solid rgba(74,222,128,0.45);padding:0.6rem 1.1rem;border-radius:99px;box-shadow:0 8px 30px rgba(0,0,0,0.8),0 0 16px rgba(74,222,128,0.2);backdrop-filter:blur(12px);transition:transform 0.25s ease;">
+  <a href="https://wa.me/447494867646?text=Hi%20Ian,%20I%20have%20a%20question%20about%20a%20piece%20on%20concreet.co.uk" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:0.6rem;color:#4ade80;text-decoration:none;font-size:0.82rem;font-weight:700;font-family:'Inter',sans-serif;letter-spacing:0.3px">
+    <span style="display:inline-block;width:9px;height:9px;background:#4ade80;border-radius:50%;box-shadow:0 0 8px #4ade80"></span>
+    <span>💬 WhatsApp Ian: 07494 867646</span>
+  </a>
+</div>
 
 </body>
 </html>

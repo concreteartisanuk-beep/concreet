@@ -13,11 +13,14 @@
   *{margin:0;padding:0;box-sizing:border-box}
   img{max-width:100%;height:auto;display:block}
   :root{--bg:#0d0d0d;--card:#141414;--accent:#c5a975;--accent-hover:#d4b885;--text:#f4f1eb;--muted:#8a8578;--border:#2a2a2a}
-  body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;padding-top:80px}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;padding-top:110px}
   a{text-decoration:none;color:inherit}
 
+  .announcement-bar{position:fixed;top:0;left:0;right:0;z-index:102;background:linear-gradient(90deg,#1c1610,#2c2216,#1c1610);color:#d4cfc7;border-bottom:1px solid rgba(197,169,117,0.35);text-align:center;padding:0.42rem 1rem;font-size:0.75rem;letter-spacing:0.8px;font-weight:500;display:flex;align-items:center;justify-content:center;line-height:1.35}
+  .announcement-bar strong{color:#fff}
+
   /* Navigation */
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 5%;background:rgba(13,13,13,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+  nav{position:fixed;top:31px;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 5%;background:rgba(13,13,13,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
   .logo{font-family:'Playfair Display',serif;font-size:1.4rem;letter-spacing:2px;color:var(--accent)}
   .nav-links{display:flex;gap:2rem;list-style:none}
   .nav-links a{font-size:0.85rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);transition:color 0.2s}
@@ -109,6 +112,9 @@
   .btn-stripe:hover{background:var(--accent-hover);border-color:var(--accent-hover);transform:translateY(-2px);box-shadow:0 4px 15px rgba(197,169,117,0.25)}
 
   @media(max-width:768px){
+    .announcement-bar{font-size:0.67rem;padding:0.35rem 0.5rem;line-height:1.25}
+    nav{top:28px}
+    body{padding-top:95px}
     .product-layout{grid-template-columns:1fr;gap:2rem}
     .product-gallery{position:static}
   }
@@ -132,6 +138,10 @@
     <button class="btn-stripe" id="btn-stripe" onclick="goToStripe()" disabled>Checkout Securely →</button>
     <p style="font-size:0.75rem;color:var(--muted);text-align:center;">🔒 Secure payment via Stripe · Free UK delivery over £40</p>
   </div>
+</div>
+
+<div class="announcement-bar">
+  <span>✦ <strong>EARLY CHRISTMAS SPECIAL:</strong> 10% OFF YOUR FIRST ORDER WITH CODE <strong style="color:var(--accent);">CONCREET10</strong> · FREE UK DELIVERY OVER £40 · ORDER BY DEC 18 FOR CHRISTMAS DELIVERY ✦</span>
 </div>
 
 <nav>
@@ -304,6 +314,14 @@
     document.getElementById('spec-size').textContent = sizeText;
   });
 </script>
+
+<!-- Floating WhatsApp Chat Button -->
+<div class="floating-whatsapp-bar" style="position:fixed;bottom:1.5rem;left:1.5rem;z-index:997;display:flex;align-items:center;background:rgba(18,18,18,0.92);border:1px solid rgba(74,222,128,0.45);padding:0.6rem 1.1rem;border-radius:99px;box-shadow:0 8px 30px rgba(0,0,0,0.8),0 0 16px rgba(74,222,128,0.2);backdrop-filter:blur(12px);transition:transform 0.25s ease;">
+  <a href="https://wa.me/447494867646?text=Hi%20Ian,%20I%20have%20a%20question%20about%20a%20piece%20on%20concreet.co.uk" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:0.6rem;color:#4ade80;text-decoration:none;font-size:0.82rem;font-weight:700;font-family:'Inter',sans-serif;letter-spacing:0.3px">
+    <span style="display:inline-block;width:9px;height:9px;background:#4ade80;border-radius:50%;box-shadow:0 0 8px #4ade80"></span>
+    <span>💬 WhatsApp Ian: 07494 867646</span>
+  </a>
+</div>
 
 </body>
 </html>
