@@ -377,6 +377,7 @@ footer a{color:var(--accent)}
     <li><a href='/'>Home</a></li>
     <li><a href='/furniture'>Furniture</a></li>
     <li><a href="#collection">Shop</a></li>
+    <li><a href="#collection" onclick="setCategoryFilter('shelves', document.querySelectorAll('.filter-btn')[1])" style="color:var(--accent);font-weight:600">Shelves (New)</a></li>
     <li><a href='/about'>About</a></li>
     <li><a href='/contact'>Contact</a></li>
   </ul>
@@ -389,7 +390,8 @@ footer a{color:var(--accent)}
   <ul>
     <li><a href='/' onclick='toggleMenu()'>Home</a></li>
     <li><a href='/furniture' onclick='toggleMenu()'>Furniture</a></li>
-    <li><a href="#collection" onclick="toggleMenu()">Shop</a></li>
+    <li><a href="#collection" onclick="toggleMenu()">Shop All</a></li>
+    <li><a href="#collection" onclick="toggleMenu();setCategoryFilter('shelves', document.querySelectorAll('.filter-btn')[1]);" style="color:var(--accent);font-weight:600">✦ Floating Shelves (New)</a></li>
     <li><a href='/about' onclick='toggleMenu()'>About</a></li>
     <li><a href='/contact' onclick='toggleMenu()'>Contact</a></li>
     <li><a href="#" onclick="toggleMenu();openCart();return false;">🛒 Basket</a></li>
@@ -455,6 +457,75 @@ footer a{color:var(--accent)}
   </div>
 
   <div class="grid">
+
+    <!-- Microcement Floating Shelf — Smooth Minimal (60cm) -->
+    <div class="card" data-category="shelves">
+      <div class="card-img-wrap">
+        <img src="/.netlify/images?url=/images/floating-shelf-smooth-minimal.jpg&w=760&h=760&fit=cover" alt="Microcement Floating Shelf — Smooth Minimal (60cm)" loading="lazy" width="380" height="380" decoding="async">
+        <span class="badge badge-new">Best Seller</span>
+      </div>
+      <div class="card-body">
+        <h3>Microcement Floating Shelf — Smooth Minimal (60cm)</h3>
+        <span class="card-size-tag">📐 60cm L × 18cm D × 5cm H | ~4.1kg</span>
+        <p class="card-desc">Handcrafted architectural microcement floating shelf with clean geometric edges and a silky smooth concrete texture. Concealed heavy-duty mounting fixings included. Heat, stain, and moisture resistant.</p>
+        <div class="card-footer" style="flex-direction:column;gap:0.75rem;align-items:stretch;">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span class="price">£69.00</span>
+            <a href="/product?id=shelf-smooth-60" style="font-size:0.78rem;color:var(--accent);text-decoration:underline;">View Specs ↗</a>
+          </div>
+          <div class="card-actions-row">
+            <button class="btn-buy-now-sm" onclick="buyNowInNewWindow('shelf-smooth-60')">⚡ Buy Now</button>
+            <button class="btn-add-sm" onclick="addToCart('shelf-smooth-60')">🛒 Basket</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Microcement Floating Shelf — Rough Chiseled Edge (60cm) -->
+    <div class="card" data-category="shelves">
+      <div class="card-img-wrap">
+        <img src="/.netlify/images?url=/images/floating-shelf-rough-chiseled.jpg&w=760&h=760&fit=cover" alt="Microcement Floating Shelf — Rough Chiseled Edge (60cm)" loading="lazy" width="380" height="380" decoding="async">
+        <span class="badge badge-new">Artisan Edge</span>
+      </div>
+      <div class="card-body">
+        <h3>Microcement Floating Shelf — Rough Chiseled Edge (60cm)</h3>
+        <span class="card-size-tag">📐 60cm L × 18cm D × 5cm H | ~4.2kg</span>
+        <p class="card-desc">Artisan microcement shelf pairing a brutalist chiseled rock front profile with a smooth, level top surface. Sealed against moisture and oils. Heavy-duty concealed floating mounting brackets included.</p>
+        <div class="card-footer" style="flex-direction:column;gap:0.75rem;align-items:stretch;">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span class="price">£69.00</span>
+            <a href="/product?id=shelf-rough-60" style="font-size:0.78rem;color:var(--accent);text-decoration:underline;">View Specs ↗</a>
+          </div>
+          <div class="card-actions-row">
+            <button class="btn-buy-now-sm" onclick="buyNowInNewWindow('shelf-rough-60')">⚡ Buy Now</button>
+            <button class="btn-add-sm" onclick="addToCart('shelf-rough-60')">🛒 Basket</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Shelf Trio Gallery Set -->
+    <div class="card" data-category="shelves">
+      <div class="card-img-wrap">
+        <img src="/.netlify/images?url=/images/floating-shelf-smooth-minimal.jpg&w=760&h=760&fit=cover" alt="Floating Shelf Trio Gallery Set" loading="lazy" width="380" height="380" decoding="async">
+        <span class="badge badge-sale">Save £22</span>
+      </div>
+      <div class="card-body">
+        <h3>Floating Shelf Trio Gallery Set</h3>
+        <span class="card-size-tag">📐 3-Piece Set: 40cm, 60cm &amp; 90cm Shelves</span>
+        <p class="card-desc">Curated 3-piece floating gallery shelf set containing 40cm, 60cm, and 90cm matching shelves. Choose between Smooth Minimal or Raw Chiseled Rock edge. Includes heavy-duty concealed floating wall mounting brackets.</p>
+        <div class="card-footer" style="flex-direction:column;gap:0.75rem;align-items:stretch;">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span class="price">£195.00</span>
+            <a href="/product?id=shelf-trio-bundle" style="font-size:0.78rem;color:var(--accent);text-decoration:underline;">View Specs ↗</a>
+          </div>
+          <div class="card-actions-row">
+            <button class="btn-buy-now-sm" onclick="buyNowInNewWindow('shelf-trio-bundle')">⚡ Buy Now</button>
+            <button class="btn-add-sm" onclick="addToCart('shelf-trio-bundle')">🛒 Basket</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="card" data-category="homeware">
       <div class="card-img-wrap">
@@ -791,12 +862,18 @@ function renderShopProducts() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+function initShop() {
   if (typeof SITE_DATA !== 'undefined') {
     renderShopHero();
     renderShopProducts();
   }
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initShop);
+} else {
+  initShop();
+}
 </script>
 
 <!-- Shared basket: persists across pages, prices resolved from assets/catalogue.mjs -->

@@ -266,6 +266,7 @@ footer a{color:var(--accent)}
   <ul class="nav-links">
     <li><a href='/furniture'>Furniture</a></li>
     <li><a href='/microcement-worktops'>Microcement Worktops</a></li>
+    <li><a href='#shelves-spotlight' style="color:var(--accent);font-weight:600">Floating Shelves (New)</a></li>
     <li><a href='/shop'>Shop</a></li>
     <li><a href='/about'>About</a></li>
     <li><a href='/contact'>Contact</a></li>
@@ -279,7 +280,8 @@ footer a{color:var(--accent)}
   <ul>
     <li><a href='/furniture' onclick='toggleMenu()'>Furniture</a></li>
     <li><a href='/microcement-worktops' onclick='toggleMenu()'>Microcement Worktops</a></li>
-    <li><a href='/shop' onclick='toggleMenu()'>Shop</a></li>
+    <li><a href='#shelves-spotlight' onclick='toggleMenu()' style="color:var(--accent);font-weight:600">✦ Floating Shelves (New)</a></li>
+    <li><a href='/shop' onclick='toggleMenu()'>Shop All</a></li>
     <li><a href='/about' onclick='toggleMenu()'>About</a></li>
     <li><a href='/contact' onclick='toggleMenu()'>Contact</a></li>
     <li><a href="#" onclick="toggleMenu();openCart();return false;">🛒 Basket</a></li>
@@ -293,6 +295,7 @@ footer a{color:var(--accent)}
     <p>Hand-trowelled coffee tables and dining tables from a small workshop in the North East of England. Made to your measurements, delivered and put in place by us — and no two surfaces have ever come out the same.</p>
     <div class="hero-actions">
       <a href="/furniture" class="hero-cta">Explore the Furniture →</a>
+      <a href="#shelves-spotlight" class="hero-cta" style="background:transparent;border:1px solid var(--accent);color:var(--accent)">New: Floating Shelves ↓</a>
       <a href="#collection" class="hero-cta ghost">Shop</a>
     </div>
   </div>
@@ -451,6 +454,44 @@ footer a{color:var(--accent)}
     </div>
   </div>
 
+  <!-- ARTISAN SPOTLIGHT: Microcement Floating Shelves -->
+  <div class="spotlight-card" id="shelves-spotlight" style="background:linear-gradient(135deg,rgba(26,24,20,0.92),rgba(15,14,13,0.98));border:1px solid rgba(197,169,117,0.45);border-radius:8px;padding:2.5rem;margin-bottom:3.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem;align-items:center;box-shadow:0 12px 45px rgba(0,0,0,0.65)">
+    <div style="position:relative;border-radius:6px;overflow:hidden;aspect-ratio:4/3;background:#141414;border:1px solid var(--border)">
+      <img id="spotlight-shelf-img" src="/.netlify/images?url=/images/floating-shelf-rough-chiseled.jpg&w=900&q=78" alt="Handcrafted Microcement Floating Shelf with Raw Chiseled Edge" style="width:100%;height:100%;object-fit:cover" loading="lazy" width="450" height="338">
+      <span class="badge badge-new" style="background:var(--accent);color:#0d0d0d;font-weight:700;top:1rem;left:1rem">New Launch · In Stock</span>
+      <div style="position:absolute;bottom:0.75rem;left:0.75rem;display:flex;gap:0.5rem;z-index:2">
+        <button onclick="document.getElementById('spotlight-shelf-img').src='/.netlify/images?url=/images/floating-shelf-rough-chiseled.jpg&w=900&q=78';this.style.borderColor='var(--accent)';" style="background:rgba(0,0,0,0.7);color:#fff;border:1px solid var(--accent);border-radius:4px;padding:0.25rem 0.6rem;font-size:0.72rem;cursor:pointer">Rough Edge</button>
+        <button onclick="document.getElementById('spotlight-shelf-img').src='/.netlify/images?url=/images/floating-shelf-smooth-minimal.jpg&w=900&q=78';this.style.borderColor='var(--accent)';" style="background:rgba(0,0,0,0.7);color:#fff;border:1px solid var(--border);border-radius:4px;padding:0.25rem 0.6rem;font-size:0.72rem;cursor:pointer">Smooth Minimal</button>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:1rem">
+      <span style="font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent);font-weight:600">Architectural Wall Shelving Collection</span>
+      <h3 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.3rem);color:#fff;line-height:1.2;font-weight:400">Microcement Floating Shelves</h3>
+      <div style="display:flex;align-items:center;gap:0.75rem">
+        <span style="color:var(--accent);font-size:0.95rem">★★★★★</span>
+        <span style="font-size:0.82rem;color:var(--muted)">County Durham Workshop · Smooth &amp; Rough Finishes</span>
+      </div>
+      <p style="color:#d4cfc7;font-size:0.92rem;line-height:1.65">
+        Architectural presence without the heavyweight wall anxiety. Crafted with real tactile microcement over an engineered lightweight structural core, finished in your choice of <strong>Crisp Smooth Minimal</strong> or <strong>Raw Chiseled Natural Rock Edge</strong>. Seamless floating installation with completely concealed heavy-duty wall fixings included. Saturated with our waterproof polyurethane barrier for luxury bathrooms, kitchens, and living rooms.
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;font-size:0.78rem;color:var(--accent)">
+        <span style="background:rgba(197,169,117,0.1);border:1px solid rgba(197,169,117,0.25);padding:0.35rem 0.75rem;border-radius:4px">📐 40cm, 60cm, 90cm &amp; 120cm</span>
+        <span style="background:rgba(197,169,117,0.1);border:1px solid rgba(197,169,117,0.25);padding:0.35rem 0.75rem;border-radius:4px">🛡️ Concealed Mounting Hardware Included</span>
+        <span style="background:rgba(197,169,117,0.1);border:1px solid rgba(197,169,117,0.25);padding:0.35rem 0.75rem;border-radius:4px">💧 100% Moisture &amp; Steam Proof</span>
+        <span style="background:rgba(197,169,117,0.1);border:1px solid rgba(197,169,117,0.25);padding:0.35rem 0.75rem;border-radius:4px">🚚 Free UK Delivery Over £40</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:1rem;margin-top:0.5rem">
+        <span class="price" style="font-size:2rem">From £49.00</span>
+        <span style="font-size:0.82rem;color:#34d399;font-weight:600">✓ Free UK Tracked Delivery</span>
+      </div>
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:0.5rem">
+        <button class="btn-bundle" style="padding:0.85rem 1.6rem;font-size:0.82rem;letter-spacing:1px" onclick="addToCart('shelf-smooth-60')">Add 60cm Smooth (£69) →</button>
+        <button class="btn-bundle" style="padding:0.85rem 1.6rem;font-size:0.82rem;letter-spacing:1px;background:transparent;border:1px solid var(--accent);color:var(--accent)" onclick="addToCart('shelf-rough-60')">Add 60cm Rough (£69) →</button>
+        <a href="/shop" class="hero-cta ghost" style="padding:0.85rem 1.4rem;font-size:0.82rem;letter-spacing:1px">View All Sizes (40–120cm) ↗</a>
+      </div>
+    </div>
+  </div>
+
   <!-- ARTISAN SPOTLIGHT: Bonsai Volcanic Diffuser -->
   <div class="spotlight-card" style="background:linear-gradient(135deg,rgba(30,24,18,0.85),rgba(18,16,14,0.95));border:1px solid rgba(197,169,117,0.4);border-radius:8px;padding:2.5rem;margin-bottom:3.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem;align-items:center;box-shadow:0 12px 45px rgba(0,0,0,0.6)">
     <div style="position:relative;border-radius:6px;overflow:hidden;aspect-ratio:1/1;background:#141414;border:1px solid var(--border)">
@@ -485,6 +526,54 @@ footer a{color:var(--accent)}
   </div>
 
   <div class="grid grid-homeware">
+
+    <!-- Microcement Floating Shelf — Smooth Minimal (60cm) -->
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="/.netlify/images?url=/images/floating-shelf-smooth-minimal.jpg&w=760&h=760&fit=cover" alt="Microcement Floating Shelf — Smooth Minimal (60cm)" loading="lazy" width="380" height="380" decoding="async">
+        <span class="badge badge-new">Best Seller</span>
+      </div>
+      <div class="card-body">
+        <h3>Microcement Floating Shelf — Smooth (60cm)</h3>
+        <p class="card-desc">Handcrafted architectural microcement floating shelf with crisp geometric edges and a silky smooth finish. Concealed mounting fixings included. Sealed against steam &amp; stains.</p>
+        <div class="card-footer">
+          <div><span class="price">£69.00</span></div>
+          <button class="btn-add" onclick="addToCart('shelf-smooth-60')">Add to Basket</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Microcement Floating Shelf — Rough Chiseled Edge (60cm) -->
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="/.netlify/images?url=/images/floating-shelf-rough-chiseled.jpg&w=760&h=760&fit=cover" alt="Microcement Floating Shelf — Rough Chiseled Edge (60cm)" loading="lazy" width="380" height="380" decoding="async">
+        <span class="badge badge-new">Artisan Rock</span>
+      </div>
+      <div class="card-body">
+        <h3>Microcement Floating Shelf — Rough Edge (60cm)</h3>
+        <p class="card-desc">Brutalist fractured quarry-stone front edge paired with a silky smooth, level top display deck. Saturated waterproof seal. Concealed floating wall brackets included.</p>
+        <div class="card-footer">
+          <div><span class="price">£69.00</span></div>
+          <button class="btn-add" onclick="addToCart('shelf-rough-60')">Add to Basket</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Shelf Trio Gallery Set -->
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="/.netlify/images?url=/images/floating-shelf-smooth-minimal.jpg&w=760&h=760&fit=cover" alt="Floating Shelf Trio Gallery Set" loading="lazy" width="380" height="380" decoding="async">
+        <span class="badge badge-sale">Save £22</span>
+      </div>
+      <div class="card-body">
+        <h3>Floating Shelf Trio Gallery Set</h3>
+        <p class="card-desc">Matched 3-piece set containing 40cm, 60cm, and 90cm shelves. Smooth Minimal or Rough Edge. Includes concealed mounting hardware for all 3 shelves.</p>
+        <div class="card-footer">
+          <div><span class="price">£195.00</span></div>
+          <button class="btn-add" onclick="addToCart('shelf-trio-bundle')">Add to Basket</button>
+        </div>
+      </div>
+    </div>
 
     <div class="card">
       <div class="card-img-wrap">

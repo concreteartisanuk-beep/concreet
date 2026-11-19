@@ -150,6 +150,7 @@
     <li><a href='/'>Home</a></li>
     <li><a href='/furniture'>Furniture</a></li>
     <li><a href='/shop'>Shop</a></li>
+    <li><a href='/shop#shelves' style="color:var(--accent);font-weight:600">Shelves (New)</a></li>
     <li><a href='/about'>About</a></li>
     <li><a href='/contact'>Contact</a></li>
   </ul>
@@ -278,10 +279,13 @@
     }
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
+  function initProduct() {
     const id = getQueryId();
     const cat = window.CONCREET_CATALOGUE || {};
-    const item = cat[id] || (SITE_DATA.shop.products.find(p => p.id === id));
+    const siteItem = (typeof SITE_DATA !== 'undefined' && SITE_DATA.shop && SITE_DATA.shop.products)
+      ? SITE_DATA.shop.products.find(p => p.id === id)
+      : null;
+    const item = cat[id] || siteItem;
 
     if (!item) {
       document.getElementById('p-title').textContent = 'Product Not Found';
@@ -312,7 +316,13 @@
     const sizeText = item.size || 'Handcrafted in North East England';
     document.getElementById('p-size-text').textContent = sizeText;
     document.getElementById('spec-size').textContent = sizeText;
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initProduct);
+  } else {
+    initProduct();
+  }
 </script>
 
 <!-- Floating WhatsApp Chat Button -->
