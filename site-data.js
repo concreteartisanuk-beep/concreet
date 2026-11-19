@@ -19,7 +19,7 @@ var SITE_DATA = {
         category: "shelves",
         badge: "Best Seller",
         badgeType: "new",
-        image: "images/floating-shelf-smooth-minimal.jpg",
+        image: "images/floating-shelf-smooth-minimal.webp",
         size: "60cm L × 18cm D × 5cm H | ~4.1kg",
         description: "Handcrafted architectural microcement floating shelf with clean geometric edges and a silky smooth concrete texture. Concealed heavy-duty mounting fixings included. Heat, stain, and moisture resistant."
       },
@@ -30,7 +30,7 @@ var SITE_DATA = {
         category: "shelves",
         badge: "Artisan Edge",
         badgeType: "new",
-        image: "images/floating-shelf-rough-chiseled.jpg",
+        image: "images/floating-shelf-rough-chiseled.webp",
         size: "60cm L × 18cm D × 5cm H | ~4.2kg",
         description: "Artisan microcement shelf pairing a brutalist chiseled rock front profile with a smooth, level top surface. Sealed against moisture and oils. Heavy-duty concealed floating mounting brackets included."
       },
@@ -41,7 +41,7 @@ var SITE_DATA = {
         category: "shelves",
         badge: "Save £22",
         badgeType: "sale",
-        image: "images/floating-shelf-smooth-minimal.jpg",
+        image: "images/floating-shelf-smooth-minimal.webp",
         size: "3-Piece Set: 40cm, 60cm & 90cm Shelves (18cm Deep, 5cm Thick)",
         description: "Curated 3-piece floating gallery shelf set containing 40cm, 60cm, and 90cm matching shelves. Choose between Crisp Smooth Minimal or Raw Chiseled Rock edge during checkout. Includes heavy-duty concealed floating wall mounting brackets for all 3 shelves."
       },
@@ -52,7 +52,7 @@ var SITE_DATA = {
         category: "shelves",
         badge: "Minimalist",
         badgeType: "new",
-        image: "images/floating-shelf-smooth-minimal.jpg",
+        image: "images/floating-shelf-smooth-minimal.webp",
         size: "40cm L × 18cm D × 5cm H | ~2.8kg",
         description: "Handcrafted architectural microcement floating shelf featuring crisp minimalist 90-degree lines and a velvety smooth matte stone finish. Concealed floating wall mounting fixings included. Engineered core with multi-coat waterproof polyurethane seal."
       },
@@ -63,7 +63,7 @@ var SITE_DATA = {
         category: "shelves",
         badge: "Raw Rock",
         badgeType: "new",
-        image: "images/floating-shelf-rough-chiseled.jpg",
+        image: "images/floating-shelf-rough-chiseled.webp",
         size: "40cm L × 18cm D × 5cm H | ~2.9kg",
         description: "Handcrafted microcement floating shelf with a dramatic natural fractured rock chiseled front edge and silky smooth level top deck. Invisible floating wall fixings included. Adds organic luxury to any wall."
       },
@@ -74,7 +74,7 @@ var SITE_DATA = {
         category: "shelves",
         badge: "Statement",
         badgeType: "new",
-        image: "images/floating-shelf-smooth-minimal.jpg",
+        image: "images/floating-shelf-smooth-minimal.webp",
         size: "90cm L × 18cm D × 5cm H | ~5.9kg",
         description: "Substantial 90cm architectural floating shelf finished in warm grey microcement. Seamless clean profile with concealed floating support fixings. Ideal for framed artwork, ceramics, and books."
       },
@@ -85,7 +85,7 @@ var SITE_DATA = {
         category: "shelves",
         badge: "Trending",
         badgeType: "new",
-        image: "images/floating-shelf-rough-chiseled.jpg",
+        image: "images/floating-shelf-rough-chiseled.webp",
         size: "90cm L × 18cm D × 5cm H | ~6.1kg",
         description: "90cm statement organic floating shelf featuring a hand-chiseled fractured slate-look front edge. Perfectly level top shelf for decor, candles, and ceramics. Completely hidden wall fixings included."
       },
@@ -96,7 +96,7 @@ var SITE_DATA = {
         category: "shelves",
         badge: "Grand Mantel",
         badgeType: "new",
-        image: "images/floating-shelf-smooth-minimal.jpg",
+        image: "images/floating-shelf-smooth-minimal.webp",
         size: "120cm L × 18cm D × 5cm H | ~7.8kg",
         description: "Grand 1.2m architectural floating shelf and fireplace mantel beam. Monolithic microcement finish over an engineered lightweight core. Features heavy-duty concealed floating wall brackets."
       },
@@ -107,7 +107,7 @@ var SITE_DATA = {
         category: "shelves",
         badge: "Fireplace Mantel",
         badgeType: "new",
-        image: "images/floating-shelf-rough-chiseled.jpg",
+        image: "images/floating-shelf-rough-chiseled.webp",
         size: "120cm L × 18cm D × 5cm H | ~8.0kg",
         description: "Grand 1.2m architectural floating shelf and fireplace mantel with an authentic chiseled quarry-stone front edge. Velvety smooth level top deck. Heavy-duty concealed floating support brackets included."
       },

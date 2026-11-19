@@ -125,3 +125,15 @@
   to = "/deposit"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/images/floating-shelf-rough-chiseled.jpg"
+  to = "/images/floating-shelf-rough-chiseled.webp"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/images/floating-shelf-smooth-minimal.jpg"
+  to = "/images/floating-shelf-smooth-minimal.webp"
+  status = 301
+  force = true
