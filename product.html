@@ -294,7 +294,12 @@
 
     currentProduct = { id: id, ...item };
 
-    document.title = item.name + ' | Concreet Concrete Homeware';
+    document.title = item.name + ' | Concreet Handcrafted UK';
+    const canonicalEl = document.querySelector('link[rel="canonical"]');
+    if (canonicalEl) canonicalEl.href = 'https://concreet.co.uk/product/' + id;
+    const metaDescEl = document.querySelector('meta[name="description"]');
+    if (metaDescEl && item.description) metaDescEl.content = item.description;
+
     document.getElementById('bc-title').textContent = item.name;
     document.getElementById('p-title').textContent = item.name;
     document.getElementById('p-price').textContent = '£' + Number(item.price).toFixed(2);

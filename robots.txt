@@ -7,3 +7,4 @@ Disallow: /success
 Disallow: /.netlify/
 
 Sitemap: https://concreet.co.uk/sitemap.xml
+Sitemap: https://concreet.co.uk/google-shopping-feed.xml
