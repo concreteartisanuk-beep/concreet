@@ -127,6 +127,24 @@
   force = true
 
 [[redirects]]
+  from = "/cart.html"
+  to = "/cart"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/checkout"
+  to = "/cart"
+  status = 200
+  force = false
+
+[[redirects]]
+  from = "/checkout.html"
+  to = "/cart"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/images/floating-shelf-rough-chiseled.jpg"
   to = "/images/floating-shelf-rough-chiseled.webp"
   status = 301

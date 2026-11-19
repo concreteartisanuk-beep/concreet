@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopping Basket &amp; Checkout | Concreet Handcrafted Homeware</title>
+<meta name="description" content="Review your Concreet artisan homeware and industrial concrete furniture basket. Fast UK tracked delivery and secure Stripe checkout.">
+<link rel="canonical" href="https://concreet.co.uk/cart">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  img{max-width:100%;height:auto;display:block}
+  :root{--bg:#0d0d0d;--card:#141414;--accent:#c5a975;--accent-hover:#d4b885;--text:#f4f1eb;--muted:#8a8578;--border:#2a2a2a}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;padding-top:105px;min-height:100vh;display:flex;flex-direction:column}
+  a{text-decoration:none;color:inherit}
+
+  .announcement-bar{position:fixed;top:0;left:0;right:0;z-index:102;background:linear-gradient(90deg,#1c1610,#2c2216,#1c1610);color:#d4cfc7;border-bottom:1px solid rgba(197,169,117,0.35);text-align:center;padding:0.42rem 1rem;font-size:0.75rem;letter-spacing:0.8px;font-weight:500;display:flex;align-items:center;justify-content:center;line-height:1.35}
+  .announcement-bar strong{color:#fff}
+
+  /* Navigation */
+  nav{position:fixed;top:31px;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 5%;background:rgba(13,13,13,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+  .logo{font-family:'Playfair Display',serif;font-size:1.4rem;letter-spacing:2px;color:var(--accent)}
+  .nav-links{display:flex;gap:2rem;list-style:none}
+  .nav-links a{font-size:0.85rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);transition:color 0.2s}
+  .nav-links a:hover{color:var(--text)}
+
+  .cart-container{max-width:980px;margin:2rem auto 5rem;padding:0 5%;flex:1;width:100%}
+  .cart-title-wrap{border-bottom:1px solid var(--border);padding-bottom:1.5rem;margin-bottom:2.5rem;display:flex;justify-content:space-between;align-items:flex-end}
+  .cart-heading{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:400;color:#fff}
+  .continue-link{font-size:0.85rem;color:var(--accent);letter-spacing:1px;text-transform:uppercase}
+  .continue-link:hover{text-decoration:underline}
+
+  .cart-grid{display:grid;grid-template-columns:1.8fr 1fr;gap:2.5rem;align-items:start}
+  @media(max-width:768px){.cart-grid{grid-template-columns:1fr}}
+
+  .items-list{display:flex;flex-direction:column;gap:1.25rem}
+  .cart-card{display:grid;grid-template-columns:90px 1fr auto;gap:1.25rem;background:var(--card);border:1px solid var(--border);padding:1.25rem;border-radius:6px;align-items:center}
+  .cart-card img{width:90px;height:90px;object-fit:cover;border-radius:4px;background:#1e1e1e}
+  .cart-item-details{display:flex;flex-direction:column;gap:0.35rem}
+  .cart-item-title{font-family:'Playfair Display',serif;font-size:1.1rem;color:#fff}
+  .cart-item-unit{font-size:0.82rem;color:var(--muted)}
+  .cart-item-price{font-size:1.1rem;color:var(--accent);font-weight:600}
+
+  .qty-controls{display:inline-flex;align-items:center;background:var(--bg);border:1px solid var(--border);border-radius:4px;overflow:hidden;margin-top:0.4rem;width:fit-content}
+  .qty-btn{background:none;border:none;color:var(--text);width:32px;height:32px;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:background 0.2s}
+  .qty-btn:hover{background:var(--border)}
+  .qty-val{width:36px;text-align:center;font-size:0.9rem;font-weight:600}
+
+  .btn-remove{background:none;border:none;color:var(--muted);font-size:0.78rem;text-transform:uppercase;letter-spacing:1px;cursor:pointer;padding:0.4rem;transition:color 0.2s;text-align:right}
+  .btn-remove:hover{color:#e06c75}
+
+  /* Order Summary */
+  .summary-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1.75rem;position:sticky;top:110px;display:flex;flex-direction:column;gap:1.25rem}
+  .summary-heading{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:400;color:#fff;border-bottom:1px solid var(--border);padding-bottom:1rem}
+  .summary-row{display:flex;justify-content:space-between;font-size:0.92rem;color:var(--muted)}
+  .summary-row.total{border-top:1px solid var(--border);padding-top:1rem;color:#fff;font-size:1.15rem;font-weight:600}
+  .summary-row.total .total-val{color:var(--accent);font-family:'Playfair Display',serif;font-size:1.5rem}
+
+  .free-del-progress{background:rgba(197,169,117,0.1);border:1px solid rgba(197,169,117,0.3);border-radius:6px;padding:0.75rem 1rem;font-size:0.8rem;color:var(--text);line-height:1.4}
+  .free-del-progress strong{color:var(--accent)}
+
+  .btn-checkout{width:100%;background:var(--accent);color:#0d0d0d;font-weight:700;font-size:1rem;letter-spacing:1.5px;text-transform:uppercase;padding:1.2rem;border-radius:4px;border:1px solid var(--accent);cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.3s cubic-bezier(0.16,1,0.3,1);box-shadow:0 4px 15px rgba(197,169,117,0.25);display:flex;align-items:center;justify-content:center;gap:0.75rem}
+  .btn-checkout:hover{background:var(--accent-hover);border-color:var(--accent-hover);transform:translateY(-2px);box-shadow:0 6px 20px rgba(197,169,117,0.4)}
+  .btn-checkout:disabled{opacity:0.6;cursor:not-allowed;transform:none}
+
+  .trust-row{display:flex;flex-direction:column;gap:0.5rem;font-size:0.75rem;color:var(--muted);text-align:center;padding-top:0.75rem;border-top:1px solid var(--border)}
+  .trust-badges{display:flex;justify-content:center;gap:1rem;color:var(--accent);font-size:0.8rem}
+
+  .cart-empty-state{text-align:center;padding:5rem 1rem;display:flex;flex-direction:column;align-items:center;gap:1.5rem}
+  .cart-empty-state h2{font-family:'Playfair Display',serif;font-size:2rem;color:#fff;font-weight:400}
+  .cart-empty-state p{color:var(--muted);max-width:440px}
+  .btn-browse{display:inline-block;background:var(--accent);color:#0d0d0d;font-weight:700;font-size:0.9rem;letter-spacing:1.5px;text-transform:uppercase;padding:1rem 2rem;border-radius:4px;transition:all 0.2s}
+  .btn-browse:hover{background:var(--accent-hover)}
+
+  footer{border-top:1px solid var(--border);padding:3rem 5%;background:#090909;margin-top:auto;text-align:center;color:var(--muted);font-size:0.8rem}
+  footer a{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<div class="announcement-bar">
+  <span>Free UK courier delivery on orders over £40 · Handcrafted in North East England</span>
+</div>
+
+<nav>
+  <a href="/" class="logo">CONCREET</a>
+  <ul class="nav-links">
+    <li><a href="/shop">Shop</a></li>
+    <li><a href="/furniture">Furniture</a></li>
+    <li><a href="/microcement-worktops">Worktops</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main class="cart-container">
+  <div class="cart-title-wrap">
+    <h1 class="cart-heading">Your Basket</h1>
+    <a href="/shop" class="continue-link">← Continue Shopping</a>
+  </div>
+
+  <div id="cart-content">
+    <!-- Populated by JavaScript -->
+    <div style="text-align:center;padding:3rem;color:var(--muted)">Loading your basket…</div>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 Concreet. All rights reserved. Handcrafted concrete furniture &amp; homeware. <a href="mailto:concreteartisanuk@gmail.com">concreteartisanuk@gmail.com</a></p>
+</footer>
+
+<script type="module">
+import { CATALOGUE, FREE_DELIVERY_OVER, DELIVERY_FLAT_RATE } from './assets/catalogue.mjs'
+
+const STORAGE_KEY = 'concreet_basket_v1'
+let basket = {}
+
+function loadBasket() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY)
+    const parsed = raw ? JSON.parse(raw) : {}
+    basket = {}
+    for (const [id, qty] of Object.entries(parsed)) {
+      const n = parseInt(qty, 10)
+      if (CATALOGUE[id] && n > 0) basket[id] = Math.min(n, 99)
+    }
+  } catch {
+    basket = {}
+  }
+}
+
+function saveBasket() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(basket))
+  } catch {}
+}
+
+function processUrlParams() {
+  const params = new URLSearchParams(window.location.search)
+  const addItem = params.get('add') || params.get('item') || params.get('id')
+  const qty = parseInt(params.get('quantity') || params.get('qty') || '1', 10) || 1
+
+  if (addItem && CATALOGUE[addItem]) {
+    basket[addItem] = (basket[addItem] || 0) + qty
+    saveBasket()
+    // Clean URL parameter without reloading
+    const cleanUrl = window.location.pathname
+    window.history.replaceState({}, '', cleanUrl)
+  }
+}
+
+function renderBasket() {
+  const container = document.getElementById('cart-content')
+  const entries = Object.entries(basket)
+
+  if (entries.length === 0) {
+    container.innerHTML = `
+      <div class="cart-empty-state">
+        <h2>Your basket is empty</h2>
+        <p>You haven't added any handcrafted concrete homeware or furniture to your basket yet.</p>
+        <a href="/shop" class="btn-browse">Explore Collection</a>
+      </div>
+    `
+    return
+  }
+
+  let subtotal = 0
+  let itemsHtml = ''
+
+  for (const [id, qty] of entries) {
+    const item = CATALOGUE[id]
+    if (!item) continue
+    const lineTotal = item.price * qty
+    subtotal += lineTotal
+
+    itemsHtml += `
+      <div class="cart-card">
+        <img src="${item.image}" alt="${item.name}">
+        <div class="cart-item-details">
+          <h2 class="cart-item-title">${item.name}</h2>
+          <div class="cart-item-unit">£${item.price.toFixed(2)} each ${item.size ? '· ' + item.size : ''}</div>
+          <div class="qty-controls">
+            <button class="qty-btn" onclick="updateQty('${id}', ${qty - 1})" aria-label="Decrease quantity">−</button>
+            <span class="qty-val">${qty}</span>
+            <button class="qty-btn" onclick="updateQty('${id}', ${qty + 1})" aria-label="Increase quantity">+</button>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.75rem">
+          <div class="cart-item-price">£${lineTotal.toFixed(2)}</div>
+          <button class="btn-remove" onclick="updateQty('${id}', 0)">Remove</button>
+        </div>
+      </div>
+    `
+  }
+
+  const isFreeDelivery = subtotal >= FREE_DELIVERY_OVER
+  const deliveryCharge = isFreeDelivery ? 0 : DELIVERY_FLAT_RATE
+  const grandTotal = subtotal + deliveryCharge
+
+  let delMessage = ''
+  if (isFreeDelivery) {
+    delMessage = `<div class="free-del-progress">🎉 <strong>Free Tracked UK Delivery</strong> unlocked on your order!</div>`
+  } else {
+    const needed = (FREE_DELIVERY_OVER - subtotal).toFixed(2)
+    delMessage = `<div class="free-del-progress">Add <strong>£${needed}</strong> more to qualify for <strong>Free UK Delivery</strong>.</div>`
+  }
+
+  container.innerHTML = `
+    <div class="cart-grid">
+      <div class="items-list">
+        ${itemsHtml}
+      </div>
+
+      <div class="summary-card">
+        <h2 class="summary-heading">Order Summary</h2>
+        
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span>£${subtotal.toFixed(2)}</span>
+        </div>
+
+        <div class="summary-row">
+          <span>UK Courier Delivery</span>
+          <span>${isFreeDelivery ? 'FREE' : '£' + deliveryCharge.toFixed(2)}</span>
+        </div>
+
+        ${delMessage}
+
+        <div class="summary-row total">
+          <span>Total</span>
+          <span class="total-val">£${grandTotal.toFixed(2)}</span>
+        </div>
+
+        <button class="btn-checkout" id="btn-proceed" onclick="proceedToCheckout()">
+          Proceed to Checkout →
+        </button>
+
+        <div class="trust-row">
+          <div class="trust-badges">
+            <span>🔒 Secure SSL</span>
+            <span>💳 Stripe</span>
+            <span>🍏 Apple Pay</span>
+            <span>G Google Pay</span>
+          </div>
+          <span>Fast courier dispatch from our workshop in North East England.</span>
+        </div>
+      </div>
+    </div>
+  `
+}
+
+window.updateQty = function(id, newQty) {
+  if (newQty <= 0) {
+    delete basket[id]
+  } else {
+    basket[id] = Math.min(newQty, 99)
+  }
+  saveBasket()
+  renderBasket()
+}
+
+window.proceedToCheckout = async function() {
+  const items = Object.entries(basket).map(([id, quantity]) => ({ id, quantity }))
+  if (items.length === 0) return
+
+  const btn = document.getElementById('btn-proceed')
+  if (btn) {
+    btn.disabled = true
+    btn.textContent = 'Redirecting to Stripe…'
+  }
+
+  try {
+    const res = await fetch('/.netlify/functions/create-checkout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items }),
+    })
+    const data = await res.json().catch(() => ({}))
+
+    if (res.ok && data.url) {
+      window.location.href = data.url
+      return
+    }
+    alert('Payment error: ' + (data.error || 'Could not start checkout. Please try again.'))
+  } catch (err) {
+    alert('Could not connect to payment gateway. Please try again.')
+  }
+
+  if (btn) {
+    btn.disabled = false
+    btn.textContent = 'Proceed to Checkout →'
+  }
+}
+
+// Initialise
+loadBasket()
+processUrlParams()
+renderBasket()
+</script>
+
+</body>
+</html>

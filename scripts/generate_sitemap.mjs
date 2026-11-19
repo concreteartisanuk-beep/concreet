@@ -56,6 +56,7 @@ const corePages = [
   { url: 'https://concreet.co.uk/delivery-returns', priority: '0.60', changefreq: 'monthly' },
   { url: 'https://concreet.co.uk/privacy', priority: '0.30', changefreq: 'yearly' },
   { url: 'https://concreet.co.uk/terms', priority: '0.30', changefreq: 'yearly' },
+  { url: 'https://concreet.co.uk/cart', priority: '0.60', changefreq: 'weekly' },
   { url: 'https://concreet.co.uk/product', priority: '0.50', changefreq: 'weekly' }
 ];
 

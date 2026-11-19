@@ -104,6 +104,12 @@
     <priority>0.30</priority>
   </url>
   <url>
+    <loc>https://concreet.co.uk/cart</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.60</priority>
+  </url>
+  <url>
     <loc>https://concreet.co.uk/product</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
